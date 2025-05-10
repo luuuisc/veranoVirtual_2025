@@ -1,0 +1,21 @@
+# Sistema operativo
+.DS_Store
+Thumbs.db
+
+# Variables de entorno
+.env
+
+# Salidas de build / herramientas estáticas
+_site/
+public/
+
+# Configuración de IDEs y editores
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.sln
+
+# Logs
+logs/
+*.log
