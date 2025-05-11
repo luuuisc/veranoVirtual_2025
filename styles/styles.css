@@ -32,6 +32,9 @@ body {
 /* La columna derecha con ancho fijo */
 .right-container {
   width: 40%;
+  max-height: calc(100vh - 40px); 
+  overflow-y: auto;
+  padding-right: 10px;
 }
 
 /* Header: logo + título */
@@ -95,6 +98,38 @@ body {
 #course-info {
   font-size: 1em;
   line-height: 1.5;
+}
+
+.social-links {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0;
+}
+
+.social-links li {
+  margin-bottom: 6px;
+}
+
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #1a535c;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.social-links a:hover {
+  color: #163d44;
+}
+
+/* Estilo para los iconos dentro de los enlaces de contacto general */
+.right-container i.fas,
+.right-container i.fab {
+  margin-right: 6px;
+  font-size: 1em;
+  color: #1a535c;
 }
 
 /* Responsivo */
