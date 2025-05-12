@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Listado de Inscripciones</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    h1 { color: #1a535c; }
+    table { width: 100%; border-collapse: collapse; margin-top: 16px; }
+    th, td { padding: 8px; border: 1px solid #ccc; text-align: left; }
+    th { background: #4ecdc4; color: white; }
+    tr:nth-child(even) { background: #f9f9f9; }
+  </style>
+</head>
+<body>
+  <h1>Inscripciones Recientes</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>E-mail</th>
+        <th>WhatsApp</th>
+        <th>Curso</th>
+        <th>Nivel</th>
+        <th>Idioma</th>
+        <th>Horario</th>
+        <th>Fecha</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for ins in inscripciones %}
+      <tr>
+        <td>{{ ins.nombre }}</td>
+        <td>{{ ins.email }}</td>
+        <td>{{ ins.whatsapp }}</td>
+        <td>{{ ins.tipo_curso }}</td>
+        <td>{{ ins.nivel_ingreso }}</td>
+        <td>{{ ins.idioma }}</td>
+        <td>{{ ins.horario }}</td>
+        <td>{{ ins.creado|date:"Y-m-d H:i" }}</td>
+      </tr>
+      {% empty %}
+      <tr><td colspan="8">No hay inscripciones aún.</td></tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</body>
+</html>

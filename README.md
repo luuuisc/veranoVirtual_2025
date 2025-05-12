@@ -5,7 +5,7 @@ Este repositorio contiene el sitio web estático de la Escuela de Idiomas, despl
 ## Descripción
 
 - Menú interactivo con 8 secciones:  
-  - CLX (Nosotros)  
+  - Nosotros
   - Intensivos  
   - Semi intensivos  
   - Regulares  

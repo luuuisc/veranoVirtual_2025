@@ -46,7 +46,7 @@ body {
 }
 
 #logo {
-  width: 60px;
+  width: 90px;
   height: auto;
 }
 
@@ -54,7 +54,7 @@ body {
 .header h1 {
   color: #1a535c;
   margin: 0;
-  font-size: 1.8em;
+  font-size: 2.2em;
 }
 
 /* Menú de rectángulos */
@@ -74,6 +74,7 @@ body {
   background-color: #4ecdc4;
   color: #fff;
   font-weight: bold;
+  font-size: 1.2em;
   text-align: center;
   border-radius: 6px;
   cursor: pointer;
@@ -118,6 +119,83 @@ body {
   text-decoration: none;
   font-weight: bold;
   transition: color 0.3s;
+}
+
+/* Formulario bonito en “cuadro” */
+.inscription-form {
+  background: #fff;
+  padding: 24px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-bottom: 20px;
+}
+.inscription-form h4 {
+  grid-column: 1 / -1;
+  margin: 0 0 12px;
+  color: #1a535c;
+}
+.inscription-form .form-group {
+  display: flex;
+  flex-direction: column;
+}
+.inscription-form .form-group label {
+  margin-bottom: 4px;
+  font-weight: bold;
+  font-size: 0.95em;
+}
+.inscription-form .form-group input,
+.inscription-form .form-group select,
+.inscription-form .form-group textarea {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.9em;
+}
+.inscription-form .form-group.full-width {
+  grid-column: 1 / -1;
+}
+.inscription-form button {
+  grid-column: 1 / -1;
+  padding: 12px;
+  background: #1a535c;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.inscription-form button:hover {
+  background: #163d44;
+}
+#insc-feedback {
+  grid-column: 1 / -1;
+  font-size: 0.9em;
+  margin-top: 8px;
+}
+
+#insc-feedback {
+  margin-top: 8px;
+  font-weight: bold;
+  min-height: 1.2em; /* reserva espacio aunque esté vacío */
+}
+
+#insc-feedback.success {
+  color: green;
+}
+
+#insc-feedback.error {
+  color: crimson;
+}
+
+/* Responsivo: una columna */
+@media (max-width: 768px) {
+  .inscription-form {
+    grid-template-columns: 1fr;
+  }
 }
 
 .social-links a:hover {

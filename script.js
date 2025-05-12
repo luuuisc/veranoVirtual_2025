@@ -1,10 +1,15 @@
 // Detalles de cada curso
 const courseDetails = {
   clx: {
-    title: 'CLX (Nosotros)',
+    title: 'Nosotros',
     content: `
-      <p>Somos CLX: la escuela de idiomas líder en innovación pedagógica y tecnología educativa. 
-      Ofrecemos metodologías activas, aprendizaje basado en proyectos y un acompañamiento continuo.</p>
+      <p>Somos un gran equipo sinérgico, multilingüe y multicultural, conformado por colaboradores responsables y comprometidos. 
+      Nos apasiona compartir nuestra experiencia en cada curso, proyecto, alianza o servicio. 
+      Trabajamos día a día para satisfacer a plenitud a quienes depositan su confianza en nosotros.</p><br>
+
+      <p>Nuestra actividad se basa en los aportes de la de la Didáctica, de la Lingüística aplicada, de las Neurociencias, 
+      asi como en los beneficios de la Virtualidad, de la Inteligencia Artificial y de la Mensajería instantánea, 
+      sin olvidar nunca que somos y atendemos a Seres Humanos.<p>
     `
   },
   intensivos: {
@@ -271,23 +276,119 @@ const courseDetails = {
       <p>
         <strong>Página oficial:</strong><br>
         <a href="https://www.clx.com.mx" target="_blank">
-          <i class="fas fa-globe"></i> https://www.clx.com.mx
+          <i class="fas fa-globe"></i>https://www.clx.com.mx
         </a>
       </p>
     `
-  }
+  }, 
+'inscripcion': {
+  title: 'Inscripción',
+  content: `
+    <form id="form-inscripcion" class="inscription-form">
+      <h4>Formulario de Inscripción</h4>
+
+      <div class="form-group">
+        <label for="nombre">Nombre</label>
+        <input
+          id="nombre"
+          name="nombre"
+          type="text"
+          placeholder="Tu nombre completo"
+          required
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="cuenta_unam">No. de Cuenta/Empleado UNAM</label>
+        <input
+          id="cuenta_unam"
+          name="cuenta_unam"
+          type="text"
+          placeholder="Ej: 12345678"
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="email">E-mail</label>
+        <input
+          id="email"
+          name="email"
+          type="email"
+          placeholder="usuario@correo.com"
+          required
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="whatsapp">WhatsApp</label>
+        <input
+          id="whatsapp"
+          name="whatsapp"
+          type="tel"
+          placeholder="55 1234 5678"
+          required
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="tipo_curso">Tipo de curso</label>
+        <select id="tipo_curso" name="tipo_curso" required>
+          <option value="" disabled selected>Elige un tipo…</option>
+          <option value="intensivo">Intensivo</option>
+          <option value="regular">Regular</option>
+          <option value="iniciacion">Iniciación</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="nivel_ingreso">Nivel de ingreso</label>
+        <select id="nivel_ingreso" name="nivel_ingreso" required>
+          <option value="" disabled selected>Primero elige tipo…</option>
+          <!-- se rellenará dinámicamente -->
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="idioma">Idioma</label>
+        <select id="idioma" name="idioma" required>
+          <option value="" disabled selected>Primero elige tipo…</option>
+          <!-- se rellenará dinámicamente -->
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="horario">Horario</label>
+        <select id="horario" name="horario" required>
+          <option value="" disabled selected>Primero elige tipo…</option>
+          <!-- se rellenará dinámicamente -->
+        </select>
+      </div>
+
+      <div class="form-group full-width">
+        <label for="mensaje">Mensaje (opcional)</label>
+        <textarea
+          id="mensaje"
+          name="mensaje"
+          placeholder="Escribe tu solicitud de horario, dudas o comentarios aquí…"
+        ></textarea>
+      </div>
+
+      <button type="submit">Enviar Inscripción</button>
+      <div id="insc-feedback" role="alert"></div>
+    </form>
+  `
+},
 };
 
 // Referencias DOM
 const rects = document.querySelectorAll('.course-menu .rect');
 const infoBox = document.getElementById('course-info');
 
-// Añadir evento click a cada rectángulo
 rects.forEach(rect => {
   rect.addEventListener('click', () => {
     // 1) Desactivar todos
     rects.forEach(r => r.classList.remove('active'));
-    // 2) Activar el clicado
+    // 2) Marcar el clicado
     rect.classList.add('active');
 
     // 3) Renderizar su contenido
@@ -295,10 +396,114 @@ rects.forEach(rect => {
     const data = courseDetails[key];
     infoBox.innerHTML = `<h3>${data.title}</h3>${data.content}`;
 
-    // 4) Hacer scroll suave hasta el contenedor de info
-    infoBox.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start'
+    // 4) Si es el apartado de Inscripción, engancha la lógica de formulario
+    if (key === 'inscripcion') {
+      bindFormLogic();
+      attachInscriptionHandler();
+    }
+
+    // 5) Scrollea hasta la sección
+    const rc = document.querySelector('.right-container');
+    rc.scrollTo({
+      top: infoBox.offsetTop - rc.offsetTop,
+      behavior: 'smooth'
     });
   });
 });
+
+// Configuración de qué opciones van para cada tipo de curso
+const availability = {
+  intensivo: {
+    niveles: ['A1','A2','B1','B2'],
+    idiomas: ['ingles','frances','aleman','italiano','portugues'],
+    horarios: ['08:00-11:00','11:30-14:30','15:00-18:00']
+  },
+  regular: {
+    niveles: ['A1.1','A2.1','B1.1'],
+    idiomas: ['ingles','frances'],
+    horarios: ['09:00-10:00','10:00-11:00','11:00-12:00']
+  },
+  iniciacion: {
+    niveles: ['A1','A2'],
+    idiomas: ['frances','aleman','italiano','portugues','japones','chino','coreano'],
+    horarios: ['16:00-17:00','17:00-18:00']
+  }
+};
+
+function bindFormLogic() {
+  const form    = document.getElementById('form-inscripcion');
+  const tipo    = form.tipo_curso;
+  const nivel   = form.nivel_ingreso;
+  const idioma  = form.idioma;
+  const horario = form.horario;
+
+  function refreshOptions() {
+    const conf = availability[tipo.value];
+
+    /*
+    // Tipo de curso
+    tipo.innerHTML = [
+      `<option value="" disabled selected>Selecciona un curso…</option>`,
+      ...Object.keys(availability).map(t => `<option value="${t}">${t.charAt(0).toUpperCase() + t.slice(1)}</option>`)
+    ].join('');
+    */
+
+    // Nivel
+    nivel.innerHTML = [
+      `<option value="" disabled selected>Selecciona un nivel…</option>`,
+      ...conf.niveles.map(n => `<option value="${n}">${n}</option>`)
+    ].join('');
+
+    // Idioma
+    idioma.innerHTML = [
+      `<option value="" disabled selected>Selecciona un idioma…</option>`,
+      ...conf.idiomas.map(i => {
+        const cap = i.charAt(0).toUpperCase() + i.slice(1);
+        return `<option value="${i}">${cap}</option>`;
+      })
+    ].join('');
+
+    // Horario
+    horario.innerHTML = [
+      `<option value="" disabled selected>Selecciona un horario…</option>`,
+      ...conf.horarios.map(h => `<option value="${h}">${h}</option>`)
+    ].join('');
+  }
+
+  // Al cambiar el tipo de curso, refresca
+  tipo.addEventListener('change', refreshOptions);
+  // Y la primera vez que aparezca el form
+  refreshOptions();
+}
+
+function attachInscriptionHandler() {
+  const form     = document.getElementById('form-inscripcion');
+  const feedback = document.getElementById('insc-feedback');
+
+  form.addEventListener('submit', async e => {
+    e.preventDefault();
+    feedback.classList.remove('success','error');
+    feedback.textContent = 'Enviando…';
+
+    const data = Object.fromEntries(new FormData(form).entries());
+
+    try {
+      const res  = await fetch('http://127.0.0.1:8000/api/inscripcion/', {
+        method: 'POST',
+        mode: 'cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+      const json = await res.json();
+
+      feedback.className    = json.status === 'ok' ? 'success' : 'error';
+      feedback.textContent  = json.message;
+      if (json.status === 'ok') form.reset();
+    } catch (err) {
+      feedback.className   = 'error';
+      feedback.textContent = 'Error de red. Intenta más tarde.';
+    }
+  });
+
+  console.log('🛠️ attachInscriptionHandler() enlazado'); // ayuda a depurar
+}
