@@ -281,55 +281,32 @@ const courseDetails = {
       </p>
     `
   }, 
-'inscripcion': {
+// Formulario de inscripción
+inscripcion: {
   title: 'Inscripción',
   content: `
     <form id="form-inscripcion" class="inscription-form">
       <h4>Formulario de Inscripción</h4>
 
+      <!-- Campos básicos -->
       <div class="form-group">
         <label for="nombre">Nombre</label>
-        <input
-          id="nombre"
-          name="nombre"
-          type="text"
-          placeholder="Tu nombre completo"
-          required
-        >
+        <input id="nombre" name="nombre" type="text" placeholder="Tu nombre completo" required>
       </div>
-
       <div class="form-group">
         <label for="cuenta_unam">No. de Cuenta/Empleado UNAM</label>
-        <input
-          id="cuenta_unam"
-          name="cuenta_unam"
-          type="text"
-          placeholder="Ej: 12345678"
-        >
+        <input id="cuenta_unam" name="cuenta_unam" type="text" placeholder="Ej: 12345678">
       </div>
-
       <div class="form-group">
         <label for="email">E-mail</label>
-        <input
-          id="email"
-          name="email"
-          type="email"
-          placeholder="usuario@correo.com"
-          required
-        >
+        <input id="email" name="email" type="email" placeholder="usuario@correo.com" required>
       </div>
-
       <div class="form-group">
         <label for="whatsapp">WhatsApp</label>
-        <input
-          id="whatsapp"
-          name="whatsapp"
-          type="tel"
-          placeholder="55 1234 5678"
-          required
-        >
+        <input id="whatsapp" name="whatsapp" type="tel" placeholder="55 1234 5678" required>
       </div>
 
+      <!-- Select tipo → idioma → nivel → horario -->
       <div class="form-group">
         <label for="tipo_curso">Tipo de curso</label>
         <select id="tipo_curso" name="tipo_curso" required>
@@ -339,171 +316,266 @@ const courseDetails = {
           <option value="iniciacion">Iniciación</option>
         </select>
       </div>
-
-      <div class="form-group">
-        <label for="nivel_ingreso">Nivel de ingreso</label>
-        <select id="nivel_ingreso" name="nivel_ingreso" required>
-          <option value="" disabled selected>Primero elige tipo…</option>
-          <!-- se rellenará dinámicamente -->
-        </select>
-      </div>
-
       <div class="form-group">
         <label for="idioma">Idioma</label>
         <select id="idioma" name="idioma" required>
-          <option value="" disabled selected>Primero elige tipo…</option>
-          <!-- se rellenará dinámicamente -->
+          <option value="" disabled selected>Selecciona primero tipo…</option>
         </select>
       </div>
-
+      <div class="form-group">
+        <label for="nivel_ingreso">Nivel de ingreso</label>
+        <select id="nivel_ingreso" name="nivel_ingreso" required>
+          <option value="" disabled selected>Selecciona primero idioma…</option>
+        </select>
+      </div>
       <div class="form-group">
         <label for="horario">Horario</label>
         <select id="horario" name="horario" required>
-          <option value="" disabled selected>Primero elige tipo…</option>
-          <!-- se rellenará dinámicamente -->
+          <option value="" disabled selected>Selecciona primero nivel…</option>
         </select>
       </div>
+      <div class="form-group" id="horario-otro-group" style="display:none;">
+        <label for="horario_otro">Proponer horario</label>
+        <input id="horario_otro" name="horario_otro" type="text" placeholder="Escribe tu horario…">
+      </div>
 
+      <!-- Selección de periodo -->
+      <div class="form-group" id="periodo-group" style="display:none;">
+        <label><strong>Periodo del curso</strong></label>
+        <div id="periodo-options"></div>
+        <input type="hidden" id="fecha_inicio" name="fecha_inicio" required>
+        <input type="hidden" id="fecha_fin"    name="fecha_fin"    required>
+      </div>
+
+      <!-- Confirmación -->
+      <div class="form-group">
+        <input id="confirm_periodo" name="confirm_periodo" type="checkbox" required>
+        <label for="confirm_periodo">Confirmo que el periodo seleccionado es correcto</label>
+      </div>
+
+      <!-- Mensaje y envío -->
       <div class="form-group full-width">
         <label for="mensaje">Mensaje (opcional)</label>
-        <textarea
-          id="mensaje"
-          name="mensaje"
-          placeholder="Escribe tu solicitud de horario, dudas o comentarios aquí…"
-        ></textarea>
+        <textarea id="mensaje" name="mensaje"
+                  placeholder="Escribe tu solicitud de horario, dudas o comentarios aquí…"></textarea>
       </div>
 
       <button type="submit">Enviar Inscripción</button>
       <div id="insc-feedback" role="alert"></div>
     </form>
   `
-},
+}
 };
 
 // Referencias DOM
-const rects = document.querySelectorAll('.course-menu .rect');
-const infoBox = document.getElementById('course-info');
+document.addEventListener('DOMContentLoaded', () => {
+  const rects = document.querySelectorAll('.course-menu .rect');
+  const infoBox = document.getElementById('course-info');
 
-rects.forEach(rect => {
-  rect.addEventListener('click', () => {
-    // 1) Desactivar todos
-    rects.forEach(r => r.classList.remove('active'));
-    // 2) Marcar el clicado
-    rect.classList.add('active');
+  rects.forEach(rect => {
+    rect.addEventListener('click', () => {
+      // 1) Desactivar todos
+      rects.forEach(r => r.classList.remove('active'));
+      // 2) Marcar el clicado
+      rect.classList.add('active');
 
-    // 3) Renderizar su contenido
-    const key = rect.id;
-    const data = courseDetails[key];
-    infoBox.innerHTML = `<h3>${data.title}</h3>${data.content}`;
+      // 3) Renderizar contenido
+      const key = rect.id;
+      const data = courseDetails[key];
+      infoBox.innerHTML = `<h3>${data.title}</h3>${data.content}`;
 
-    // 4) Si es el apartado de Inscripción, engancha la lógica de formulario
-    if (key === 'inscripcion') {
-      bindFormLogic();
-      attachInscriptionHandler();
-    }
+      // 4) Si es Inscripción, inicializar form y lógica
+      if (key === 'inscripcion') {
+        bindFormLogic();
+        populatePeriodos();
+        attachInscriptionHandler();
+        // Disparar primer change para placeholders
+        document.getElementById('tipo_curso').dispatchEvent(new Event('change'));
+      }
 
-    // 5) Scrollea hasta la sección
-    const rc = document.querySelector('.right-container');
-    rc.scrollTo({
-      top: infoBox.offsetTop - rc.offsetTop,
-      behavior: 'smooth'
+      // 5) Scroll suave a infoBox
+      infoBox.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
   });
 });
 
-// Configuración de qué opciones van para cada tipo de curso
+// Configuración de disponibilidad por tipo de curso (idioma → nivel → horarios)
 const availability = {
-  intensivo: {
-    niveles: ['A1','A2','B1','B2'],
-    idiomas: ['ingles','frances','aleman','italiano','portugues'],
-    horarios: ['08:00-11:00','11:30-14:30','15:00-18:00']
-  },
-  regular: {
-    niveles: ['A1.1','A2.1','B1.1'],
-    idiomas: ['ingles','frances'],
-    horarios: ['09:00-10:00','10:00-11:00','11:00-12:00']
-  },
-  iniciacion: {
-    niveles: ['A1','A2'],
-    idiomas: ['frances','aleman','italiano','portugues','japones','chino','coreano'],
-    horarios: ['16:00-17:00','17:00-18:00']
-  }
+  intensivo: { idiomas: {
+      ingles: { A1: ['07:00-10:00','10:00-13:00','13:00-16:00','16:00-19:00','19:00-22:00'],
+                A2: ['07:00-10:00','10:00-13:00','13:00-16:00','16:00-19:00','19:00-22:00'],
+                B1: ['07:00-10:00','10:00-13:00','16:00-19:00','19:00-22:00'],
+                B2: ['07:00-10:00','13:00-16:00','19:00-22:00'] },
+      frances:{ A1:['07:00-10:00','10:00-13:00','13:00-16:00','16:00-19:00','19:00-22:00'],
+                A2:['10:00-13:00','16:00-19:00'],
+                B1:['19:00-22:00'], B2:['19:00-22:00'] },
+      aleman:{ A1:['08:00-11:00','19:00-22:00'] },
+      italiano:{ A1:['07:00-10:00','16:00-19:00'] },
+      portugues:{ A1:['10:00-13:00','19:00-22:00'] }
+  } },
+
+  regular: { idiomas: {
+      ingles:{'A1.1':['09:00-10:00','10:00-11:00'],'A2.1':['10:00-11:00','11:00-12:00'],'B1.1':['09:00-10:00','11:00-12:00']},
+      frances:{'A1.1':['09:00-10:00','10:00-11:00'],'A2.1':['10:00-11:00','11:00-12:00'],'B1.1':['09:00-10:00','11:00-12:00']}
+  } },
+
+  iniciacion:{ idiomas: {
+      frances:{ A1:['16:00-17:00','17:00-18:00'], A2:['16:00-17:00','17:00-18:00'] },
+      aleman:{ A1:['16:00-17:00','17:00-18:00'] },
+      italiano:{ A1:['16:00-17:00','17:00-18:00'] },
+      portugues:{ A1:['16:00-17:00','17:00-18:00'] },
+      japones:{ A1:['16:00-17:00','17:00-18:00'] },
+      chino:{   A1:['16:00-17:00','17:00-18:00'] },
+      coreano:{A1:['16:00-17:00','17:00-18:00'] }
+  } }
 };
 
+// Función para poblar los radios de periodo según tipo de curso
+function populatePeriodos() {
+  const tipo = document.getElementById('tipo_curso').value;
+  const cont = document.getElementById('periodo-options');
+  const grp  = document.getElementById('periodo-group');
+  let opts   = [];
+
+  if (tipo === 'intensivo') {
+    opts = [{ label: '4 - 31 julio', start: '2025-07-04', end: '2025-07-31' }];
+  } else if (tipo === 'regular') {
+    opts = [{ label: '16 junio - 25 julio', start: '2025-06-16', end: '2025-07-25' }];
+  } else if (tipo === 'iniciacion') {
+    opts = [
+      { label: '2 - 30 junio', start: '2025-06-02', end: '2025-06-30' },
+      { label: '4 - 31 julio', start: '2025-07-04', end: '2025-07-31' }
+    ];
+  }
+
+  if (!opts.length) {
+    grp.style.display = 'none';
+    return;
+  }
+  grp.style.display = 'block';
+
+  cont.innerHTML = opts.map((o,i)=>`
+    <div class="radio-option">
+      <input type="radio" id="periodo_${i}" name="periodo" value="${o.start}|${o.end}" required>
+      <label for="periodo_${i}">${o.label}</label>
+    </div>
+  `).join('');
+
+  opts.forEach((o,i)=>{
+    document.getElementById(`periodo_${i}`).addEventListener('change', e=>{
+      const [s,f] = e.target.value.split('|');
+      document.getElementById('fecha_inicio').value = s;
+      document.getElementById('fecha_fin').value    = f;
+    });
+  });
+
+  // preseleccionar si sólo hay uno
+  const radios = cont.querySelectorAll('input[type="radio"]');
+  if (radios.length === 1) {
+    radios[0].checked = true;
+    radios[0].dispatchEvent(new Event('change'));
+  }
+}
+
+// ————————————————————————————————
+// 4) bindFormLogic: maneja selects y checkbox “otro…”
+// ————————————————————————————————
 function bindFormLogic() {
   const form    = document.getElementById('form-inscripcion');
   const tipo    = form.tipo_curso;
-  const nivel   = form.nivel_ingreso;
   const idioma  = form.idioma;
+  const nivel   = form.nivel_ingreso;
   const horario = form.horario;
+  const otroGrp = document.getElementById('horario-otro-group');
+  const otroInp = document.getElementById('horario_otro');
 
-  function refreshOptions() {
-    const conf = availability[tipo.value];
+  const placeholder = txt => `<option value="" disabled selected>${txt}</option>`;
 
-    /*
-    // Tipo de curso
-    tipo.innerHTML = [
-      `<option value="" disabled selected>Selecciona un curso…</option>`,
-      ...Object.keys(availability).map(t => `<option value="${t}">${t.charAt(0).toUpperCase() + t.slice(1)}</option>`)
-    ].join('');
-    */
+  tipo.addEventListener('change', ()=>{
+    // poblar idiomas
+    const langs = Object.keys(availability[tipo.value]?.idiomas||{});
+    idioma.innerHTML = langs.length
+      ? [placeholder('Selecciona un idioma…'), ...langs.map(l=>`<option value="${l}">${l.charAt(0).toUpperCase()+l.slice(1)}</option>`)].join('')
+      : placeholder('Selecciona tipo primero…');
+    nivel.innerHTML   = placeholder('Idioma primero…');
+    horario.innerHTML = placeholder('Nivel primero…');
 
-    // Nivel
-    nivel.innerHTML = [
-      `<option value="" disabled selected>Selecciona un nivel…</option>`,
-      ...conf.niveles.map(n => `<option value="${n}">${n}</option>`)
-    ].join('');
+    // poblar periodos
+    populatePeriodos();
+  });
 
-    // Idioma
-    idioma.innerHTML = [
-      `<option value="" disabled selected>Selecciona un idioma…</option>`,
-      ...conf.idiomas.map(i => {
-        const cap = i.charAt(0).toUpperCase() + i.slice(1);
-        return `<option value="${i}">${cap}</option>`;
-      })
-    ].join('');
+  idioma.addEventListener('change', ()=>{
+    const lvls = Object.keys(availability[tipo.value]?.idiomas[idioma.value]||{});
+    nivel.innerHTML = lvls.length
+      ? [placeholder('Selecciona un nivel…'), ...lvls.map(v=>`<option value="${v}">${v}</option>`)].join('')
+      : placeholder('Primero elige idioma…');
+    horario.innerHTML = placeholder('Nivel primero…');
+  });
 
-    // Horario
+  nivel.addEventListener('change', ()=>{
+    const slots = availability[tipo.value]?.idiomas[idioma.value]?.[nivel.value]||[];
     horario.innerHTML = [
-      `<option value="" disabled selected>Selecciona un horario…</option>`,
-      ...conf.horarios.map(h => `<option value="${h}">${h}</option>`)
+      placeholder('Selecciona un horario…'),
+      ...slots.map(h=>`<option value="${h}">${h}</option>`),
+      '<option value="otro">Otro…</option>'
     ].join('');
-  }
+  });
 
-  // Al cambiar el tipo de curso, refresca
-  tipo.addEventListener('change', refreshOptions);
-  // Y la primera vez que aparezca el form
-  refreshOptions();
-}
-
-function attachInscriptionHandler() {
-  const form     = document.getElementById('form-inscripcion');
-  const feedback = document.getElementById('insc-feedback');
-
-  form.addEventListener('submit', async e => {
-    e.preventDefault();
-    feedback.classList.remove('success','error');
-    feedback.textContent = 'Enviando…';
-
-    const data = Object.fromEntries(new FormData(form).entries());
-
-    try {
-      const res  = await fetch('http://127.0.0.1:8000/api/inscripcion/', {
-        method: 'POST',
-        mode: 'cors',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data)
-      });
-      const json = await res.json();
-
-      feedback.className    = json.status === 'ok' ? 'success' : 'error';
-      feedback.textContent  = json.message;
-      if (json.status === 'ok') form.reset();
-    } catch (err) {
-      feedback.className   = 'error';
-      feedback.textContent = 'Error de red. Intenta más tarde.';
+  horario.addEventListener('change', ()=>{
+    if (horario.value === 'otro') {
+      otroGrp.style.display = 'block'; otroInp.required = true;
+    } else {
+      otroGrp.style.display = 'none';  otroInp.required = false; otroInp.value = '';
     }
   });
 
-  console.log('🛠️ attachInscriptionHandler() enlazado'); // ayuda a depurar
+  // inicializar
+  tipo.dispatchEvent(new Event('change'));
 }
+
+// ————————————————————————————————
+// 5) attachInscriptionHandler: AJAX + feedback + temporizador
+// ————————————————————————————————
+function attachInscriptionHandler() {
+  const form     = document.getElementById('form-inscripcion');
+  const feedback = document.getElementById('insc-feedback');
+  const btn      = form.querySelector('button[type="submit"]');
+
+  form.addEventListener('submit', async e => {
+    e.preventDefault();
+    feedback.className = ''; feedback.textContent = 'Enviando…';
+    btn.disabled = true;
+
+    const data = Object.fromEntries(new FormData(form).entries());
+    try {
+      const res  = await fetch('http://127.0.0.1:8000/api/inscripcion/', {
+        method:'POST', mode:'cors',
+        headers:{'Content-Type':'application/json'},
+        body:JSON.stringify(data)
+      });
+      const json = await res.json();
+      feedback.classList.add(json.status==='ok'?'success':'error');
+      feedback.textContent = json.message;
+      if (json.status==='ok') form.reset();
+    } catch {
+      feedback.classList.add('error');
+      feedback.textContent = 'Error de red. Intenta más tarde.';
+    } finally {
+      setTimeout(()=>{
+        feedback.textContent='';
+        feedback.className='';
+        btn.disabled=false;
+      },5000);
+    }
+  });
+}
+
+// ————————————————————————————————
+// 6) Inicializar en DOMContentLoaded
+// ————————————————————————————————
+document.addEventListener('DOMContentLoaded', ()=>{
+  // activar menú lateral
+  document.querySelectorAll('.course-menu .rect').forEach(r=>{
+    r.addEventListener('click', ()=>{/* ya enlazado arriba */});
+  });
+});

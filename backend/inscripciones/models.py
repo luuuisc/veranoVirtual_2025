@@ -10,5 +10,7 @@ class Inscripcion(models.Model):
     nivel_ingreso = models.CharField(max_length=10)
     idioma = models.CharField(max_length=20)
     horario = models.CharField(max_length=20)
+    fecha_inicio = models.DateField(null=True, blank=True)
+    fecha_fin    = models.DateField(null=True, blank=True)
     mensaje = models.TextField(blank=True)
     creado = models.DateTimeField(auto_now_add=True)
