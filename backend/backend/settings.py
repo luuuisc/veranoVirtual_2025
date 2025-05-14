@@ -134,7 +134,9 @@ USE_TZ = True
 # STATIC_URL = 'static/'
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [ BASE_DIR / 'static' ]
+STATICFILES_DIRS = [ BASE_DIR / 'static',
+                     BASE_DIR / 'styles' 
+                     ]
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 # Default primary key field type
