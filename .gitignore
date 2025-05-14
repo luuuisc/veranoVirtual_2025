@@ -19,3 +19,6 @@ public/
 # Logs
 logs/
 *.log
+
+# Django collectstatic
+/staticfiles/
