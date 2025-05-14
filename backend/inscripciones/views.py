@@ -9,6 +9,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.core.mail import send_mail, EmailMessage
 from django.conf import settings
 from django.utils import timezone
+from datetime import datetime
 
 from .models import Inscripcion
 
@@ -19,16 +20,16 @@ def inscribirse(request):
     if request.method != 'POST':
         return JsonResponse({'status':'error','message':'Método no permitido'}, status=405)
 
-    # 1) Decodificar JSON
+    # Decodificar JSON
     data = json.loads(request.body.decode())
 
-    # 2) Campos básicos
+    # Campos básicos
     tipo    = data.get('tipo_curso')
     idioma  = data.get('idioma')
     nivel   = data.get('nivel_ingreso')
     horario = data.get('horario')
 
-    # 3) Conteo de inscripciones en ese mismo bloque
+    # Conteo de inscripciones en ese mismo bloque
     existentes = Inscripcion.objects.filter(
         tipo_curso=tipo,
         idioma=idioma,
@@ -36,11 +37,27 @@ def inscribirse(request):
         horario=horario
     ).count()
 
-    # 4) Calcular número de grupo: bloques de 15
-    POR_GRUPO = 15
-    numero_grupo = (existentes // POR_GRUPO) + 1
+    # Si ya hay 15 o más, bloqueamos
+    if existentes >= 15:
+        return JsonResponse({
+            'status': 'error',
+            'message': 'Lo siento, este horario ya está lleno. Por favor elige otro horario o propón uno nuevo.'
+        }, status=400)
 
-    # 5) Crear la inscripción en la BD
+    # Siempre asignamos grupo = 1
+    numero_grupo = 1
+    
+    fecha_inicio_str = data.get('fecha_inicio')   
+    fecha_fin_str    = data.get('fecha_fin')      
+
+    fecha_inicio = datetime.strptime(fecha_inicio_str, '%Y-%m-%d').date()
+    fecha_fin    = datetime.strptime(fecha_fin_str,    '%Y-%m-%d').date()
+
+    # Formato para el correo (dd/mm/aa)
+    fmt_inicio = fecha_inicio.strftime('%d/%m/%y')
+    fmt_fin    = fecha_fin.   strftime('%d/%m/%y')
+    
+    # Crear la inscripción en la BD
     ins = Inscripcion.objects.create(
         nombre        = data.get('nombre'),
         cuenta_unam   = data.get('cuenta_unam', ''),
@@ -50,54 +67,51 @@ def inscribirse(request):
         nivel_ingreso = nivel,
         idioma        = idioma,
         horario       = horario,
-        fecha_inicio  = data.get('fecha_inicio'),
-        fecha_fin     = data.get('fecha_fin'),
+        fecha_inicio  = fecha_inicio,
+        fecha_fin     = fecha_fin,
         grupo         = numero_grupo,
         mensaje       = data.get('mensaje', ''),
     )
 
-    # 6) Enviar correo de confirmación ALUMNO con PDF adjunto
+    # Fecha de registro
+    fmt_reg    = timezone.localtime(ins.creado).strftime('%d/%m/%y %H:%M')
+    
+    # Correo al alumno con PDF adjunto
     subject = 'CLX - ¡Tu pre-inscripción ha sido recibida!'
     body = (
         f"Hola {ins.nombre},\n\n"
         f"Hemos registrado tu solicitud al curso {ins.tipo_curso} "
         f"({ins.nivel_ingreso} de {ins.idioma}).\n"
-        f"- Horario elegido: {ins.horario}\n"
-        f"- Periodo: {ins.fecha_inicio} a {ins.fecha_fin}\n"
-        f"- Tu grupo es el número {ins.grupo}.\n\n"
-        "Adjunto encontrarás un PDF con nuestros datos bancarios para que puedas realizar tu pago.\n\n"
+        f"Horario: {ins.horario}\n"
+        f"Periodo: {fmt_inicio} a {fmt_fin}\n"
+        f"Tu grupo es el número {ins.grupo}.\n\n"
+        "Adjunto encontrarás un PDF con nuestros datos bancarios para tu pago.\n\n"
+        "Enviar por WhatsApp (55 1340 4064) una foto del comprobante de depósito y el nombre completo de la persona inscrita."
         "¡Gracias por confiar en nosotros!"
     )
     email_alumno = EmailMessage(
-        subject,
-        body,
+        subject, body,
         settings.DEFAULT_FROM_EMAIL,
         [ins.email],
     )
     if PDF_BANCOS.exists():
         email_alumno.attach_file(str(PDF_BANCOS))
     email_alumno.send(fail_silently=False)
-
-    # 7) Fecha local para registro
-    local_dt = timezone.localtime(ins.creado)
-
-    # 8) Notificación al equipo/profesor
-    prof_emails = [
-        'agente3jlcosta@gmail.com',
-        'luisangelperezcastro1305@gmail.com',
-    ]
+    
+    # Notificación al equipo
+    prof_emails  = ['agente3jlcosta@gmail.com', 'luisangelperezcastro1305@gmail.com']
     prof_subject = f'Nueva inscripción: {ins.nombre}'
-    prof_body = (
+    prof_body    = (
         f"Se ha inscrito:\n"
         f"- Nombre: {ins.nombre}\n"
         f"- E-mail: {ins.email}\n"
         f"- WhatsApp: {ins.whatsapp}\n"
         f"- Curso: {ins.tipo_curso} ({ins.nivel_ingreso} de {ins.idioma})\n"
         f"- Horario: {ins.horario}\n"
-        f"- Periodo: {ins.fecha_inicio} a {ins.fecha_fin}\n"
+        f"- Periodo: {fmt_inicio} a {fmt_fin}\n"
         f"- Grupo: {ins.grupo}\n"
         f"- Mensaje: {ins.mensaje}\n"
-        f"- Fecha registro: {local_dt.strftime('%Y-%m-%d %H:%M')}\n"
+        f"- Fecha registro: {fmt_reg}\n"
     )
     send_mail(
         prof_subject,
@@ -107,15 +121,12 @@ def inscribirse(request):
         fail_silently=True,
     )
 
-    # 9) Responder al front
     return JsonResponse({
-        'status': 'ok',
-        'message': 'Inscripción exitosa, revisa tu correo para detalles de pago.'
+        'status':'ok',
+        'message':'Inscripción exitosa, revisa tu correo para detalles de pago.'
     })
 
-
 def list_inscripciones(request):
-    # Lista todas las inscripciones, orden descendente
     inscripciones = Inscripcion.objects.all().order_by('-creado')
     return render(request, 'inscripciones/list.html', {
         'inscripciones': inscripciones
