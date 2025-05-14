@@ -77,8 +77,8 @@ def inscribirse(request):
     fmt_reg    = timezone.localtime(ins.creado).strftime('%d/%m/%y %H:%M')
     
     # Correo al alumno con PDF adjunto
-    subject = 'CLX - ¡Tu pre-inscripción ha sido recibida!'
-    body = (
+    subject_alumno = 'CLX - ¡Tu pre-inscripción ha sido recibida!'
+    body_alumno = (
         f"Hola {ins.nombre},\n\n"
         f"Hemos registrado tu solicitud al curso {ins.tipo_curso} "
         f"({ins.nivel_ingreso} de {ins.idioma}).\n"
@@ -86,22 +86,26 @@ def inscribirse(request):
         f"Periodo: {fmt_inicio} a {fmt_fin}\n"
         f"Tu grupo es el número {ins.grupo}.\n\n"
         "Adjunto encontrarás un PDF con nuestros datos bancarios para tu pago.\n\n"
-        "Enviar por WhatsApp (55 1340 4064) una foto del comprobante de depósito y el nombre completo de la persona inscrita."
+        "Enviar por WhatsApp una foto del comprobante de depósito al 55 1340 4064.\n"
         "¡Gracias por confiar en nosotros!"
     )
     email_alumno = EmailMessage(
-        subject, body,
+        subject_alumno,
+        body_alumno,
         settings.DEFAULT_FROM_EMAIL,
-        [ins.email],
+        [ins.email],           # ← aquí únicamente el email del alumno
     )
     if PDF_BANCOS.exists():
         email_alumno.attach_file(str(PDF_BANCOS))
     email_alumno.send(fail_silently=False)
-    
-    # Notificación al equipo
-    prof_emails  = ['agente3jlcosta@gmail.com', 'luisangelperezcastro1305@gmail.com']
-    prof_subject = f'Nueva inscripción: {ins.nombre}'
-    prof_body    = (
+
+    # Enviar correo de notificación al EQUIPO 
+    prof_emails = [
+        'agente3jlcosta@gmail.com',
+        'luisangelperezcastro1305@gmail.com',
+    ]
+    subject_equipo = f'Nueva inscripción: {ins.nombre}'
+    body_equipo = (
         f"Se ha inscrito:\n"
         f"- Nombre: {ins.nombre}\n"
         f"- E-mail: {ins.email}\n"
@@ -113,13 +117,13 @@ def inscribirse(request):
         f"- Mensaje: {ins.mensaje}\n"
         f"- Fecha registro: {fmt_reg}\n"
     )
-    send_mail(
-        prof_subject,
-        prof_body,
+    email_equipo = EmailMessage(
+        subject_equipo,
+        body_equipo,
         settings.DEFAULT_FROM_EMAIL,
-        prof_emails,
-        fail_silently=True,
+        prof_emails,          
     )
+    email_equipo.send(fail_silently=True)
 
     return JsonResponse({
         'status':'ok',
