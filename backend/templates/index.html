@@ -30,7 +30,8 @@
     <!-- Columna izquierda: logo + menú de cursos -->
     <div class="left-container">
       <div class="header">
-        <img src="img/CLX.png" alt="Logo de la escuela" id="logo">
+        {% load static %}
+        <img src="{% static 'img/logo.png' %}" alt="Logo CLX">
         <h1>VERANO VIRTUAL 2025</h1>
       </div>
       <div class="course-menu">
