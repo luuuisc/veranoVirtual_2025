@@ -732,7 +732,8 @@ function attachInscriptionHandler() {
 
     const data = Object.fromEntries(new FormData(form).entries());
     try {
-      const res  = await fetch('http://127.0.0.1:8000/api/inscripcion/', {
+      const res  = await fetch('/api/inscripcion/', {
+        // await fetch('http://127.0.0.1:8000/api/inscripcion/', {
         method: 'POST',
         mode:   'cors',
         headers:{ 'Content-Type':'application/json' },
