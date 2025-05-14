@@ -16,10 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from inscripciones.views import list_inscripciones
+from inscripciones.views import list_inscripciones, index
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', index, name='home'),
     path('api/inscripcion/', include('inscripciones.urls_list')),
     path('inscripciones/', list_inscripciones, name='list_inscripciones'),
 ]

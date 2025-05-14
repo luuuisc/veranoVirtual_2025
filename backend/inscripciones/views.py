@@ -131,3 +131,6 @@ def list_inscripciones(request):
     return render(request, 'inscripciones/list.html', {
         'inscripciones': inscripciones
     })
+    
+def index(request):
+    return render(request, 'index.html')
