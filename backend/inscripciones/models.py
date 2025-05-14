@@ -12,5 +12,6 @@ class Inscripcion(models.Model):
     horario = models.CharField(max_length=20)
     fecha_inicio = models.DateField(null=True, blank=True)
     fecha_fin    = models.DateField(null=True, blank=True)
+    grupo = models.PositiveSmallIntegerField(null=True, blank=True)
     mensaje = models.TextField(blank=True)
     creado = models.DateTimeField(auto_now_add=True)

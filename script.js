@@ -99,6 +99,8 @@ const courseDetails = {
       <ul>
         <li>Inglés: (A1.1, A2.1, B1.1)</li>
         <li>Francés: (A1.1, A2.1, B1.1)</li>
+        <li>Italiano: (A1.1)</li>
+        <li>Portugués: (A1.1)</li>
       </ul>
   
       <p><strong>Duración:</strong> 6 semanas (60 horas en total)</p>
@@ -367,70 +369,219 @@ inscripcion: {
 }
 };
 
-// Referencias DOM
+// ————————————————————————————————
+// 2) DOMContentLoaded: menú lateral + renderizado dinámico
+// ————————————————————————————————
 document.addEventListener('DOMContentLoaded', () => {
-  const rects = document.querySelectorAll('.course-menu .rect');
+  const rects   = document.querySelectorAll('.course-menu .rect');
   const infoBox = document.getElementById('course-info');
 
   rects.forEach(rect => {
     rect.addEventListener('click', () => {
       // 1) Desactivar todos
       rects.forEach(r => r.classList.remove('active'));
-      // 2) Marcar el clicado
+      // 2) Activar el clicado
       rect.classList.add('active');
 
       // 3) Renderizar contenido
-      const key = rect.id;
+      const key  = rect.id;
       const data = courseDetails[key];
       infoBox.innerHTML = `<h3>${data.title}</h3>${data.content}`;
 
-      // 4) Si es Inscripción, inicializar form y lógica
+      // 4) Si es Inscripción, inicializar TODO
       if (key === 'inscripcion') {
         bindFormLogic();
         populatePeriodos();
         attachInscriptionHandler();
-        // Disparar primer change para placeholders
+        // placeholders iniciales
         document.getElementById('tipo_curso').dispatchEvent(new Event('change'));
       }
 
-      // 5) Scroll suave a infoBox
+      // 5) Scroll suave
       infoBox.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
   });
 });
 
-// Configuración de disponibilidad por tipo de curso (idioma → nivel → horarios)
+
+// ————————————————————————————————
+// 3) availability: idiomas → niveles → horarios (strings) o bloques { dias, horas }
+// ————————————————————————————————
 const availability = {
-  intensivo: { idiomas: {
-      ingles: { A1: ['07:00-10:00','10:00-13:00','13:00-16:00','16:00-19:00','19:00-22:00'],
-                A2: ['07:00-10:00','10:00-13:00','13:00-16:00','16:00-19:00','19:00-22:00'],
-                B1: ['07:00-10:00','10:00-13:00','16:00-19:00','19:00-22:00'],
-                B2: ['07:00-10:00','13:00-16:00','19:00-22:00'] },
-      frances:{ A1:['07:00-10:00','10:00-13:00','13:00-16:00','16:00-19:00','19:00-22:00'],
-                A2:['10:00-13:00','16:00-19:00'],
-                B1:['19:00-22:00'], B2:['19:00-22:00'] },
-      aleman:{ A1:['08:00-11:00','19:00-22:00'] },
-      italiano:{ A1:['07:00-10:00','16:00-19:00'] },
-      portugues:{ A1:['10:00-13:00','19:00-22:00'] }
-  } },
+  intensivo: {
+    idiomas: {
+      ingles: {
+        A1: [
+          { dias: ['Lun','Mar','Mié','Jue','Vie'], horas: [
+            '07:00-10:00','10:00-13:00','13:00-16:00','16:00-19:00','19:00-22:00'
+          ] }
+        ],
+        A2: [
+          { dias: ['Lun','Mar','Mié','Jue','Vie'], horas: [
+            '07:00-10:00','10:00-13:00','13:00-16:00','16:00-19:00','19:00-22:00'
+          ] }
+        ],
+        B1: [
+          { dias: ['Lun','Mar','Mié','Jue','Vie'], horas: [
+            '07:00-10:00','10:00-13:00','16:00-19:00','19:00-22:00'
+          ] }
+        ],
+        B2: [
+          { dias: ['Lun','Mar','Mié','Jue','Vie'], horas: [
+            '07:00-10:00','13:00-16:00','19:00-22:00'
+          ] }
+        ]
+      },
+      frances: {
+        A1: [
+          { dias: ['Lun','Mar','Mié','Jue','Vie'], horas: [
+            '07:00-10:00','10:00-13:00','13:00-16:00','16:00-19:00','19:00-22:00'
+          ] }
+        ],
+        A2: [
+          { dias: ['Lun','Mar','Mié','Jue','Vie'], horas: [
+            '10:00-13:00','16:00-19:00'
+          ] }
+        ],
+        B1: [
+          { dias: ['Lun','Mar','Mié','Jue','Vie'], horas: [
+            '19:00-22:00'
+          ] }
+        ],
+        B2: [
+          { dias: ['Lun','Mar','Mié','Jue','Vie'], horas: [
+            '19:00-22:00'
+          ] }
+        ]
+      },
+      aleman: {
+        A1: [
+          { dias: ['Lun','Mar','Mié','Jue','Vie'], horas: [
+            '08:00-11:00','19:00-22:00'
+          ] }
+        ]
+      },
+      italiano: {
+        A1: [
+          { dias: ['Lun','Mar','Mié','Jue','Vie'], horas: [
+            '07:00-10:00','16:00-19:00'
+          ] }
+        ]
+      },
+      portugues: {
+        A1: [
+          { dias: ['Lun','Mar','Mié','Jue','Vie'], horas: [
+            '10:00-13:00','19:00-22:00'
+          ] }
+        ]
+      }
+    }
+  },
 
-  regular: { idiomas: {
-      ingles:{'A1.1':['09:00-10:00','10:00-11:00'],'A2.1':['10:00-11:00','11:00-12:00'],'B1.1':['09:00-10:00','11:00-12:00']},
-      frances:{'A1.1':['09:00-10:00','10:00-11:00'],'A2.1':['10:00-11:00','11:00-12:00'],'B1.1':['09:00-10:00','11:00-12:00']}
-  } },
+  regular: {
+    idiomas: {
+      ingles: {
+        'A1.1': [
+          { dias: ['Lun','Mar','Mié','Jue','Vie'], horas: [
+              '07:00-08:00','08:00-09:00','09:00-10:00','10:00-11:00',
+              '16:00-17:00','17:00-18:00','18:00-19:00','19:00-20:00',
+              '20:00-21:00','21:00-22:00'
+          ] }
+        ],
+        'A2.1': [
+          { dias: ['Lun','Mar','Mié','Jue','Vie'], horas: [
+              '07:00-08:00','10:00-11:00','16:00-17:00','19:00-20:00'
+          ] }
+        ],
+        'B1.1': [
+          { dias: ['Lun','Mar','Mié','Jue','Vie'], horas: [
+              '08:00-09:00','11:00-12:00','16:00-17:00','19:00-20:00','20:00-21:00'
+          ] }
+        ],
+        'B2.1': [
+          { dias: ['Lun','Mar','Mié','Jue','Vie'], horas: [
+              '10:00-11:00','13:00-14:00','21:00-22:00'
+          ] }
+        ]
+      },
 
-  iniciacion:{ idiomas: {
-      frances:{ A1:['16:00-17:00','17:00-18:00'], A2:['16:00-17:00','17:00-18:00'] },
-      aleman:{ A1:['16:00-17:00','17:00-18:00'] },
-      italiano:{ A1:['16:00-17:00','17:00-18:00'] },
-      portugues:{ A1:['16:00-17:00','17:00-18:00'] },
-      japones:{ A1:['16:00-17:00','17:00-18:00'] },
-      chino:{   A1:['16:00-17:00','17:00-18:00'] },
-      coreano:{A1:['16:00-17:00','17:00-18:00'] }
-  } }
+      frances: {
+        'A1.1': [
+          { dias: ['Lun','Mar','Mié','Jue','Vie'], horas: [
+              '07:00-08:00','08:00-09:00','09:00-10:00','10:00-11:00',
+              '16:00-17:00','17:00-18:00','18:00-19:00','19:00-20:00',
+              '20:00-21:00','21:00-22:00'
+          ] }
+        ],
+        'A2.1': [
+          { dias: ['Lun','Mar','Mié','Jue','Vie'], horas: [
+              '07:00-08:00','10:00-11:00','16:00-17:00','19:00-20:00'
+          ] }
+        ],
+        'B1.1': [
+          { dias: ['Lun','Mar','Mié','Jue','Vie'], horas: [
+              '08:00-09:00','20:00-21:00'
+          ] }
+        ],
+        'B2.1': [
+          { dias: ['Lun','Mar','Mié','Jue','Vie'], horas: [
+              '08:00-09:00','21:00-22:00'
+          ] }
+        ]
+      },
+
+      portugues: {
+        'A1.1': [
+          { dias: ['Lun','Mar','Mié','Jue','Vie'], horas: [
+              '08:00-09:00','19:00-20:00'
+          ] }
+        ]
+      },
+
+      italiano: {
+        'A1.1': [
+          { dias: ['Lun','Mar','Mié','Jue','Vie'], horas: [
+              '07:00-08:00','13:00-14:00','19:00-20:00'
+          ] }
+        ]
+      },
+
+      aleman: {
+        'A1.1': [
+          // Sólo sábados
+          { dias: ['Sáb'], horas: [
+              '16:00-19:00','19:00-22:00'
+          ] }
+        ]
+      }
+    }
+  },
+
+  iniciacion: { idiomas: {
+    frances: {
+      A1: [
+        { dias: ['Lun','Mié','Vie'], horas: ['9:00-10:00','10:00-11:00','11:00-12:00','12:00-13:00','13:00-14:00','16:00-17:00','17:00-18:00'] },
+        { dias: ['Mar','Jue'],      horas: ['10:00-11:30','11:30-13:00','13:00-14:30','16:00-17:30'] },
+        { dias: ['Sáb'],            horas: ['7:00-10:00'] }
+      ]
+    },
+    coreano: {
+      A1: [
+        { dias: ['Mar','Jue'], horas: ['9:00-10:30'] }
+      ]
+    },
+    aleman: {
+      A1: [
+        { dias: ['Lun','Mié','Vie'], horas: ['18:00-19:00'] }
+      ]
+    }
+  }}
 };
 
-// Función para poblar los radios de periodo según tipo de curso
+
+// ————————————————————————————————
+// 4) populatePeriodos: radios de periodo según tipo_curso
+// ————————————————————————————————
 function populatePeriodos() {
   const tipo = document.getElementById('tipo_curso').value;
   const cont = document.getElementById('periodo-options');
@@ -438,13 +589,13 @@ function populatePeriodos() {
   let opts   = [];
 
   if (tipo === 'intensivo') {
-    opts = [{ label: '4 - 31 julio', start: '2025-07-04', end: '2025-07-31' }];
+    opts = [{ label: '4 - 31 julio',    start: '2025-07-04', end: '2025-07-31' }];
   } else if (tipo === 'regular') {
     opts = [{ label: '16 junio - 25 julio', start: '2025-06-16', end: '2025-07-25' }];
   } else if (tipo === 'iniciacion') {
     opts = [
-      { label: '2 - 30 junio', start: '2025-06-02', end: '2025-06-30' },
-      { label: '4 - 31 julio', start: '2025-07-04', end: '2025-07-31' }
+      { label: '2 - 30 junio',  start: '2025-06-02', end: '2025-06-30' },
+      { label: '4 - 31 julio',  start: '2025-07-04', end: '2025-07-31' }
     ];
   }
 
@@ -469,7 +620,7 @@ function populatePeriodos() {
     });
   });
 
-  // preseleccionar si sólo hay uno
+  // auto‐selección si solo hay uno
   const radios = cont.querySelectorAll('input[type="radio"]');
   if (radios.length === 1) {
     radios[0].checked = true;
@@ -477,8 +628,9 @@ function populatePeriodos() {
   }
 }
 
+
 // ————————————————————————————————
-// 4) bindFormLogic: maneja selects y checkbox “otro…”
+// 5) bindFormLogic: poblado de selects y “otro…”
 // ————————————————————————————————
 function bindFormLogic() {
   const form    = document.getElementById('form-inscripcion');
@@ -491,50 +643,81 @@ function bindFormLogic() {
 
   const placeholder = txt => `<option value="" disabled selected>${txt}</option>`;
 
-  tipo.addEventListener('change', ()=>{
+  tipo.addEventListener('change', () => {
     // poblar idiomas
-    const langs = Object.keys(availability[tipo.value]?.idiomas||{});
+    const langs = Object.keys(availability[tipo.value]?.idiomas || {});
     idioma.innerHTML = langs.length
-      ? [placeholder('Selecciona un idioma…'), ...langs.map(l=>`<option value="${l}">${l.charAt(0).toUpperCase()+l.slice(1)}</option>`)].join('')
+      ? [ placeholder('Selecciona un idioma…'),
+          ...langs.map(l=>`<option value="${l}">${l.charAt(0).toUpperCase()+l.slice(1)}</option>`)
+        ].join('')
       : placeholder('Selecciona tipo primero…');
+
     nivel.innerHTML   = placeholder('Idioma primero…');
     horario.innerHTML = placeholder('Nivel primero…');
 
-    // poblar periodos
+    // actualizar periodos
     populatePeriodos();
   });
 
-  idioma.addEventListener('change', ()=>{
-    const lvls = Object.keys(availability[tipo.value]?.idiomas[idioma.value]||{});
+  idioma.addEventListener('change', () => {
+    const lvls = Object.keys(availability[tipo.value]?.idiomas[idioma.value] || {});
     nivel.innerHTML = lvls.length
-      ? [placeholder('Selecciona un nivel…'), ...lvls.map(v=>`<option value="${v}">${v}</option>`)].join('')
+      ? [ placeholder('Selecciona un nivel…'),
+          ...lvls.map(v=>`<option value="${v}">${v}</option>`)
+        ].join('')
       : placeholder('Primero elige idioma…');
     horario.innerHTML = placeholder('Nivel primero…');
   });
 
-  nivel.addEventListener('change', ()=>{
-    const slots = availability[tipo.value]?.idiomas[idioma.value]?.[nivel.value]||[];
-    horario.innerHTML = [
-      placeholder('Selecciona un horario…'),
-      ...slots.map(h=>`<option value="${h}">${h}</option>`),
-      '<option value="otro">Otro…</option>'
-    ].join('');
+  nivel.addEventListener('change', () => {
+    const conf = availability[tipo.value]?.idiomas[idioma.value]?.[nivel.value] || [];
+    // aquí usamos nuestra nueva helper:
+    populateHorarios(conf, horario, placeholder);
   });
 
-  horario.addEventListener('change', ()=>{
+  horario.addEventListener('change', () => {
     if (horario.value === 'otro') {
-      otroGrp.style.display = 'block'; otroInp.required = true;
+      otroGrp.style.display = 'block';
+      otroInp.required      = true;
     } else {
-      otroGrp.style.display = 'none';  otroInp.required = false; otroInp.value = '';
+      otroGrp.style.display = 'none';
+      otroInp.required      = false;
+      otroInp.value         = '';
     }
   });
 
-  // inicializar
+  // disparar inicial
   tipo.dispatchEvent(new Event('change'));
 }
 
+
 // ————————————————————————————————
-// 5) attachInscriptionHandler: AJAX + feedback + temporizador
+// 6) populateHorarios: distingue L-V (strings) vs bloques días…horas
+// ————————————————————————————————
+function populateHorarios(conf, selectEl, placeholder) {
+  let options = [ placeholder('Selecciona un horario…') ];
+
+  if (conf.length && typeof conf[0] === 'string') {
+    // caso L-V
+    conf.forEach(h => options.push(`<option value="${h}">${h}</option>`));
+  } else {
+    // caso bloques { dias, horas }
+    conf.forEach(block => {
+      block.horas.forEach(h => {
+        options.push(
+          `<option value="${h}">${block.dias.join(', ')} — ${h}</option>`
+        );
+      });
+    });
+  }
+
+  options.push('<option value="otro">Otro…</option>');
+  selectEl.innerHTML = options.join('');
+}
+
+
+// ————————————————————————————————
+// 7) attachInscriptionHandler: AJAX + feedback + temporizador
 // ————————————————————————————————
 function attachInscriptionHandler() {
   const form     = document.getElementById('form-inscripcion');
@@ -543,39 +726,40 @@ function attachInscriptionHandler() {
 
   form.addEventListener('submit', async e => {
     e.preventDefault();
-    feedback.className = ''; feedback.textContent = 'Enviando…';
+    feedback.className = '';
+    feedback.textContent = 'Enviando…';
     btn.disabled = true;
 
     const data = Object.fromEntries(new FormData(form).entries());
     try {
       const res  = await fetch('http://127.0.0.1:8000/api/inscripcion/', {
-        method:'POST', mode:'cors',
-        headers:{'Content-Type':'application/json'},
-        body:JSON.stringify(data)
+        method: 'POST',
+        mode:   'cors',
+        headers:{ 'Content-Type':'application/json' },
+        body:   JSON.stringify(data)
       });
       const json = await res.json();
+
       feedback.classList.add(json.status==='ok'?'success':'error');
       feedback.textContent = json.message;
-      if (json.status==='ok') form.reset();
+
+      if (json.status === 'ok') {
+        form.reset();
+      } else {
+        // si no hay cupo: forzar re-selección de horario
+        const sel = form.querySelector('#horario');
+        sel.selectedIndex = 0;
+        sel.dispatchEvent(new Event('change'));
+      }
     } catch {
       feedback.classList.add('error');
       feedback.textContent = 'Error de red. Intenta más tarde.';
     } finally {
       setTimeout(()=>{
-        feedback.textContent='';
-        feedback.className='';
-        btn.disabled=false;
-      },5000);
+        feedback.textContent = '';
+        feedback.className   = '';
+        btn.disabled         = false;
+      }, 5000);
     }
   });
 }
-
-// ————————————————————————————————
-// 6) Inicializar en DOMContentLoaded
-// ————————————————————————————————
-document.addEventListener('DOMContentLoaded', ()=>{
-  // activar menú lateral
-  document.querySelectorAll('.course-menu .rect').forEach(r=>{
-    r.addEventListener('click', ()=>{/* ya enlazado arriba */});
-  });
-});
