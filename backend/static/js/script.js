@@ -229,6 +229,9 @@ const courseDetails = {
       <li>Vivir una experiencia enriquecedora</li>
     </ul>
 
+    <p><strong>IMPORTANTE:</strong></p>
+    <p>El 10 de junio publicaremos  nuevos horarios para los cursos de iniciación de julio : francés, italiano, portugués, chino, griego, latin y otras lenguas.</p>
+
     <p><strong>Más información:</strong>  
       WhatsApp: <a href="tel:+525513404064">55 1340 4064</a>
     </p>

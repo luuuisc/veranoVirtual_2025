@@ -21,4 +21,4 @@ logs/
 *.log
 
 # Django collectstatic
-/staticfiles/
+staticfiles/
