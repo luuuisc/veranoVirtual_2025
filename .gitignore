@@ -22,3 +22,9 @@ logs/
 
 # Django collectstatic
 staticfiles/
+
+# Notebook de Jupyter
+export.ipynb
+
+# Base de datos SQLite
+db.sqlite3
