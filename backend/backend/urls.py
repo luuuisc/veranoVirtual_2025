@@ -23,4 +23,5 @@ urlpatterns = [
     path('', index, name='home'),
     path('api/inscripcion/', include('inscripciones.urls_list')),
     path('inscripciones/', list_inscripciones, name='list_inscripciones'),
+    path('api/inscripciones/count/', include('inscripciones.urls_list')), 
 ]

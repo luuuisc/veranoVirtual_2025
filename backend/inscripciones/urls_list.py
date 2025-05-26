@@ -1,7 +1,10 @@
+# inscripciones/urls_list.py
+
 from django.urls import path
-from .views import inscribirse, list_inscripciones
+from .views import inscribirse
+from . import views
 
 urlpatterns = [
     path('', inscribirse, name='api_inscripcion'),
-    path('', list_inscripciones, name='list_inscripciones'),
+    path('count/', views.count_inscripciones, name='count_inscripciones'),
 ]

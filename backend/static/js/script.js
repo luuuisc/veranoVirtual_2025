@@ -287,96 +287,101 @@ const courseDetails = {
     `
   }, 
 // Formulario de inscripción
-inscripcion: {
-  title: 'Inscripción',
-  content: `
-    <form id="form-inscripcion" class="inscription-form">
-      <h4>Formulario de Inscripción</h4>
+  inscripcion: {
+    title: 'Inscripción',
+    content: `
+      <form id="form-inscripcion" class="inscription-form">
+        <h4>Formulario de Inscripción</h4>
+        <div id="insc-announcement" class="announcement">
+          ⚠️ ¡Con 6 inscritos un grupo se abre! <br><br>
+          Te recomendamos registrarte en un horario que ya tenga inscritos, para que se abra el curso. <br>
+        </div>
+        <!-- Campos básicos -->
+        <div class="form-group">
+          <label for="nombre">Nombre</label>
+          <input id="nombre" name="nombre" type="text" placeholder="Tu nombre completo" required>
+        </div>
+        <div class="form-group">
+          <label for="cuenta_unam">No. de Cuenta/Empleado UNAM</label>
+          <input id="cuenta_unam" name="cuenta_unam" type="text" placeholder="Ej: 12345678">
+        </div>
+        <div class="form-group">
+          <label for="email">E-mail</label>
+          <input id="email" name="email" type="email" placeholder="usuario@correo.com" required>
+        </div>
+        <div class="form-group">
+          <label for="whatsapp">WhatsApp</label>
+          <input id="whatsapp" name="whatsapp" type="tel" placeholder="55 1234 5678" required>
+        </div>
 
-      <!-- Campos básicos -->
-      <div class="form-group">
-        <label for="nombre">Nombre</label>
-        <input id="nombre" name="nombre" type="text" placeholder="Tu nombre completo" required>
-      </div>
-      <div class="form-group">
-        <label for="cuenta_unam">No. de Cuenta/Empleado UNAM</label>
-        <input id="cuenta_unam" name="cuenta_unam" type="text" placeholder="Ej: 12345678">
-      </div>
-      <div class="form-group">
-        <label for="email">E-mail</label>
-        <input id="email" name="email" type="email" placeholder="usuario@correo.com" required>
-      </div>
-      <div class="form-group">
-        <label for="whatsapp">WhatsApp</label>
-        <input id="whatsapp" name="whatsapp" type="tel" placeholder="55 1234 5678" required>
-      </div>
+        <!-- Select tipo → idioma → nivel → horario -->
+        <div class="form-group">
+          <label for="tipo_curso">Tipo de curso</label>
+          <select id="tipo_curso" name="tipo_curso" required>
+            <option value="" disabled selected>Elige un tipo…</option>
+            <option value="intensivo">Intensivo</option>
+            <option value="regular">Regular</option>
+            <option value="iniciacion">Iniciación</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="idioma">Idioma</label>
+          <select id="idioma" name="idioma" required>
+            <option value="" disabled selected>Selecciona primero tipo…</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="nivel_ingreso">Nivel de ingreso</label>
+          <select id="nivel_ingreso" name="nivel_ingreso" required>
+            <option value="" disabled selected>Selecciona primero idioma…</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="horario">Horario</label>
+          <select id="horario" name="horario" required>
+            <option value="" disabled selected>Selecciona primero nivel…</option>
+          </select>
+          <div class="inscritos-info">
+            Inscritos en este horario: <span id="inscritos-count-inline">0</span>
+          </div>
+        </div>
+        <div class="form-group" id="horario-otro-group" style="display:none;">
+          <label for="horario_otro">Proponer horario</label>
+          <input id="horario_otro" name="horario_otro" type="text" placeholder="Escribe tu horario…">
+        </div>
 
-      <!-- Select tipo → idioma → nivel → horario -->
-      <div class="form-group">
-        <label for="tipo_curso">Tipo de curso</label>
-        <select id="tipo_curso" name="tipo_curso" required>
-          <option value="" disabled selected>Elige un tipo…</option>
-          <option value="intensivo">Intensivo</option>
-          <option value="regular">Regular</option>
-          <option value="iniciacion">Iniciación</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="idioma">Idioma</label>
-        <select id="idioma" name="idioma" required>
-          <option value="" disabled selected>Selecciona primero tipo…</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="nivel_ingreso">Nivel de ingreso</label>
-        <select id="nivel_ingreso" name="nivel_ingreso" required>
-          <option value="" disabled selected>Selecciona primero idioma…</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="horario">Horario</label>
-        <select id="horario" name="horario" required>
-          <option value="" disabled selected>Selecciona primero nivel…</option>
-        </select>
-      </div>
-      <div class="form-group" id="horario-otro-group" style="display:none;">
-        <label for="horario_otro">Proponer horario</label>
-        <input id="horario_otro" name="horario_otro" type="text" placeholder="Escribe tu horario…">
-      </div>
+        <!-- Selección de periodo -->
+        <div class="form-group" id="periodo-group" style="display:none;">
+          <label><strong>Periodo del curso</strong></label>
+          <div id="periodo-options"></div>
+          <input type="hidden" id="fecha_inicio" name="fecha_inicio" required>
+          <input type="hidden" id="fecha_fin" name="fecha_fin" required>
+        </div>
 
-      <!-- Selección de periodo -->
-      <div class="form-group" id="periodo-group" style="display:none;">
-        <label><strong>Periodo del curso</strong></label>
-        <div id="periodo-options"></div>
-        <input type="hidden" id="fecha_inicio" name="fecha_inicio" required>
-        <input type="hidden" id="fecha_fin"    name="fecha_fin"    required>
-      </div>
+        <!-- Confirmación -->
+        <div class="form-group">
+          <input id="confirm_periodo" name="confirm_periodo" type="checkbox" required>
+          <label for="confirm_periodo">Confirmo que el periodo seleccionado es correcto</label>
+        </div>
 
-      <!-- Confirmación -->
-      <div class="form-group">
-        <input id="confirm_periodo" name="confirm_periodo" type="checkbox" required>
-        <label for="confirm_periodo">Confirmo que el periodo seleccionado es correcto</label>
-      </div>
+        <!-- Mensaje y envío -->
+        <div class="form-group full-width">
+          <label for="mensaje">Mensaje (opcional)</label>
+          <textarea id="mensaje" name="mensaje"
+                    placeholder="Escribe tu solicitud de horario, dudas o comentarios aquí…"></textarea>
+        </div>
 
-      <!-- Mensaje y envío -->
-      <div class="form-group full-width">
-        <label for="mensaje">Mensaje (opcional)</label>
-        <textarea id="mensaje" name="mensaje"
-                  placeholder="Escribe tu solicitud de horario, dudas o comentarios aquí…"></textarea>
-      </div>
-
-      <button type="submit">Enviar Inscripción</button>
-      <div id="insc-feedback" role="alert"></div>
-    </form>
-  `
-}
+        <button type="submit">Enviar Inscripción</button>
+        <div id="insc-feedback" role="alert"></div>
+      </form>
+    `
+  }
 };
 
-// ————————————————————————————————
 // 2) DOMContentLoaded: menú lateral + renderizado dinámico
 // ————————————————————————————————
 document.addEventListener('DOMContentLoaded', () => {
-  const rects   = document.querySelectorAll('.course-menu .rect');
+  const rects = document.querySelectorAll('.course-menu .rect');
   const infoBox = document.getElementById('course-info');
 
   rects.forEach(rect => {
@@ -387,7 +392,7 @@ document.addEventListener('DOMContentLoaded', () => {
       rect.classList.add('active');
 
       // 3) Renderizar contenido
-      const key  = rect.id;
+      const key = rect.id;
       const data = courseDetails[key];
       infoBox.innerHTML = `<h3>${data.title}</h3>${data.content}`;
 
@@ -396,7 +401,6 @@ document.addEventListener('DOMContentLoaded', () => {
         bindFormLogic();
         populatePeriodos();
         attachInscriptionHandler();
-        // placeholders iniciales
         document.getElementById('tipo_curso').dispatchEvent(new Event('change'));
       }
 
@@ -581,7 +585,6 @@ const availability = {
   }}
 };
 
-
 // ————————————————————————————————
 // 4) populatePeriodos: radios de periodo según tipo_curso
 // ————————————————————————————————
@@ -592,13 +595,13 @@ function populatePeriodos() {
   let opts   = [];
 
   if (tipo === 'intensivo') {
-    opts = [{ label: '4 - 31 julio',    start: '2025-07-04', end: '2025-07-31' }];
+    opts = [{ label:'4 - 31 julio',   start:'2025-07-04', end:'2025-07-31' }];
   } else if (tipo === 'regular') {
-    opts = [{ label: '16 junio - 25 julio', start: '2025-06-16', end: '2025-07-25' }];
+    opts = [{ label:'16 jun - 25 jul', start:'2025-06-16', end:'2025-07-25' }];
   } else if (tipo === 'iniciacion') {
     opts = [
-      { label: '2 - 30 junio',  start: '2025-06-02', end: '2025-06-30' },
-      { label: '4 - 31 julio',  start: '2025-07-04', end: '2025-07-31' }
+      { label:'2 - 30 junio', start:'2025-06-02', end:'2025-06-30' },
+      { label:'4 - 31 julio', start:'2025-07-04', end:'2025-07-31' }
     ];
   }
 
@@ -610,30 +613,31 @@ function populatePeriodos() {
 
   cont.innerHTML = opts.map((o,i)=>`
     <div class="radio-option">
-      <input type="radio" id="periodo_${i}" name="periodo" value="${o.start}|${o.end}" required>
+      <input type="radio" id="periodo_${i}" name="periodo" 
+             value="${o.start}|${o.end}" required>
       <label for="periodo_${i}">${o.label}</label>
     </div>
   `).join('');
 
   opts.forEach((o,i)=>{
-    document.getElementById(`periodo_${i}`).addEventListener('change', e=>{
-      const [s,f] = e.target.value.split('|');
-      document.getElementById('fecha_inicio').value = s;
-      document.getElementById('fecha_fin').value    = f;
-    });
+    document.getElementById(`periodo_${i}`)
+      .addEventListener('change', e => {
+        const [s,f] = e.target.value.split('|');
+        document.getElementById('fecha_inicio').value = s;
+        document.getElementById('fecha_fin').value    = f;
+      });
   });
 
-  // auto‐selección si solo hay uno
-  const radios = cont.querySelectorAll('input[type="radio"]');
-  if (radios.length === 1) {
-    radios[0].checked = true;
-    radios[0].dispatchEvent(new Event('change'));
+  // auto-select si sólo hay uno
+  const r = cont.querySelectorAll('input[type="radio"]');
+  if (r.length === 1) {
+    r[0].checked = true;
+    r[0].dispatchEvent(new Event('change'));
   }
 }
 
-
 // ————————————————————————————————
-// 5) bindFormLogic: poblado de selects y “otro…”
+// 5) bindFormLogic: manejamos selects y “otro…” + fetch de count
 // ————————————————————————————————
 function bindFormLogic() {
   const form    = document.getElementById('form-inscripcion');
@@ -643,84 +647,98 @@ function bindFormLogic() {
   const horario = form.horario;
   const otroGrp = document.getElementById('horario-otro-group');
   const otroInp = document.getElementById('horario_otro');
+  const inlineCount = document.getElementById('inscritos-count-inline');
 
   const placeholder = txt => `<option value="" disabled selected>${txt}</option>`;
 
+  // 5.1) al cambiar tipo → poblamos idiomas + periodos
   tipo.addEventListener('change', () => {
-    // poblar idiomas
-    const langs = Object.keys(availability[tipo.value]?.idiomas || {});
+    const langs = Object.keys(availability[tipo.value]?.idiomas||{});
     idioma.innerHTML = langs.length
       ? [ placeholder('Selecciona un idioma…'),
-          ...langs.map(l=>`<option value="${l}">${l.charAt(0).toUpperCase()+l.slice(1)}</option>`)
+          ...langs.map(l=>`<option value="${l}">${l[0].toUpperCase()+l.slice(1)}</option>`)
         ].join('')
       : placeholder('Selecciona tipo primero…');
 
     nivel.innerHTML   = placeholder('Idioma primero…');
     horario.innerHTML = placeholder('Nivel primero…');
 
-    // actualizar periodos
     populatePeriodos();
+    // No inlineCount update needed here
   });
 
+  // 5.2) al cambiar idioma → poblamos niveles
   idioma.addEventListener('change', () => {
-    const lvls = Object.keys(availability[tipo.value]?.idiomas[idioma.value] || {});
+    const lvls = Object.keys(availability[tipo.value]?.idiomas[idioma.value]||{});
     nivel.innerHTML = lvls.length
       ? [ placeholder('Selecciona un nivel…'),
           ...lvls.map(v=>`<option value="${v}">${v}</option>`)
         ].join('')
       : placeholder('Primero elige idioma…');
     horario.innerHTML = placeholder('Nivel primero…');
+    // No inlineCount update needed here
   });
 
+  // 5.3) al cambiar nivel → poblamos horarios con bloques o strings
   nivel.addEventListener('change', () => {
     const conf = availability[tipo.value]?.idiomas[idioma.value]?.[nivel.value] || [];
-    // aquí usamos nuestra nueva helper:
     populateHorarios(conf, horario, placeholder);
+    // No inlineCount update needed here
   });
 
+  // 5.4) al cambiar horario → mostramos count y “otro” si aplica
   horario.addEventListener('change', () => {
     if (horario.value === 'otro') {
       otroGrp.style.display = 'block';
       otroInp.required      = true;
-    } else {
-      otroGrp.style.display = 'none';
-      otroInp.required      = false;
-      otroInp.value         = '';
+      // No inlineCount update for "otro"
+      return;
     }
+    otroGrp.style.display = 'none';
+    otroInp.required      = false;
+    otroInp.value         = '';
+    // —— fetch count inscripciones ——
+    const params = new URLSearchParams({
+      tipo_curso: tipo.value,
+      idioma:     idioma.value,
+      nivel_ingreso: nivel.value,
+      horario:    horario.value
+    });
+    fetch(`/api/inscripcion/count/?${params}`, { method: 'GET' })
+      .then(r => r.json())
+      .then(json => {
+        const n = json.count;
+        inlineCount.textContent = n;
+      })
+      .catch(()=>{
+        inlineCount.textContent = '0';
+      });
   });
 
-  // disparar inicial
+  // disparamos el primero
   tipo.dispatchEvent(new Event('change'));
 }
 
-
 // ————————————————————————————————
-// 6) populateHorarios: distingue L-V (strings) vs bloques días…horas
+// 6) populateHorarios: strings vs bloques {dias, horas}
 // ————————————————————————————————
 function populateHorarios(conf, selectEl, placeholder) {
-  let options = [ placeholder('Selecciona un horario…') ];
-
+  let opts = [ placeholder('Selecciona un horario…') ];
   if (conf.length && typeof conf[0] === 'string') {
-    // caso L-V
-    conf.forEach(h => options.push(`<option value="${h}">${h}</option>`));
+    conf.forEach(h => opts.push(`<option value="${h}">${h}</option>`));
   } else {
-    // caso bloques { dias, horas }
     conf.forEach(block => {
       block.horas.forEach(h => {
-        options.push(
-          `<option value="${h}">${block.dias.join(', ')} — ${h}</option>`
-        );
+        opts.push(`<option value="${h}">${block.dias.join(', ')} — ${h}</option>`);
       });
     });
   }
-
-  options.push('<option value="otro">Otro…</option>');
-  selectEl.innerHTML = options.join('');
+  opts.push('<option value="otro">Otro…</option>');
+  selectEl.innerHTML = opts.join('');
 }
 
-
 // ————————————————————————————————
-// 7) attachInscriptionHandler: AJAX + feedback + temporizador
+// 7) attachInscriptionHandler: tu AJAX + feedback + reset
 // ————————————————————————————————
 function attachInscriptionHandler() {
   const form     = document.getElementById('form-inscripcion');
@@ -729,28 +747,23 @@ function attachInscriptionHandler() {
 
   form.addEventListener('submit', async e => {
     e.preventDefault();
-    feedback.className = '';
+    feedback.className   = '';
     feedback.textContent = 'Enviando…';
-    btn.disabled = true;
+    btn.disabled         = true;
 
     const data = Object.fromEntries(new FormData(form).entries());
     try {
       const res  = await fetch('/api/inscripcion/', {
-        // await fetch('http://127.0.0.1:8000/api/inscripcion/', {
-        method: 'POST',
-        mode:   'cors',
+        method:'POST', mode:'cors',
         headers:{ 'Content-Type':'application/json' },
-        body:   JSON.stringify(data)
+        body:JSON.stringify(data)
       });
       const json = await res.json();
-
       feedback.classList.add(json.status==='ok'?'success':'error');
       feedback.textContent = json.message;
-
-      if (json.status === 'ok') {
-        form.reset();
-      } else {
-        // si no hay cupo: forzar re-selección de horario
+      if (json.status==='ok') form.reset();
+      else {
+        // si error de cupo, forzamos re-select horario
         const sel = form.querySelector('#horario');
         sel.selectedIndex = 0;
         sel.dispatchEvent(new Event('change'));

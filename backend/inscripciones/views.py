@@ -6,6 +6,7 @@ from pathlib import Path
 from django.shortcuts import render
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
+from django.views.decorators.http import require_GET
 from django.core.mail import send_mail, EmailMessage
 from django.conf import settings
 from django.utils import timezone
@@ -138,3 +139,19 @@ def list_inscripciones(request):
     
 def index(request):
     return render(request, 'index.html')
+
+@csrf_exempt
+def count_inscripciones(request):
+    if request.method != 'GET':
+        return JsonResponse({'detail':'Method not allowed'}, status=405)
+    tipo     = request.GET.get('tipo_curso')
+    idioma   = request.GET.get('idioma')
+    nivel    = request.GET.get('nivel_ingreso')
+    horario  = request.GET.get('horario')
+    count = Inscripcion.objects.filter(
+        tipo_curso=tipo,
+        idioma=idioma,
+        nivel_ingreso=nivel,
+        horario=horario
+    ).count()
+    return JsonResponse({'count': count})
