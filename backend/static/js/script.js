@@ -293,8 +293,8 @@ const courseDetails = {
       <form id="form-inscripcion" class="inscription-form">
         <h4>Formulario de Inscripción</h4>
         <div id="insc-announcement" class="announcement">
-          ⚠️ ¡Con 6 inscritos un grupo se abre! <br><br>
-          Te recomendamos registrarte en un horario que ya tenga inscritos, para que se abra el curso. <br>
+          ⚠️ ¡IMPORTANTE! Abrimos un grupo con al menos 6 alumnos inscritos.<br><br>
+          Te recomendamos considerar un horario que ya tenga alumnos inscritos o bien reflexionar sobre otras posibilidades de horario o cambio de idioma (si eres principiante)<br>
         </div>
         <!-- Campos básicos -->
         <div class="form-group">
