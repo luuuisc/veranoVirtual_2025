@@ -411,6 +411,19 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+// Diccionario de idiomas
+const languageLabels = {
+  ingles:   'Inglés',
+  frances:  'Francés',
+  aleman:   'Alemán',
+  italiano: 'Italiano',
+  portugues: 'Portugués',
+  japones:  'Japonés',
+  chino:    'Chino',
+  coreano:  'Coreano'
+};
+
+
 // ————————————————————————————————
 // 3) availability: idiomas → niveles → horarios (strings) o bloques { dias, horas }
 // ————————————————————————————————
@@ -464,7 +477,7 @@ const availability = {
       aleman: {
         A1: [
           { dias: ['Lun','Mar','Mié','Jue','Vie'], horas: [
-            '08:00-11:00','19:00-22:00'
+            '11:00-14:00','19:00-22:00'
           ] }
         ]
       },
@@ -655,10 +668,13 @@ function bindFormLogic() {
   tipo.addEventListener('change', () => {
     const langs = Object.keys(availability[tipo.value]?.idiomas||{});
     idioma.innerHTML = langs.length
-      ? [ placeholder('Selecciona un idioma…'),
-          ...langs.map(l=>`<option value="${l}">${l[0].toUpperCase()+l.slice(1)}</option>`)
-        ].join('')
-      : placeholder('Selecciona tipo primero…');
+    ? [ placeholder('Selecciona un idioma…'),
+        ...langs.map(l => {
+          const label = languageLabels[l] || (l.charAt(0).toUpperCase() + l.slice(1));
+          return `<option value="${l}">${label}</option>`;
+        })
+      ].join('')
+    : placeholder('Selecciona tipo primero…');
 
     nivel.innerHTML   = placeholder('Idioma primero…');
     horario.innerHTML = placeholder('Nivel primero…');
