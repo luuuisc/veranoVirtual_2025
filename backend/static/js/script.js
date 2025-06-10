@@ -15,72 +15,100 @@ const courseDetails = {
   intensivos: {
     title: 'Intensivos - Verano 2025',
     content: `
-      <h4>Cursos Virtuales Intensivos de Verano - UNAM</h4>
-      <p><strong>Idiomas y niveles:</strong></p>
+      <h4><strong>CURSOS virtuales INTENSIVOS</strong> de verano 2025 para la Comunidad UNAM.</h4>
+
+      <p><strong>DURACIÓN :</strong><br>
+        Del 4 al 31 de julio, 3 horas diarias, de lunes a viernes, en tiempo real y en grupos pequeños</p>
+
+      <p><strong>HORARIOS :</strong></p>
       <ul>
-        <li>Inglés: (A1, A2, B1, B2)</li>
-        <li>Francés: (A1, A2, B1)</li>
-        <li>Alemán: (A1)</li>
-        <li>Italiano: (A1)</li>
-        <li>Portugués: (A1)</li>
+        <li><strong>INGLÉS A1</strong>
+          <ul>
+            <li>7-10 hrs</li>
+            <li>10-13 hrs</li>
+            <li>16-19 hrs</li>
+            <li>19-22 hrs</li>
+          </ul>
+        </li>
+        <li><strong>INGLÉS A2</strong>
+          <ul>
+            <li>7-10 hrs</li>
+            <li>10-13 hrs</li>
+            <li>13-16 hrs</li>
+            <li>19-22 hrs</li>
+          </ul>
+        </li>
+        <li><strong>INGLÉS B1</strong>
+          <ul>
+            <li>7-10 hrs</li>
+            <li>10-13 hrs</li>
+            <li>19-22 hrs</li>
+          </ul>
+        </li>
+        <li><strong>INGLÉS B2</strong><br>
+            10-13 hrs
+        </li>
+        <li><strong>FRANCÉS A1</strong>
+          <ul>
+            <li>7-10 hrs</li>
+            <li>10-13 hrs</li>
+            <li>16-19 hrs</li>
+          </ul>
+        </li>
+        <li><strong>ALEMÁN A1</strong>
+          <ul>
+            <li>11-14 hrs</li>
+            <li>19-22 hrs</li>
+          </ul>
+        </li>
       </ul>
-  
-      <p><strong>Duración:</strong> 4 semanas (120 horas en total)</p>
-  
-      <p><strong>Distribución semanal (30 h/semana):</strong></p>
+
+      <p><strong>IMPORTANTE :</strong><br>
+      El periodo de inscripción a estos cursos es del 10 al 25 de junio, el cupo por grupo es de 6 a 12 alumnos máximo.</p>
+
+      <p>La inscripción es de <strong>$250</strong> y la colegiatura por el curso de 60 horas es de <strong>$3 000</strong>.</p>
+
+      <p>Aparte del llenado del formulario, te recomendamos enviar los siguientes datos <strong>vía WhatsApp al 55 1340 4064</strong>:</p>
+      <ol>
+        <li>Nombre completo de quien tomará el curso :</li>
+        <li>Nombre completo y teléfono del padre o tutor, si quien va a tomar el curso es menor a 18 años :</li>
+        <li>Idioma :</li>
+        <li>Nivel :</li>
+        <li>Horario :</li>
+        <li>Foto o captura del depósito o transferencia de la inscripción y colegiatura. (Total <strong>$3 250</strong>)</li>
+      </ol>
+
+      <p><strong>DISTRIBUCIÓN :</strong><br>
+      Cada semana se preveen 30 horas de actividad :</p>
       <ul>
-        <li>15 h sincrónicas (3 h diarias, L - V)</li>
-        <li>15 h asíncronas (3 h diarias de tareas)</li>
+        <li><strong>A.</strong> 15 horas en sesiones sincrónicas en tiempo real (clases), o sea 3 horas diarias, de lunes a viernes.</li>
+        <li><strong>B.</strong> 15 horas de tareas (actividades en autonomía), o sea 3 horas diarias de lunes a viernes.</li>
       </ul>
-  
-      <p><strong>Alcance:</strong>  
-      Alcanzas un nivel oficial internacional si asistes puntualmente, participas activamente y te comprometes con tu aprendizaje.</p>
-  
-      <p><strong>Cupo por grupo:</strong> Mínimo 6, máximo 12 participantes</p>
-  
-      <p><strong>Incluye:</strong></p>
+
+      <p><strong>ALCANCE :</strong><br>
+      En 4 semanas alcanzas un nivel oficial internacional, si asistes puntualmente, participas activamente y te comprometes totalmente con tu proceso de aprendizaje.</p>
+
+      <p><strong>CUPO POR GRUPO :</strong><br>
+      Mínimo 6, máximo 12 participantes</p>
+
+      <p><strong>INCLUYE :</strong></p>
       <ul>
         <li>Material multimedia</li>
-        <li>Constancia de equivalencia de nivel oficial (promedio ≥ 8)</li>
+        <li>Constancia de equivalencia de nivel oficial internacional si obtienes al final del curso un promedio igual o superior a 8.</li>
       </ul>
-  
-      <p><strong>Inscripciones y cuotas:</strong></p>
+
+      <p><strong>EXAMEN DE COLOCACIÓN</strong><br>
+      Para ingresar a los niveles A2, B1 o B2 es necesario presentar un examen de colocación cuyo costo es de $150, o bien una constancia que acredite tu nivel inmediato anterior. Se puede tramitar entre el 10 y el 25 de junio.</p>
+
+      <p><strong>CONSIDERA QUE …</strong><br>
+      Este curso te permitirá:</p>
       <ul>
-        <li>
-          <em>Primer periodo</em> (2 - 23 mayo):
-          <ul>
-            <li>Inscripción: $250</li>
-            <li>Colegiatura: $3,000</li>
-            <li>Puedes apartar lugar con $1,000 y cubrir la totalidad a más tardar el 23 de mayo.</li><br>
-          </ul>
-        </li>
-        <li>
-          <em>Segundo periodo</em> (24 mayo - 10 junio):
-          <ul>
-            <li>Inscripción: $500</li>
-            <li>Colegiatura: $3,000</li>
-            <li>Puedes apartar tu lugar con $1,000 y cubrir la totalidad  a más tardar el 20 de junio.</li>
-          </ul>
-        </li>
+        <li>Aprovechar tu tiempo sin prisa, pero con intención.</li>
+        <li>Enriquecer tu formación académica de forma dinámica.</li>
+        <li>Prepararte mejor para intercambios, becas, empleos.</li>
+        <li>No desconectarte del todo, sino recargarte con algo que te aporta y te hace crecer.</li>
+        <li>Ganar seguridad y fluidez gracias a la práctica constante.</li>
       </ul>
-  
-      <p><strong>Periodo del curso:</strong> 4 - 31 de julio</p>
-  
-      <p><strong>Examen de colocación:</strong>  
-        Obligatorio para A2, B1 y B2 ($150), o constancia de nivel anterior.
-      </p>
-  
-      <p><strong>Importante:</strong></p>
-      <ul>
-        <li>Aprovechar tu tiempo con intención</li>
-        <li>Formación dinámica y recargadora</li>
-        <li>Prepararte para intercambios, becas y empleos</li>
-        <li>Ganar seguridad y fluidez con práctica constante</li>
-      </ul>
-  
-      <p><strong>Más información:</strong>  
-        WhatsApp: <a href="tel:+525513404064">55 1340 4064</a>
-      </p>
     `
   },
   'semi-intensivos': {
@@ -93,148 +121,166 @@ const courseDetails = {
   regulares: {
     title: 'Regulares - Verano 2025',
     content: `
-      <h4>Cursos Virtuales Regulares de Verano - UNAM</h4>
-  
-      <p><strong>Idiomas y niveles:</strong></p>
+      <h4>CURSOS virtuales REGULARES de verano 2025 para la Comunidad UNAM.</h4>
+
+      <p><strong>DURACIÓN</strong><br>
+      Del 16 de junio al 25 de julio, una hora diaria, de lunes a viernes, durante 6 semanas, en tiempo real y en grupos pequeños</p>
+
+      <p><strong>HORARIOS</strong></p>
       <ul>
-        <li>Inglés: (A1.1, A2.1, B1.1)</li>
-        <li>Francés: (A1.1, A2.1, B1.1)</li>
-        <li>Italiano: (A1.1)</li>
-        <li>Portugués: (A1.1)</li>
+        <li><strong>INGLÉS A1.1</strong><br>
+            8-9 hrs<br>
+            9-10 hrs<br>
+            10-11 hrs<br>
+            16-17 hrs<br>
+            17-18 hrs<br>
+            20-21 hrs
+        </li>
+        <li><strong>INGLÉS A2.1</strong><br>
+            7-8 hrs<br>
+            10-11 hrs<br>
+            19-20 hrs
+        </li>
+        <li><strong>INGLÉS B1.1</strong><br>
+            8-9 hrs<br>
+            11-12 hrs<br>
+            20-21 hrs
+        </li>
+        <li><strong>INGLÉS B2.1</strong><br>
+            13-14 hrs<br>
+            21-22 hrs
+        </li>
+        <li><strong>FRANCÉS A1.1</strong><br>
+            10-11 hrs
+        </li>
+        <li><strong>ITALIANO A1.1</strong><br>
+            7-8 hrs<br>
+            13-14 hrs
+        </li>
       </ul>
-  
-      <p><strong>Duración:</strong> 6 semanas (60 horas en total)</p>
-  
-      <p><strong>Distribución semanal (10 h/semana):</strong></p>
+
+      <p><strong>IMPORTANTE</strong><br>
+      El periodo de inscripción a estos cursos es del 10 al 25 de junio, el cupo por grupo es de 6 a 12 alumnos máximo.</p>
+
+      <p>La inscripción es de <strong>$250</strong> y la colegiatura por el curso de 30 horas, es de <strong>$1500</strong>.</p>
+
+      <p>Aparte del llenado del formulario, te recomendamos también enviar los siguientes datos <em>vía WhatsApp</em> al <a href="https://wa.me/525513404064" target="_blank">55 1340 4064</a>:</p>
+      <ol>
+        <li>Nombre completo de quien tomará el curso :</li>
+        <li>Nombre completo y número de teléfono del padre o tutor, si quien va a tomar el curso es menor a 18 años :</li>
+        <li>Idioma :</li>
+        <li>Nivel :</li>
+        <li>Horario :</li>
+        <li>Foto o captura de pantalla de la inscripción y de la colegiatura. ( Total : <strong>$1750</strong> )</li>
+      </ol>
+
+      <p><strong>DISTRIBUCIÓN</strong><br>
+      Cada semana se preeven 10 horas :</p>
       <ul>
-        <li>5 h sincrónicas (1 h diaria, L - V)</li>
-        <li>5 h asíncronas (1 h diaria para tareas)</li>
+        <li><strong>A.</strong> 5 horas en sesiones sincrónicas en tiempo real (clases), o sea 1 hora diaria, de lunes a viernes.</li>
+        <li><strong>B.</strong> 5 horas de tareas (actividades en autonomía), o sea 1 hora diaria de lunes a viernes.</li>
       </ul>
-  
-      <p><strong>Alcance:</strong><br>
-      Alcanzas medio nivel oficial internacional si asistes puntualmente, participas activamente y te comprometes con tu aprendizaje.</p>
-  
-      <p><strong>Cupo por grupo:</strong> Mínimo 6, máximo 12 participantes</p>
-  
-      <p><strong>Incluye:</strong></p>
+
+      <p><strong>ALCANCE :</strong><br>
+      En 6 semanas alcanzas medio nivel oficial internacional, si asistes puntualmente, participas activamente y te comprometes totalmente con tu proceso de aprendizaje.</p>
+
+      <p><strong>CUPO POR GRUPO :</strong><br>
+      Mínimo 6, máximo 12 participantes</p>
+
+      <p><strong>INCLUYE :</strong></p>
       <ul>
         <li>Material multimedia</li>
-        <li>Constancia de equivalencia de nivel oficial (promedio ≥ 8)</li>
+        <li>Constancia de equivalencia de nivel oficial internacional si obtienes al final del curso un promedio igual o superior a 8.</li>
       </ul>
-  
-      <p><strong>Inscripciones y cuotas:</strong></p>
-      <ul>
-        <li>
-          <em>Primer periodo</em> (2 - 23 mayo):
-          <ul>
-            <li>Inscripción: $250</li>
-            <li>Colegiatura: $1,500</li>
-            <li>Puedes apartar lugar con $500 y cubrir la totalidad a más tardar el 23 de mayo.</li><br>
-          </ul>
-        </li>
-        <li>
-          <em>Segundo periodo</em> (24 mayo - 10 junio):
-          <ul>
-            <li>Inscripción: $500</li>
-            <li>Colegiatura: $1,500</li>
-            <li>Puedes apartar tu lugar con $500 y cubrir la totalidad a más tardar el 10 de junio.</li>
-          </ul>
-        </li>
-      </ul>
-  
-      <p><strong>Periodo del curso:</strong> 16 de junio - 25 de julio</p>
-  
-      <p><strong>Examen de colocación:</strong><br>
-      Obligatorio para A2.1 o B1.1 ($150) o presentar constancia de nivel anterior.</p>
-  
-      <p><strong>Importante:</strong></p>
+
+      <p><strong>EXAMEN DE COLOCACIÓN :</strong><br>
+      Para ingresar a los niveles A2.1, B1.1 o B2.1 es necesario que presentes un examen de colocación cuyo costo es de $150, o bien, una constancia que acredite tu nivel inmediato anterior.</p>
+
+      <p><strong>IMPORTANTE :</strong><br>
+      Este curso te permitirá:</p>
       <ul>
         <li>Avanzar con constancia y equilibrio, sin dejar de disfrutar tu verano.</li>
         <li>Incorporar el idioma a tu rutina diaria sin agobiarte.</li>
         <li>Mantener tu mente activa y tu motivación constante a lo largo de 6 semanas.</li>
         <li>Ganar seguridad y fluidez mediante una práctica continua, sin presiones.</li>
       </ul>
-  
-      <p><strong>Más información:</strong><br>
-        WhatsApp: <a href="tel:+525513404064">55 1340 4064</a>
-      </p>
     `
   },
   'ini-prepa': {
   title: 'Iniciación - Verano 2025',
   content: `
-    <h4>Cursos Virtuales de Iniciación - Comunidad UNAM (15 - 18 años)</h4>
-    <p><strong>Idiomas:</strong></p>
-      <ul>
-        <li>Francés</li>
-        <li>Alemán</li>
-        <li>Italiano</li>
-        <li>Portugués</li>
-        <li>Japonés</li>
-        <li>Chino</li>
-        <li>Coreano</li>
-      </ul>
+    <h4>CURSOS virtuales <strong>DE INICIACIÓN</strong> a una lengua  extranjera, para la <strong>Comunidad  UNAM</strong>, idealmente de 15 años en adelante.</h4>
 
-    <p><strong>Duración:</strong> 4 semanas (24 horas en total)</p>
+    <p><strong>DURACIÓN :</strong><br>
+    ( Del 4 al 31 de <strong>JULIO</strong> : 12 horas en total )</p>
 
-    <p><strong>Distribución semanal (6 h/semana):</strong></p>
+    <p><strong>HORARIOS :</strong></p>
     <ul>
-      <li>3 h sincrónicas (sesiones en tiempo real)</li>
-      <li>3 h asíncronas (tareas y actividades)</li>
+      <li><strong>ALEMÁN</strong><br>
+          Lunes, miércoles y viernes de 18 a 19 hrs
+      </li>
+      <li><strong>ARABE</strong><br>
+          Lunes, miércoles y viernes de 19-20 hrs
+      </li>
+      <li><strong>COREANO</strong><br>
+          Martes y jueves de 9-10:30 hrs
+      </li>
+      <li><strong>CHINO</strong><br>
+          Lunes, miércoles y jueves de 19 a 20 hrs
+      </li>
+      <li><strong>FRANCÉS</strong><br>
+          Lunes, miércoles y viernes de 18 a 19 hrs
+      </li>
+      <li><strong>ITALIANO</strong><br>
+          Lunes, miércoles y viernes de 15 a 16 hrs
+      </li>
+      <li><strong>JAPONÉS</strong><br>
+          Lunes, miércoles y viernes de 17 a 18 hrs
+      </li>
+      <li><strong>PORTUGUÉS</strong><br>
+          Lunes, miércoles y viernes de 11-12 hrs
+      </li>
     </ul>
 
-    <p><strong>Alcance:</strong>  
-    Lograrás una percepción general del idioma para decidir si iniciar un estudio formal.</p>
+    <p><strong>ALCANCE</strong><br>
+    En cuatro semanas lograrás adquirir una percepción general de la lengua extranjera que hayas elegido para decidir posteriormente y con mayor certeza, si deseas iniciar el estudio formal de la misma...</p>
 
-    <p><strong>Cupo por grupo:</strong> Mínimo 6, máximo 12 participantes</p>
+    <p><strong>PERIODO DE INSCRIPCIONES</strong><br>
+    El periodo de inscripción a estos cursos es del 10 al 20 de junio, el cupo por grupo es de 6 a 12 alumnos máximo.</p>
 
-    <p><strong>Incluye:</strong></p>
+    <p>La inscripción es de <strong>$250</strong> y la colegiatura por el curso de 12 horas es de <strong>$600</strong> ( ya está aplicado el 50% de descuento para la comunidad UNAM ).</p>
+
+    <p>En el llenado de la ficha de inscripción, favor de anotar los datos de quien tomará el curso, no de quien l@ inscribe.</p>
+
+    <p><strong>IMPORTANTE :</strong><br>
+    Enviar los siguientes datos vía WhatsApp al <a href="https://wa.me/525513404064" target="_blank">55 1340 4064</a> :</p>
+    <ol>
+      <li>Nombre completo de quien tomará el curso :</li>
+      <li>Nombre completo y número de teléfono del padre o tutor, si quien va a tomar el curso es menor a 18 años :</li>
+      <li>Idioma :</li>
+      <li>Nivel :</li>
+      <li>Horario :</li>
+      <li>Foto o captura del depósito o transferencia de la inscripción y colegiatura. ( Total <strong>$850</strong> )</li>
+    </ol>
+
+    <p><strong>CUPO POR GRUPO :</strong><br>
+    Mínimo 6, máximo 12 participantes</p>
+
+    <p><strong>INCLUYE :</strong></p>
     <ul>
       <li>Material multimedia</li>
       <li>Constancia de participación</li>
     </ul>
 
-    <p><strong>Inscripciones y cuotas:</strong></p>
+    <p><strong>A CONSIDERAR...</strong><br>
+    Este curso te permitirá:</p>
     <ul>
-      <li>
-        <em>Para junio</em> (2 - 23 mayo):
-        <ul>
-          <li>Inscripción: $250</li>
-          <li>Colegiatura: $600</li>
-          <li>Aparta con $250 (resto antes del 23 de mayo)</li><br>
-        </ul>
-      </li>
-      <li>
-        <em>Para julio</em> (24 mayo - 10 junio):
-        <ul>
-          <li>Inscripción: $250</li>
-          <li>Colegiatura: $600</li>
-          <li>Aparta con $250 (resto antes del 20 de junio)</li>
-        </ul>
-      </li>
+      <li>Descubrir si ese idioma que te llama la atención puede ser parte de tu camino.</li>
+      <li>Aprender frases útiles y expresiones básicas desde el primer día.</li>
+      <li>Explorar costumbres, música, gastronomía y escritura de otras culturas.</li>
+      <li>Dar el primer paso hacia una formación global y un perfil internacional.</li>
+      <li>Tener una experiencia enriquecedora que puedes continuar más adelante.</li>
     </ul>
-
-    <p><strong>Periodos de curso:</strong></p>
-    <ul>
-      <li>Junio: 2 - 30 de junio</li>
-      <li>Julio: 4 - 31 de julio</li>
-    </ul>
-
-    <p><strong>Importante:</strong></p>
-    <ul>
-      <li>Descubrir si ese idioma puede ser parte de tu camino</li>
-      <li>Aprender frases útiles y expresiones básicas</li>
-      <li>Explorar cultura: costumbres, música, gastronomía, escritura</li>
-      <li>Dar el primer paso hacia una formación global</li>
-      <li>Vivir una experiencia enriquecedora</li>
-    </ul>
-
-    <p><strong>IMPORTANTE:</strong></p>
-    <p>El 10 de junio publicaremos  nuevos horarios para los cursos de iniciación de julio : francés, italiano, portugués, chino, griego, latin y otras lenguas.</p>
-
-    <p><strong>Más información:</strong>  
-      WhatsApp: <a href="tel:+525513404064">55 1340 4064</a>
-    </p>
   `
 },
   'ini-ninos': {
@@ -433,31 +479,32 @@ const availability = {
       ingles: {
         A1: [
           { dias: ['Lun','Mar','Mié','Jue','Vie'], horas: [
-            '07:00-10:00','10:00-13:00','13:00-16:00','16:00-19:00','19:00-22:00'
+            '07:00-10:00','10:00-13:00','16:00-19:00','19:00-22:00'
           ] }
         ],
         A2: [
           { dias: ['Lun','Mar','Mié','Jue','Vie'], horas: [
-            '07:00-10:00','10:00-13:00','13:00-16:00','16:00-19:00','19:00-22:00'
+            '07:00-10:00','10:00-13:00','13:00-16:00','19:00-22:00'
           ] }
         ],
         B1: [
           { dias: ['Lun','Mar','Mié','Jue','Vie'], horas: [
-            '07:00-10:00','10:00-13:00','16:00-19:00','19:00-22:00'
+            '07:00-10:00','10:00-13:00','19:00-22:00'
           ] }
         ],
         B2: [
           { dias: ['Lun','Mar','Mié','Jue','Vie'], horas: [
-            '07:00-10:00','13:00-16:00','19:00-22:00'
+            '10:00-13:00',
           ] }
         ]
       },
       frances: {
         A1: [
           { dias: ['Lun','Mar','Mié','Jue','Vie'], horas: [
-            '07:00-10:00','10:00-13:00','13:00-16:00','16:00-19:00','19:00-22:00'
+            '07:00-10:00','10:00-13:00','16:00-19:00',
           ] }
         ],
+        /*
         A2: [
           { dias: ['Lun','Mar','Mié','Jue','Vie'], horas: [
             '10:00-13:00','16:00-19:00'
@@ -465,14 +512,14 @@ const availability = {
         ],
         B1: [
           { dias: ['Lun','Mar','Mié','Jue','Vie'], horas: [
-            '19:00-22:00'
+            '10:00-13:00'
           ] }
         ],
         B2: [
           { dias: ['Lun','Mar','Mié','Jue','Vie'], horas: [
             '19:00-22:00'
           ] }
-        ]
+        ]*/
       },
       aleman: {
         A1: [
@@ -480,7 +527,7 @@ const availability = {
             '11:00-14:00','19:00-22:00'
           ] }
         ]
-      },
+      },/*
       italiano: {
         A1: [
           { dias: ['Lun','Mar','Mié','Jue','Vie'], horas: [
@@ -494,7 +541,7 @@ const availability = {
             '10:00-13:00','19:00-22:00'
           ] }
         ]
-      }
+      }*/
     }
   },
 
@@ -503,24 +550,23 @@ const availability = {
       ingles: {
         'A1.1': [
           { dias: ['Lun','Mar','Mié','Jue','Vie'], horas: [
-              '07:00-08:00','08:00-09:00','09:00-10:00','10:00-11:00',
-              '16:00-17:00','17:00-18:00','18:00-19:00','19:00-20:00',
-              '20:00-21:00','21:00-22:00'
+              '08:00-09:00','09:00-10:00','10:00-11:00',
+              '16:00-17:00','17:00-18:00','20:00-21:00'
           ] }
         ],
         'A2.1': [
           { dias: ['Lun','Mar','Mié','Jue','Vie'], horas: [
-              '07:00-08:00','10:00-11:00','16:00-17:00','19:00-20:00'
+              '07:00-08:00','10:00-11:00','19:00-20:00'
           ] }
         ],
         'B1.1': [
           { dias: ['Lun','Mar','Mié','Jue','Vie'], horas: [
-              '08:00-09:00','11:00-12:00','16:00-17:00','19:00-20:00','20:00-21:00'
+              '08:00-09:00','11:00-12:00','20:00-21:00'
           ] }
         ],
         'B2.1': [
           { dias: ['Lun','Mar','Mié','Jue','Vie'], horas: [
-              '10:00-11:00','13:00-14:00','21:00-22:00'
+              '13:00-14:00','21:00-22:00'
           ] }
         ]
       },
@@ -528,11 +574,10 @@ const availability = {
       frances: {
         'A1.1': [
           { dias: ['Lun','Mar','Mié','Jue','Vie'], horas: [
-              '07:00-08:00','08:00-09:00','09:00-10:00','10:00-11:00',
-              '16:00-17:00','17:00-18:00','18:00-19:00','19:00-20:00',
-              '20:00-21:00','21:00-22:00'
+              '10:00-11:00',
           ] }
         ],
+        /*
         'A2.1': [
           { dias: ['Lun','Mar','Mié','Jue','Vie'], horas: [
               '07:00-08:00','10:00-11:00','16:00-17:00','19:00-20:00'
@@ -547,42 +592,46 @@ const availability = {
           { dias: ['Lun','Mar','Mié','Jue','Vie'], horas: [
               '08:00-09:00','21:00-22:00'
           ] }
-        ]
+        ]*/
       },
-
+      /*
       portugues: {
         'A1.1': [
           { dias: ['Lun','Mar','Mié','Jue','Vie'], horas: [
               '08:00-09:00','19:00-20:00'
           ] }
         ]
-      },
+      },*/
 
       italiano: {
         'A1.1': [
           { dias: ['Lun','Mar','Mié','Jue','Vie'], horas: [
-              '07:00-08:00','13:00-14:00','19:00-20:00'
+              '07:00-08:00','13:00-14:00',
           ] }
         ]
       },
 
+      /*
       aleman: {
         'A1.1': [
-          // Sólo sábados
           { dias: ['Sáb'], horas: [
               '16:00-19:00','19:00-22:00'
           ] }
         ]
-      }
+      }*/
     }
   },
 
-  iniciacion: { idiomas: {
-    frances: {
+  iniciacion: {
+  idiomas: {
+    aleman: {
       A1: [
-        { dias: ['Lun','Mié','Vie'], horas: ['9:00-10:00','10:00-11:00','11:00-12:00','12:00-13:00','13:00-14:00','16:00-17:00','17:00-18:00'] },
-        { dias: ['Mar','Jue'],      horas: ['10:00-11:30','11:30-13:00','13:00-14:30','16:00-17:30'] },
-        { dias: ['Sáb'],            horas: ['7:00-10:00'] }
+        { dias: ['Lun','Mié','Vie'], horas: ['18:00-19:00'] }
+      ]
+    },
+    arabe: {
+      A1: [
+        { dias: ['Lun','Mié','Vie'], horas: ['19:00-20:00'] }
       ]
     },
     coreano: {
@@ -590,12 +639,33 @@ const availability = {
         { dias: ['Mar','Jue'], horas: ['9:00-10:30'] }
       ]
     },
-    aleman: {
+    chino: {
       A1: [
-        { dias: ['Lun','Mié','Vie'], horas: ['18:00-19:00'] }
+        { dias: ['Lun','Mié','Jue'], horas: ['19:00-20:00'] }
+      ]
+    },
+    frances: {
+      A1: [
+        { dias: ['Lun','Mié','Vie'], horas: ['18:00-19:00',] }, 
+      ]
+    },
+    italiano: {
+      A1: [
+        { dias: ['Lun','Mié','Vie'], horas: ['15:00-16:00'] }
+      ]
+    },
+    japones: {
+      A1: [
+        { dias: ['Lun','Mié','Vie'], horas: ['17:00-18:00'] }
+      ]
+    },
+    portugues: {
+      A1: [
+        { dias: ['Lun','Mié','Vie'], horas: ['11:00-12:00'] }
       ]
     }
-  }}
+  }
+},
 };
 
 // ————————————————————————————————
@@ -613,7 +683,6 @@ function populatePeriodos() {
     opts = [{ label:'16 jun - 25 jul', start:'2025-06-16', end:'2025-07-25' }];
   } else if (tipo === 'iniciacion') {
     opts = [
-      { label:'2 - 30 junio', start:'2025-06-02', end:'2025-06-30' },
       { label:'4 - 31 julio', start:'2025-07-04', end:'2025-07-31' }
     ];
   }

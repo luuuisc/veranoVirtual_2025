@@ -38,8 +38,8 @@ def inscribirse(request):
         horario=horario
     ).count()
 
-    # Si ya hay 15 o más, bloqueamos
-    if existentes >= 15:
+    # Si ya hay 12 o más, bloqueamos
+    if existentes >= 12:
         return JsonResponse({
             'status': 'error',
             'message': 'Lo siento, este horario ya está lleno. Por favor elige otro horario o propón uno nuevo.'
