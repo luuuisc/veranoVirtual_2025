@@ -61,6 +61,11 @@ const courseDetails = {
             <li>19-22 hrs</li>
           </ul>
         </li>
+        <li><strong>ITALIANO A1</strong>
+          <ul>
+            <li>11-14 hrs</li>
+          <ul>
+        </li>
       </ul>
 
       <p><strong>IMPORTANTE :</strong><br>
@@ -527,14 +532,14 @@ const availability = {
             '11:00-14:00','19:00-22:00'
           ] }
         ]
-      },/*
+      },
       italiano: {
         A1: [
           { dias: ['Lun','Mar','Mié','Jue','Vie'], horas: [
-            '07:00-10:00','16:00-19:00'
+            '11:00-14:00',
           ] }
         ]
-      },
+      },/*
       portugues: {
         A1: [
           { dias: ['Lun','Mar','Mié','Jue','Vie'], horas: [
