@@ -165,7 +165,8 @@ const courseDetails = {
       </ul>
 
       <p><strong>IMPORTANTE</strong><br>
-      El periodo de inscripción a estos cursos es del 10 al 25 de junio, el cupo por grupo es de 6 a 12 alumnos máximo.</p>
+      El periodo de inscripción a estos cursos es del 10 al 25 de junio, el cupo por grupo es de 6 a 12 alumnos máximo.<br>
+      Si hubiera lugar podrá haber inscripciones hasta el 25 de junio sin reposiciones de clase ni descuentos adicionales.</p>
 
       <p>La inscripción es de <strong>$250</strong> y la colegiatura por el curso de 30 horas, es de <strong>$1500</strong>.</p>
 
@@ -555,7 +556,7 @@ const availability = {
       ingles: {
         'A1.1': [
           { dias: ['Lun','Mar','Mié','Jue','Vie'], horas: [
-              '08:00-09:00','09:00-10:00','10:00-11:00',
+              '08:00-09:00','10:00-11:00',
               '16:00-17:00','17:00-18:00','20:00-21:00'
           ] }
         ],
