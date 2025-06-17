@@ -17,6 +17,10 @@ const courseDetails = {
     content: `
       <h4><strong>CURSOS virtuales INTENSIVOS</strong> de verano 2025 para la Comunidad UNAM.</h4>
 
+      <h4 style="color: red; text-align: center;">
+      ¡ÚLTIMOS LUGARES!
+      </h4>
+
       <p><strong>DURACIÓN :</strong><br>
         Del 4 al 31 de julio, 3 horas diarias, de lunes a viernes, en tiempo real y en grupos pequeños</p>
 
@@ -26,50 +30,32 @@ const courseDetails = {
           <ul>
             <li>7-10 hrs</li>
             <li>10-13 hrs</li>
-            <li>16-19 hrs</li>
-            <li>19-22 hrs</li>
           </ul>
         </li>
         <li><strong>INGLÉS A2</strong>
           <ul>
             <li>7-10 hrs</li>
-            <li>10-13 hrs</li>
-            <li>13-16 hrs</li>
             <li>19-22 hrs</li>
           </ul>
-        </li>
-        <li><strong>INGLÉS B1</strong>
-          <ul>
-            <li>7-10 hrs</li>
-            <li>10-13 hrs</li>
-            <li>19-22 hrs</li>
-          </ul>
-        </li>
-        <li><strong>INGLÉS B2</strong><br>
-            10-13 hrs
         </li>
         <li><strong>FRANCÉS A1</strong>
           <ul>
             <li>7-10 hrs</li>
-            <li>10-13 hrs</li>
-            <li>16-19 hrs</li>
           </ul>
         </li>
         <li><strong>ALEMÁN A1</strong>
           <ul>
             <li>11-14 hrs</li>
-            <li>19-22 hrs</li>
           </ul>
-        </li>
-        <li><strong>ITALIANO A1</strong>
-          <ul>
-            <li>11-14 hrs</li>
-          <ul>
         </li>
       </ul>
 
-      <p><strong>IMPORTANTE :</strong><br>
-      El periodo de inscripción a estos cursos es del 10 al 25 de junio, el cupo por grupo es de 6 a 12 alumnos máximo.</p>
+      <p><strong>IMPORTANTE</strong><br>
+      <ol>
+        <li>El periodo de inscripción a estos cursos es del 10 al 25 de junio, el cupo por grupo es de 4 a 12 alumnos máximo.</li>
+        <li>Si no encontraste el idioma, horario o nivel que te interesa, envía un WhatsApp al 55 1340 40604 con tu nombre completo y tu propuesta.</li>
+        <li>Si hubiera lugar podrá haber inscripciones hasta el 7 de julio sin reposiciones de clase ni descuentos adicionales.</li>
+      </ol>
 
       <p>La inscripción es de <strong>$250</strong> y la colegiatura por el curso de 60 horas es de <strong>$3 000</strong>.</p>
 
@@ -94,7 +80,7 @@ const courseDetails = {
       En 4 semanas alcanzas un nivel oficial internacional, si asistes puntualmente, participas activamente y te comprometes totalmente con tu proceso de aprendizaje.</p>
 
       <p><strong>CUPO POR GRUPO :</strong><br>
-      Mínimo 6, máximo 12 participantes</p>
+      Mínimo 4, máximo 12 participantes</p>
 
       <p><strong>INCLUYE :</strong></p>
       <ul>
@@ -104,6 +90,17 @@ const courseDetails = {
 
       <p><strong>EXAMEN DE COLOCACIÓN</strong><br>
       Para ingresar a los niveles A2, B1 o B2 es necesario presentar un examen de colocación cuyo costo es de $150, o bien una constancia que acredite tu nivel inmediato anterior. Se puede tramitar entre el 10 y el 25 de junio.</p>
+      <!-- Sección: Inscripción al examen de colocación -->
+      <section id="examen-colocacion" class="info-block">
+        <h3>¿Cómo me inscribo al examen de colocación?</h3>
+        <ol>
+          <li>Cubres el costo del examen de colocación y envías la foto o captura del depósito o transferencia al 55 1340 4064 con tu Nombre Completo</li>
+          <li>Nos das tres fechas y horarios en los que lo puedas presentar. Es virtual.</li>
+          <li>Te confirmamos una de las tres fechas y horarios que elegiste.</li>
+          <li>Te enviamos el link para ese día y hora.</li>
+          <li>Con base en tu nivel, escoges el horario que te convenga.</li>
+        </ol>
+      </section>
 
       <p><strong>CONSIDERA QUE …</strong><br>
       Este curso te permitirá:</p>
@@ -128,6 +125,10 @@ const courseDetails = {
     content: `
       <h4>CURSOS virtuales REGULARES de verano 2025 para la Comunidad UNAM.</h4>
 
+      <h4 style="color: red; text-align: center;">
+      ¡ÚLTIMOS LUGARES!
+      </h4>
+
       <p><strong>DURACIÓN</strong><br>
       Del 16 de junio al 25 de julio, una hora diaria, de lunes a viernes, durante 6 semanas, en tiempo real y en grupos pequeños</p>
 
@@ -135,38 +136,29 @@ const courseDetails = {
       <ul>
         <li><strong>INGLÉS A1.1</strong><br>
             8-9 hrs<br>
-            9-10 hrs<br>
-            10-11 hrs<br>
             16-17 hrs<br>
-            17-18 hrs<br>
             20-21 hrs
         </li>
         <li><strong>INGLÉS A2.1</strong><br>
-            7-8 hrs<br>
             10-11 hrs<br>
-            19-20 hrs
         </li>
         <li><strong>INGLÉS B1.1</strong><br>
-            8-9 hrs<br>
             11-12 hrs<br>
-            20-21 hrs
-        </li>
-        <li><strong>INGLÉS B2.1</strong><br>
-            13-14 hrs<br>
-            21-22 hrs
         </li>
         <li><strong>FRANCÉS A1.1</strong><br>
             10-11 hrs
         </li>
         <li><strong>ITALIANO A1.1</strong><br>
             7-8 hrs<br>
-            13-14 hrs
         </li>
       </ul>
 
       <p><strong>IMPORTANTE</strong><br>
-      El periodo de inscripción a estos cursos es del 10 al 25 de junio, el cupo por grupo es de 6 a 12 alumnos máximo.<br>
-      Si hubiera lugar podrá haber inscripciones hasta el 25 de junio sin reposiciones de clase ni descuentos adicionales.</p>
+      <ol>
+        <li>Si no encontraste el idioma, horario o nivel que te interesa, envía un WhatsApp al 55 1340 40604 con tu nombre completo y tu propuesta.</li>
+        <li>El cupo por grupo es de 4 a 12 alumnos máximo.</li>
+        <li>Si hubiera lugar podrá haber inscripciones hasta el 25 de junio sin reposiciones de clase ni descuentos adicionales.</li>
+      </ol>
 
       <p>La inscripción es de <strong>$250</strong> y la colegiatura por el curso de 30 horas, es de <strong>$1500</strong>.</p>
 
@@ -191,7 +183,7 @@ const courseDetails = {
       En 6 semanas alcanzas medio nivel oficial internacional, si asistes puntualmente, participas activamente y te comprometes totalmente con tu proceso de aprendizaje.</p>
 
       <p><strong>CUPO POR GRUPO :</strong><br>
-      Mínimo 6, máximo 12 participantes</p>
+      Mínimo 4, máximo 12 participantes</p>
 
       <p><strong>INCLUYE :</strong></p>
       <ul>
@@ -201,6 +193,17 @@ const courseDetails = {
 
       <p><strong>EXAMEN DE COLOCACIÓN :</strong><br>
       Para ingresar a los niveles A2.1, B1.1 o B2.1 es necesario que presentes un examen de colocación cuyo costo es de $150, o bien, una constancia que acredite tu nivel inmediato anterior.</p>
+      <!-- Sección: Inscripción al examen de colocación -->
+      <section id="examen-colocacion" class="info-block">
+        <h3>¿Cómo me inscribo al examen de colocación?</h3>
+        <ol>
+          <li>Cubres el costo del examen de colocación y envías la foto o captura del depósito o transferencia al 55 1340 4064 con tu Nombre Completo</li>
+          <li>Nos das tres fechas y horarios en los que lo puedas presentar. Es virtual.</li>
+          <li>Te confirmamos una de las tres fechas y horarios que elegiste.</li>
+          <li>Te enviamos el link para ese día y hora.</li>
+          <li>Con base en tu nivel, escoges el horario que te convenga.</li>
+        </ol>
+      </section>
 
       <p><strong>IMPORTANTE :</strong><br>
       Este curso te permitirá:</p>
@@ -345,7 +348,7 @@ const courseDetails = {
       <form id="form-inscripcion" class="inscription-form">
         <h4>Formulario de Inscripción</h4>
         <div id="insc-announcement" class="announcement">
-          ⚠️ ¡IMPORTANTE! Abrimos un grupo con al menos 6 alumnos inscritos.<br><br>
+          ⚠️ ¡IMPORTANTE! Abrimos un grupo con al menos 4 alumnos inscritos.<br><br>
           Te recomendamos considerar un horario que ya tenga alumnos inscritos o bien reflexionar sobre otras posibilidades de horario o cambio de idioma (si eres principiante)<br>
         </div>
         <!-- Campos básicos -->
@@ -485,14 +488,15 @@ const availability = {
       ingles: {
         A1: [
           { dias: ['Lun','Mar','Mié','Jue','Vie'], horas: [
-            '07:00-10:00','10:00-13:00','16:00-19:00','19:00-22:00'
+            '07:00-10:00','10:00-13:00',
           ] }
         ],
         A2: [
           { dias: ['Lun','Mar','Mié','Jue','Vie'], horas: [
-            '07:00-10:00','10:00-13:00','13:00-16:00','19:00-22:00'
+            '07:00-10:00','19:00-22:00'
           ] }
         ],
+        /*
         B1: [
           { dias: ['Lun','Mar','Mié','Jue','Vie'], horas: [
             '07:00-10:00','10:00-13:00','19:00-22:00'
@@ -502,12 +506,12 @@ const availability = {
           { dias: ['Lun','Mar','Mié','Jue','Vie'], horas: [
             '10:00-13:00',
           ] }
-        ]
+        ]*/
       },
       frances: {
         A1: [
           { dias: ['Lun','Mar','Mié','Jue','Vie'], horas: [
-            '07:00-10:00','10:00-13:00','16:00-19:00',
+            '07:00-10:00',
           ] }
         ],
         /*
@@ -530,17 +534,18 @@ const availability = {
       aleman: {
         A1: [
           { dias: ['Lun','Mar','Mié','Jue','Vie'], horas: [
-            '11:00-14:00','19:00-22:00'
+            '11:00-14:00',
           ] }
         ]
       },
+      /*
       italiano: {
         A1: [
           { dias: ['Lun','Mar','Mié','Jue','Vie'], horas: [
             '11:00-14:00',
           ] }
         ]
-      },/*
+      },
       portugues: {
         A1: [
           { dias: ['Lun','Mar','Mié','Jue','Vie'], horas: [
@@ -556,25 +561,25 @@ const availability = {
       ingles: {
         'A1.1': [
           { dias: ['Lun','Mar','Mié','Jue','Vie'], horas: [
-              '08:00-09:00','10:00-11:00',
-              '16:00-17:00','17:00-18:00','20:00-21:00'
+              '08:00-09:00','16:00-17:00','20:00-21:00'
           ] }
         ],
         'A2.1': [
           { dias: ['Lun','Mar','Mié','Jue','Vie'], horas: [
-              '07:00-08:00','10:00-11:00','19:00-20:00'
+              '10:00-11:00'
           ] }
         ],
         'B1.1': [
           { dias: ['Lun','Mar','Mié','Jue','Vie'], horas: [
-              '08:00-09:00','11:00-12:00','20:00-21:00'
+              '11:00-12:00'
           ] }
         ],
+        /*
         'B2.1': [
           { dias: ['Lun','Mar','Mié','Jue','Vie'], horas: [
               '13:00-14:00','21:00-22:00'
           ] }
-        ]
+        ]*/
       },
 
       frances: {
@@ -612,7 +617,7 @@ const availability = {
       italiano: {
         'A1.1': [
           { dias: ['Lun','Mar','Mié','Jue','Vie'], horas: [
-              '07:00-08:00','13:00-14:00',
+              '07:00-08:00'
           ] }
         ]
       },
@@ -829,7 +834,7 @@ function populateHorarios(conf, selectEl, placeholder) {
 }
 
 // ————————————————————————————————
-// 7) attachInscriptionHandler: tu AJAX + feedback + reset
+// 7) attachInscriptionHandler: tu AJAX + Stripe Checkout
 // ————————————————————————————————
 function attachInscriptionHandler() {
   const form     = document.getElementById('form-inscripcion');
@@ -839,35 +844,61 @@ function attachInscriptionHandler() {
   form.addEventListener('submit', async e => {
     e.preventDefault();
     feedback.className   = '';
-    feedback.textContent = 'Enviando…';
+    feedback.textContent = 'Procesando…';
     btn.disabled         = true;
 
     const data = Object.fromEntries(new FormData(form).entries());
+
     try {
-      const res  = await fetch('/api/inscripcion/', {
-        method:'POST', mode:'cors',
-        headers:{ 'Content-Type':'application/json' },
-        body:JSON.stringify(data)
+      // 1) Guardar la inscripción en tu BD
+      let res = await fetch('/api/inscripcion/', {
+        method: 'POST', headers: {'Content-Type':'application/json'},
+        body: JSON.stringify(data)
       });
-      const json = await res.json();
-      feedback.classList.add(json.status==='ok'?'success':'error');
-      feedback.textContent = json.message;
-      if (json.status==='ok') form.reset();
-      else {
-        // si error de cupo, forzamos re-select horario
-        const sel = form.querySelector('#horario');
-        sel.selectedIndex = 0;
-        sel.dispatchEvent(new Event('change'));
+      let json = await res.json();
+
+      if (json.status !== 'ok') {
+        feedback.classList.add('error');
+        feedback.textContent = json.message;
+        btn.disabled = false;
+        return;
       }
-    } catch {
+
+      /*
+      // 2) Crear Checkout según nivel
+      res = await fetch('/api/inscripcion/create-session/', {
+        method:'POST', headers:{'Content-Type':'application/json'},
+        body: JSON.stringify(data)
+      });
+      const { url, error } = await res.json();
+      if (error) throw new Error(error);
+
+      // 3) Redirigir al Checkout de Stripe
+      window.location = url;
+      */
+
+      // 2) Aviso de pago manual
+      feedback.classList.add('success');
+      feedback.innerHTML = `
+          <p>
+          <strong>
+            TU ALTA EN EL CURSO QUE ELEGISTE AÚN NO ESTÁ TERMINADA HASTA QUE REALICES EL PAGO DE $250 DE INSCRIPCIÓN
+          </strong>
+          <br>
+          Y LA COLEGIATURA CORRESPONDIENTE Y ENVÍES DICHO(S) COMPROBANTE(S), CON TU NOMBRE COMPLETO AL WHATSAPP
+          <a href="https://wa.me/5215513404064" target="_blank" rel="noopener">55&nbsp;1340&nbsp;4064</a>.
+          <br>
+          EN CASO DE QUERER PRESENTAR EL EXAMEN DE COLOCACIÓN DEBES ENVIAR LA PALABRA “<strong>EC</strong>” Y EL IDIOMA ELEGIDO AL MISMO NÚMERO DE WHATSAPP.
+        </p>
+      `;
+
+      form.reset();
+
+    } catch (err) {
+      console.error(err);
       feedback.classList.add('error');
-      feedback.textContent = 'Error de red. Intenta más tarde.';
-    } finally {
-      setTimeout(()=>{
-        feedback.textContent = '';
-        feedback.className   = '';
-        btn.disabled         = false;
-      }, 5000);
+      feedback.textContent = err.message || 'Error, inténtalo más tarde.';
+      btn.disabled = false;
     }
   });
 }

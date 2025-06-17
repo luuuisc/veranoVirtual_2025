@@ -16,6 +16,9 @@ public/
 *.ntvs*
 *.sln
 
+# Entorno virtual de Python
+venv/
+
 # Logs
 logs/
 *.log
