@@ -234,9 +234,6 @@ const courseDetails = {
       <li><strong>COREANO</strong><br>
           Martes y jueves de 9-10:30 hrs
       </li>
-      <li><strong>CHINO</strong><br>
-          Lunes, miércoles y jueves de 19 a 20 hrs
-      </li>
       <li><strong>FRANCÉS</strong><br>
           Lunes, miércoles y viernes de 18 a 19 hrs
       </li>
@@ -650,11 +647,13 @@ const availability = {
         { dias: ['Mar','Jue'], horas: ['9:00-10:30'] }
       ]
     },
+    /*
     chino: {
       A1: [
         { dias: ['Lun','Mié','Jue'], horas: ['19:00-20:00'] }
       ]
     },
+    */
     frances: {
       A1: [
         { dias: ['Lun','Mié','Vie'], horas: ['18:00-19:00',] }, 
