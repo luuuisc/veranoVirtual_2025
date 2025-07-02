@@ -18,11 +18,11 @@ const courseDetails = {
       <h4><strong>CURSOS virtuales INTENSIVOS</strong> de verano 2025 para la Comunidad UNAM.</h4>
 
       <h4 style="color: red; text-align: center;">
-      ¡ÚLTIMOS LUGARES!
+      Últimas inscripciones hasta el 6 de julio.
       </h4>
 
       <p><strong>DURACIÓN :</strong><br>
-        Del 4 al 31 de julio, 3 horas diarias, de lunes a viernes, en tiempo real y en grupos pequeños</p>
+      Del 7 al 31 de julio ó del 7 de julio al 4 de agosto, 3 horas diarias, de lunes a viernes, en tiempo real y en grupos pequeños</p>
 
       <p><strong>HORARIOS :</strong></p>
       <ul>
@@ -312,7 +312,10 @@ const courseDetails = {
           <i class="fas fa-envelope"></i>contacto@clx.com
         </a><br>  
         <a href="tel:+525513404064">
-          <i class="fab fa-whatsapp"></i>55 1340 4064
+          <i class="fab fa-whatsapp"></i>55 1340 4064<br>
+        </a>
+        <a href="tel:+525573980411">
+          <i class="fab fa-whatsapp"></i>55 7398 0411
         </a>
       </p>
   
@@ -372,8 +375,6 @@ const courseDetails = {
           <select id="tipo_curso" name="tipo_curso" required>
             <option value="" disabled selected>Elige un tipo…</option>
             <option value="intensivo">Intensivo</option>
-            <option value="regular">Regular</option>
-            <option value="iniciacion">Iniciación</option>
           </select>
         </div>
         <div class="form-group">
@@ -553,6 +554,7 @@ const availability = {
     }
   },
 
+  /*
   regular: {
     idiomas: {
       ingles: {
@@ -571,12 +573,12 @@ const availability = {
               '11:00-12:00'
           ] }
         ],
-        /*
+        
         'B2.1': [
           { dias: ['Lun','Mar','Mié','Jue','Vie'], horas: [
               '13:00-14:00','21:00-22:00'
           ] }
-        ]*/
+        ]
       },
 
       frances: {
@@ -585,7 +587,7 @@ const availability = {
               '10:00-11:00',
           ] }
         ],
-        /*
+        
         'A2.1': [
           { dias: ['Lun','Mar','Mié','Jue','Vie'], horas: [
               '07:00-08:00','10:00-11:00','16:00-17:00','19:00-20:00'
@@ -600,16 +602,16 @@ const availability = {
           { dias: ['Lun','Mar','Mié','Jue','Vie'], horas: [
               '08:00-09:00','21:00-22:00'
           ] }
-        ]*/
+        ]
       },
-      /*
+      
       portugues: {
         'A1.1': [
           { dias: ['Lun','Mar','Mié','Jue','Vie'], horas: [
               '08:00-09:00','19:00-20:00'
           ] }
         ]
-      },*/
+      },
 
       italiano: {
         'A1.1': [
@@ -626,10 +628,11 @@ const availability = {
               '16:00-19:00','19:00-22:00'
           ] }
         ]
-      }*/
+      }
     }
   },
 
+  
   iniciacion: {
   idiomas: {
     aleman: {
@@ -647,13 +650,12 @@ const availability = {
         { dias: ['Mar','Jue'], horas: ['9:00-10:30'] }
       ]
     },
-    /*
     chino: {
       A1: [
         { dias: ['Lun','Mié','Jue'], horas: ['19:00-20:00'] }
       ]
     },
-    */
+    
     frances: {
       A1: [
         { dias: ['Lun','Mié','Vie'], horas: ['18:00-19:00',] }, 
@@ -675,7 +677,7 @@ const availability = {
       ]
     }
   }
-},
+},*/
 };
 
 // ————————————————————————————————
