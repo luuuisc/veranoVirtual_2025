@@ -504,13 +504,103 @@ Se avanza medio nivel oficial al cabo de 30 horas de clase en tiempo real y apro
   examen: {
     title: "Examen de Colocación",
     content: `
-      <p>Detalles sobre el examen de colocación...</p>
+      <form id="form-examen-colocacion" class="examen-form">
+  <h4>Registro Examen de Colocación</h4>
+
+  <div class="form-group">
+    <label for="ex_nombre">Nombre</label>
+    <input id="ex_nombre" name="nombre" type="text" placeholder="Tu nombre completo" required>
+  </div>
+
+  <div class="form-group">
+    <label for="ex_cuenta">No. de Cuenta/Empleado UNAM</label>
+    <input id="ex_cuenta" name="cuenta_unam" type="text" placeholder="Ej: 12345678" required>
+  </div>
+
+  <div class="form-group">
+    <label for="ex_whatsapp">WhatsApp</label>
+    <input id="ex_whatsapp" name="whatsapp" type="tel" placeholder="55 1234 5678" required>
+  </div>
+
+  <div class="form-group">
+    <label for="ex_email">E-mail</label>
+    <input id="ex_email" name="email" type="email" placeholder="usuario@correo.com" required>
+  </div>
+
+  <div class="form-group">
+    <label for="ex_idioma">Idioma</label>
+    <select id="ex_idioma" name="idioma" required>
+      <option value="" disabled selected>Selecciona idioma…</option>
+      <option value="ingles">Inglés</option>
+      <option value="frances">Francés</option>
+      <option value="aleman">Alemán</option>
+      <option value="italiano">Italiano</option>
+      <option value="portugues">Portugués</option>
+      <option value="japones">Japonés</option>
+      <option value="chino">Chino</option>
+      <option value="coreano">Coreano</option>
+      <option value="esp_extranjeros">Español para extranjeros</option>
+      <option value="otro">Otro</option>
+    </select>
+  </div>
+
+  <button type="submit">Enviar Registro</button>
+</form>
+
+<p class="note">
+  * En breve un ejecutivo se pondrá en contacto contigo para darle seguimiento al proceso de presentación de examen de colocación.
+</p>
     `,
   },
   lista: {
     title: "Lista de Espera",
     content: `
-      <p>Detalles sobre la lista de espera...</p>
+      <form id="form-lista-espera" class="lista-espera-form">
+  <h4>Registro Lista de Espera</h4>
+
+  <div class="form-group">
+    <label for="le_nombre">Nombre</label>
+    <input id="le_nombre" name="nombre" type="text" placeholder="Tu nombre completo" required>
+  </div>
+
+  <div class="form-group">
+    <label for="le_cuenta">No. de Cuenta/Empleado UNAM</label>
+    <input id="le_cuenta" name="cuenta_unam" type="text" placeholder="Ej: 12345678" required>
+  </div>
+
+  <div class="form-group">
+    <label for="le_whatsapp">WhatsApp</label>
+    <input id="le_whatsapp" name="whatsapp" type="tel" placeholder="55 1234 5678" required>
+  </div>
+
+  <div class="form-group">
+    <label for="le_email">E-mail</label>
+    <input id="le_email" name="email" type="email" placeholder="usuario@correo.com" required>
+  </div>
+
+  <div class="form-group">
+    <label for="le_idioma">Idioma</label>
+    <select id="le_idioma" name="idioma" required>
+      <option value="" disabled selected>Selecciona idioma…</option>
+      <option value="ingles">Inglés</option>
+      <option value="frances">Francés</option>
+      <option value="aleman">Alemán</option>
+      <option value="italiano">Italiano</option>
+      <option value="portugues">Portugués</option>
+      <option value="japones">Japonés</option>
+      <option value="chino">Chino</option>
+      <option value="coreano">Coreano</option>
+      <option value="esp_extranjeros">Español para extranjeros</option>
+      <option value="otro">Otro</option>
+    </select>
+  </div>
+
+  <button type="submit">Enviar Solicitud</button>
+</form>
+
+<p class="note">
+  * En breve un ejecutivo se pondrá en contacto contigo para darle seguimiento a tu solicitud.
+</p>
     `,
   },
 };
