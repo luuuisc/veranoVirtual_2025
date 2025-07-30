@@ -1,6 +1,6 @@
 # inscripciones/views.py
 
-import json, stripe
+import json
 from pathlib import Path
 
 from django.shortcuts import render
@@ -12,7 +12,7 @@ from django.conf import settings
 from django.utils import timezone
 from datetime import datetime
 
-from .models import Inscripcion
+from .models import Inscripcion, ExamenColocacion
 
 PDF_BANCOS = Path(settings.BASE_DIR) / 'static' / 'docs' / 'datos_bancarios.pdf'
 
@@ -131,9 +131,85 @@ def inscribirse(request):
         'message': (
             "TU ALTA EN EL CURSO QUE ELEGISTE AÚN NO ESTÁ TERMINADA HASTA QUE REALICES EL PAGO DE $250 DE INSCRIPCIÓN "
             "Y LA COLEGIATURA CORRESPONDIENTE Y ENVÍES DICHO(S) COMPROBANTE(S), CON TU NOMBRE COMPLETO AL WHATSAPP 55 1340 4064. "
-            "EN CASO DE QUERER PRESENTAR EL EXAMEN DE COLOCACIÓN DEBES ENVIAR LA PALABRA “EC” "
-            "Y EL IDIOMA ELEGIDO AL MISMO NÚMERO DE WHATSAPP. "
         )
+    })
+    
+@csrf_exempt
+def registro_examen_colocacion(request):
+    if request.method != 'POST':
+        return JsonResponse({'status':'error','message':'Método no permitido'}, status=405)
+
+    # 1) Parsear JSON
+    try:
+        data = json.loads(request.body.decode())
+    except json.JSONDecodeError:
+        return JsonResponse({'status':'error','message':'JSON inválido'}, status=400)
+
+    # 2) Validar campos
+    nombre      = data.get('nombre')
+    cuenta      = data.get('cuenta_unam')
+    whatsapp    = data.get('whatsapp')
+    email       = data.get('email')
+    idioma      = data.get('idioma')
+
+    if not all([nombre, cuenta, whatsapp, email, idioma]):
+        return JsonResponse({
+            'status':'error',
+            'message':'Faltan campos obligatorios'
+        }, status=400)
+
+    # 3) Guardar en BD
+    examen = ExamenColocacion.objects.create(
+        nombre      = nombre,
+        cuenta_unam = cuenta,
+        whatsapp    = whatsapp,
+        email       = email,
+        idioma      = idioma
+    )
+
+    # 4) Enviar correo al alumno
+    subject_alumno = 'CLX – Registro Examen de Colocación'
+    body_alumno = (
+        f"Hola {examen.nombre},\n\n"
+        "Hemos recibido tu solicitud para presentar el Examen de Colocación.\n"
+        f"- Idioma: {examen.get_idioma_display()}\n\n"
+        "En breve un ejecutivo se pondrá en contacto contigo para darle seguimiento a tu solicitud.\n\n"
+        "¡Gracias por tu interés!"
+    )
+    mail_al = EmailMessage(
+        subject_alumno,
+        body_alumno,
+        settings.DEFAULT_FROM_EMAIL,
+        [examen.email]
+    )
+    mail_al.send(fail_silently=False)
+
+    # 5) Notificación al equipo
+    equipo = [
+        'agente3jlcosta@gmail.com',
+        'luisangelperezcastro1305@gmail.com',
+    ]
+    subject_eq = f'Nueva solicitud Examen Colocación: {examen.nombre}'
+    body_eq = (
+        "Se ha registrado una nueva solicitud de Examen de Colocación:\n"
+        f"- Nombre: {examen.nombre}\n"
+        f"- Cuenta UNAM: {examen.cuenta_unam}\n"
+        f"- WhatsApp: {examen.whatsapp}\n"
+        f"- E-mail: {examen.email}\n"
+        f"- Idioma: {examen.get_idioma_display()}\n"
+        f"- Fecha registro: {timezone.localtime(examen.creado).strftime('%d/%m/%y %H:%M')}\n"
+    )
+    mail_eq = EmailMessage(
+        subject_eq,
+        body_eq,
+        settings.DEFAULT_FROM_EMAIL,
+        equipo
+    )
+    mail_eq.send(fail_silently=True)
+
+    return JsonResponse({
+        'status':'ok',
+        'message':'Tu registro ha sido recibido. En breve nos contactaremos contigo.'
     })
 
 def list_inscripciones(request):
@@ -163,6 +239,9 @@ def count_inscripciones(request):
     ).count()
     return JsonResponse({'count': count})
 
+
+
+"""
 stripe.api_key = settings.STRIPE_SECRET_KEY
 
 @require_POST
@@ -206,3 +285,4 @@ def create_checkout_session(request):
         return JsonResponse({'url': session.url})
     except Exception as e:
         return JsonResponse({'error': str(e)}, status=400)
+"""
