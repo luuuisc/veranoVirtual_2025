@@ -44,3 +44,20 @@ class ExamenColocacion(models.Model):
 
     def __str__(self):
         return f"{self.nombre} - {self.get_idioma_display()}"
+    
+class ListaEspera(models.Model):
+    nombre      = models.CharField("Nombre completo", max_length=150)
+    cuenta_unam = models.CharField("No. de Cuenta/UNAM",   max_length=20)
+    whatsapp    = models.CharField("WhatsApp",             max_length=20)
+    email       = models.EmailField("Correo electrónico")
+    idioma      = models.CharField("Idioma",               max_length=30, choices=IDIOMA_CHOICES)
+    creado      = models.DateTimeField("Fecha registro",    auto_now_add=True)
+
+    class Meta:
+        verbose_name = "Registro Lista de Espera"
+        verbose_name_plural = "Registros Lista de Espera"
+        ordering = ['-creado']
+
+    def __str__(self):
+        return f"{self.nombre} – {self.get_idioma_display()}"
+    

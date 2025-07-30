@@ -12,7 +12,7 @@ from django.conf import settings
 from django.utils import timezone
 from datetime import datetime
 
-from .models import Inscripcion, ExamenColocacion
+from .models import Inscripcion, ExamenColocacion, ListaEspera
 
 PDF_BANCOS = Path(settings.BASE_DIR) / 'static' / 'docs' / 'datos_bancarios.pdf'
 
@@ -211,6 +211,65 @@ def registro_examen_colocacion(request):
         'status':'ok',
         'message':'Tu registro ha sido recibido. En breve nos contactaremos contigo.'
     })
+
+@csrf_exempt
+def registro_lista_espera(request):
+    if request.method != 'POST':
+        return JsonResponse({'status':'error','message':'Método no permitido'}, status=405)
+
+    try:
+        data = json.loads(request.body.decode())
+    except json.JSONDecodeError:
+        return JsonResponse({'status':'error','message':'JSON inválido'}, status=400)
+
+    nombre   = data.get('nombre')
+    cuenta   = data.get('cuenta_unam')
+    whatsapp = data.get('whatsapp')
+    email    = data.get('email')
+    idioma   = data.get('idioma')
+
+    if not all([nombre, cuenta, whatsapp, email, idioma]):
+        return JsonResponse({'status':'error','message':'Faltan campos obligatorios'}, status=400)
+
+    registro = ListaEspera.objects.create(
+        nombre      = nombre,
+        cuenta_unam = cuenta,
+        whatsapp    = whatsapp,
+        email       = email,
+        idioma      = idioma
+    )
+
+    # Correo al alumno
+    subject_al = 'CLX – Registro Lista de Espera'
+    body_al = (
+        f"Hola {registro.nombre},\n\n"
+        f"Hemos recibido tu solicitud para la Lista de Espera.\n"
+        f"- Idioma: {registro.get_idioma_display()}\n\n"
+        "En breve un ejecutivo se pondrá en contacto contigo para darle seguimiento a tu solicitud.\n\n"
+        "¡Gracias por tu interés!"
+    )
+    mail_al = EmailMessage(subject_al, body_al, settings.DEFAULT_FROM_EMAIL, [registro.email])
+    mail_al.send(fail_silently=False)
+
+    # Notificación al equipo
+    equipo = [
+        'agente3jlcosta@gmail.com',
+        'luisangelperezcastro1305@gmail.com',
+    ]
+    subject_eq = f'Nueva Lista de Espera: {registro.nombre}'
+    body_eq = (
+        "Nuevo registro en Lista de Espera:\n"
+        f"- Nombre: {registro.nombre}\n"
+        f"- Cuenta UNAM: {registro.cuenta_unam}\n"
+        f"- WhatsApp: {registro.whatsapp}\n"
+        f"- E-mail: {registro.email}\n"
+        f"- Idioma: {registro.get_idioma_display()}\n"
+        f"- Fecha: {timezone.localtime(registro.creado).strftime('%d/%m/%y %H:%M')}"
+    )
+    mail_eq = EmailMessage(subject_eq, body_eq, settings.DEFAULT_FROM_EMAIL, equipo)
+    mail_eq.send(fail_silently=True)
+
+    return JsonResponse({'status':'ok','message':'Registro recibido correctamente.'})
 
 def list_inscripciones(request):
     inscripciones = Inscripcion.objects.all().order_by('-creado')
