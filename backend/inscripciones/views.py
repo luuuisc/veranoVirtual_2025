@@ -104,6 +104,7 @@ def inscribirse(request):
     prof_emails = [
         'agente3jlcosta@gmail.com',
         'luisangelperezcastro1305@gmail.com',
+        'jorgedaniel2915@gmail.com'
     ]
     subject_equipo = f'Nueva inscripción: {ins.nombre}'
     body_equipo = (
@@ -188,6 +189,7 @@ def registro_examen_colocacion(request):
     equipo = [
         'agente3jlcosta@gmail.com',
         'luisangelperezcastro1305@gmail.com',
+        'jorgedaniel2915@gmail.com'
     ]
     subject_eq = f'Nueva solicitud Examen Colocación: {examen.nombre}'
     body_eq = (
@@ -255,6 +257,7 @@ def registro_lista_espera(request):
     equipo = [
         'agente3jlcosta@gmail.com',
         'luisangelperezcastro1305@gmail.com',
+        'jorgedaniel2915@gmail.com'
     ]
     subject_eq = f'Nueva Lista de Espera: {registro.nombre}'
     body_eq = (

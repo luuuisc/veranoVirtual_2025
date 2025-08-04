@@ -126,164 +126,55 @@ const courseDetails = {
   },
   regulares: {
     title: "Regulares - VIRTUALES 2025",
-    content: `
-      <h4>
-          <span style="font-size: 1em;">Cursos</span>
-          <span style="font-size: 1em;">VIRTUALES</span>
-          <span style="font-size: 1em;">regulares</span>
-      </h4>
-<p><strong>Para la comunidad UNAM</strong></p>
-<p><strong>Periodo:</strong> Agosto - Octubre 2025</p>
+    content: ` 
+<section>
+  <h2><strong>Para la comunidad UNAM</strong></h2>
+  <p><strong>Periodo:</strong> Agosto - Noviembre 2025</p>
 
-<p><strong>INSCRIPCIONES:</strong><br>
-Del 1 al 13 de agosto. Cupo limitado.</p>
+  <h3><strong>INSCRIPCIONES:</strong></h3>
+  <p>Del 1 al 16 de agosto. Cupo limitado.</p>
 
-<p><strong>DURACIÓN:</strong><br>
-Del 18 de agosto al 27 de octubre<br>
-(3 horas por semana durante 10 semanas)</p>
+  <h3><strong>DURACIÓN:</strong></h3>
+  <ul>
+    <li><strong>Lunes a viernes:</strong> Del 18 de agosto al 11 de noviembre. (Días de asueto: 15 y 16 de septiembre)</li>
+    <li><strong>Sábados y domingos:</strong> Del 23 de agosto al 9 de noviembre.</li>
+    <li><strong>Carga horaria:</strong> 3 a 5 horas semanales. Total: 30 a 60 horas clase + tareas extracurriculares.</li>
+  </ul>
 
-<p><strong>ALCANCE:</strong><br>
-Se avanza medio nivel oficial al cabo de 30 horas de clase en tiempo real y aproximadamente 60 horas de tareas extra clase.</p>
+  <h3><strong>ALCANCE:</strong></h3>
+  <p>Se avanza medio nivel oficial con clases en tiempo real + actividades autónomas.</p>
 
-<p><strong>HORARIOS:</strong></p>
-<ul>
-  <li><strong>I. Lunes, miércoles y viernes</strong>
-    <ul>
-      <li><strong>INGLÉS A1 (Primera parte: desde 00)</strong><br>
-        7-8 hrs<br>
-        8-9 hrs<br>
-        14-15 hrs<br>
-        17-18 hrs<br>
-        20-21 hrs
-      </li>
-      <li><strong>INGLÉS A2 (Primera parte)</strong><br>
-        7-8 hrs<br>
-        13-14 hrs<br>
-        20-21 hrs
-      </li>
-      <li><strong>INGLÉS B1 (Primera parte)</strong><br>
-        13-14 hrs<br>
-        21-22 hrs
-      </li>
-      <li><strong>INGLÉS B2 (Primera parte)</strong><br>
-        21-22 hrs
-      </li>
-      <li><strong>FRANCÉS A1 (Primera parte: desde 00)</strong><br>
-        7-8 hrs<br>
-        8-9 hrs<br>
-        17-18 hrs<br>
-        20-21 hrs
-      </li>
-      <li><strong>FRANCÉS A2 (Primera parte)</strong><br>
-        7-8 hrs<br>
-        13-14 hrs<br>
-        21-22 hrs
-      </li>
-    </ul>
-  </li>
-  <li><strong>II. Martes y jueves</strong>
-    <ul>
-      <li><strong>INGLÉS A1 (Primera parte: desde 00)</strong><br>
-        7-8:30 hrs<br>
-        13:30-15 hrs<br>
-        17-18:30 hrs<br>
-        18:30-20 hrs
-      </li>
-      <li><strong>INGLÉS A2 (Primera parte)</strong><br>
-        7-8:30 hrs<br>
-        13:30-15 hrs<br>
-        20:30-22 hrs
-      </li>
-      <li><strong>INGLÉS B1 (Primera parte)</strong><br>
-        7-8:30 hrs<br>
-        20:30-22 hrs
-      </li>
-      <li><strong>FRANCÉS A1 (Primera parte: desde 00)</strong><br>
-        7-8:30 hrs<br>
-        13:30-15 hrs<br>
-        17:30-19 hrs<br>
-        19-20:30 hrs<br>
-        20:30-22 hrs
-      </li>
-      <li><strong>FRANCÉS A2 (Primera parte)</strong><br>
-        17-18:30 hrs<br>
-        20:30-22 hrs
-      </li>
-    </ul>
-  </li>
-  <li><strong>III. Sábados</strong>
-    <ul>
-      <li><strong>INGLÉS A1 (Primera parte: desde 00)</strong><br>
-        8-11 hrs<br>
-        11-14 hrs<br>
-        14-17 hrs<br>
-        17-20 hrs
-      </li>
-      <li><strong>INGLÉS A2 (Primera parte)</strong><br>
-        8-11 hrs<br>
-        11-14 hrs<br>
-        14-17 hrs<br>
-        17-20 hrs
-      </li>
-      <li><strong>INGLÉS B1 (Primera parte)</strong><br>
-        8-11 hrs<br>
-        11-14 hrs<br>
-        14-17 hrs<br>
-        17-20 hrs
-      </li>
-      <li><strong>FRANCÉS A1 (Primera parte: desde 00)</strong><br>
-        8-11 hrs<br>
-        11-14 hrs<br>
-        14-17 hrs<br>
-        17-20 hrs
-      </li>
-      <li><strong>FRANCÉS A2 (Primera parte)</strong><br>
-        8-11 hrs<br>
-        11-14 hrs<br>
-        14-17 hrs<br>
-        17-20 hrs
-      </li>
-    </ul>
-  </li>
-  <li><strong>IV. Domingo</strong>
-    <ul>
-      <li><strong>INGLÉS A1 (Primera parte: desde 00)</strong><br>
-        8-11 hrs<br>
-        17-20 hrs
-      </li>
-      <li><strong>INGLÉS A2 (Primera parte)</strong><br>
-        8-11 hrs<br>
-        17-20 hrs
-      </li>
-      <li><strong>INGLÉS B1 (Primera parte)</strong><br>
-        8-11 hrs<br>
-        17-20 hrs
-      </li>
-      <li><strong>FRANCÉS A1 (Primera parte: desde 00)</strong><br>
-        8-11 hrs<br>
-        17-20 hrs
-      </li>
-      <li><strong>FRANCÉS A2 (Primera parte)</strong><br>
-        17-20 hrs
-      </li>
-    </ul>
-  </li>
-</ul>
+  <h3><strong>CUOTAS DE RECUPERACIÓN:</strong></h3>
+  <ul>
+    <li>Inscripción: <strong>$250</strong></li>
+    <li>Curso regular virtual (12 semanas): <strong>$3000</strong></li>
+    <li>Cupo por grupo: mínimo 6, máximo 12 personas</li>
+    <li>Incluye material multimedia y constancia oficial (mínimo 8 de promedio)</li>
+  </ul>
 
-<p><strong>IMPORTANTE:</strong></p>
-<ul>
-  <li>Si deseas inscribirte a un nivel u horario diferente de inglés o francés, así como a otro idioma (alemán, italiano, portugués, japonés, chino, coreano, español para extranjeros u otro), ingresa a la sección <strong>“LISTA DE ESPERA”</strong>.</li>
-  <li>El periodo de inscripción a estos cursos es del 10 al 25 de junio; el cupo por grupo es de 6 a 15 alumnos máximo.</li>
-  <li>La inscripción es de <strong>$250</strong> y la colegiatura para el curso <strong>REGULAR</strong> de 10 semanas es de <strong>$1500</strong>.</li>
-  <li>El cupo por grupo es de mínimo 6, máximo 12 participantes.</li>
-  <li>Incluye material multimedia.</li>
-  <li>Al final del curso se otorga una constancia de equivalencia de nivel oficial internacional, si se obtiene un promedio mínimo de 8.</li>
-</ul>
+  <h3><strong>HORARIOS DISPONIBLES</strong></h3>
 
-<section id="examen-colocacion" class="info-block">
-  <h3>EXAMEN DE COLOCACIÓN</h3>
-  <p>Para ingresar a los niveles A2, B1 o B2 es necesario presentar un examen de colocación cuyo costo es de <strong>$150</strong>, o bien, una constancia que acredite el nivel inmediato anterior.<br>
-  Para tramitar dicho examen ingresa a la sección <strong>“EXAMEN DE COLOCACIÓN”</strong>.</p>
+  <h4><strong>De lunes a viernes</strong></h4>
+  <ul>
+    <li><strong>Inglés A1:</strong> 7-8, 8-9, 11-12, 14-15, 17-18, 18-19, 19-20, 20-21 hrs</li>
+    <li><strong>Francés A1:</strong> 7-8, 8-9, 13-14, 18-19, 20-21 hrs</li>
+  </ul>
+
+  <h4><strong>Sábados y domingos</strong></h4>
+  <ul>
+    <li><strong>Inglés A1:</strong> 7-9:30, 8-10:30, 9:30-12, 10:30-13, 19-21:30 hrs</li>
+    <li><strong>Francés A1:</strong> 7-9:30, 8-10:30, 19:30-22 hrs</li>
+  </ul>
+
+  <h3><strong>OTROS IDIOMAS:</strong></h3>
+  <p>Para horarios/niveles distintos o cursos en <strong>alemán, italiano, portugués, japonés, chino, coreano, español para extranjeros</strong>, consulta la sección <strong>“Lista de Espera”</strong>.</p>
+
+  <h3><strong>EXAMEN DE COLOCACIÓN:</strong></h3>
+  <p>Requerido para ingresar a niveles A2, B1 o B2. Costo: <strong>$150</strong>. También puedes presentar constancia del nivel anterior.<br>
+  Tramita tu examen en la sección <strong>“EXAMEN DE COLOCACIÓN”</strong>.</p>
+
+  <h3><strong>¿TIENES DUDAS?</strong></h3>
+  <p>Escríbenos por WhatsApp: <a href="https://wa.me/525573980411"><strong>55 7398 0411</strong></a></p>
 </section>`,
   },
   "ini-prepa": {
@@ -445,7 +336,6 @@ Se avanza medio nivel oficial al cabo de 30 horas de clase en tiempo real y apro
           <label for="tipo_curso">Tipo de curso</label>
           <select id="tipo_curso" name="tipo_curso" required>
             <option value="" disabled selected>Elige un tipo…</option>
-            <option value="intensivo">Intensivo</option>
             <option value="regular">Regular</option>
           </select>
         </div>
@@ -750,114 +640,81 @@ const availability = {
   },
   },
   regular: {
-    idiomas: {
+  idiomas: {
     ingles: {
       'A1': [
-        // I. Lunes, miércoles y viernes
+        // I. Lunes a viernes
         {
-          dias: ['Lun', 'Mié', 'Vie'],
+          dias: ['Lun', 'Mar', 'Mié', 'Jue', 'Vie'],
           horas: [
             '07:00-08:00',
             '08:00-09:00',
+            '11:00-12:00',
             '14:00-15:00',
             '17:00-18:00',
+            '18:00-19:00',
+            '19:00-20:00',
             '20:00-21:00'
           ],
         },
-        // II. Martes y jueves
+        // II. Sábados y domingos
         {
-          dias: ['Mar', 'Jue'],
+          dias: ['Sáb', 'Dom'],
           horas: [
-            '07:00-08:30',
-            '13:30-15:00',
-            '17:00-18:30',
-            '18:30-20:00'
+            '07:00-09:30',
+            '08:00-10:30',
+            '09:30-12:00',
+            '10:30-13:00',
+            '19:00-21:30'
           ],
-        },
-        // III. Sábados
-        {
-          dias: ['Sáb'],
-          horas: [
-            '08:00-11:00',
-            '11:00-14:00',
-            '14:00-17:00',
-            '17:00-20:00'
-          ],
-        },
-        // IV. Domingo
-        {
-          dias: ['Dom'],
-          horas: [
-            '08:00-11:00',
-            '17:00-20:00'
-          ],
-        },
+        }
       ]
     },
 
     frances: {
       'A1': [
-        // I. Lunes, miércoles y viernes
+        // I. Lunes a viernes
         {
-          dias: ['Lun', 'Mié', 'Vie'],
+          dias: ['Lun', 'Mar', 'Mié', 'Jue', 'Vie'],
           horas: [
             '07:00-08:00',
             '08:00-09:00',
-            '17:00-18:00',
+            '13:00-14:00',
+            '18:00-19:00',
             '20:00-21:00'
           ],
         },
-        // II. Martes y jueves
+        // II. Sábados y domingos
         {
-          dias: ['Mar', 'Jue'],
+          dias: ['Sáb', 'Dom'],
           horas: [
-            '07:00-08:30',
-            '13:30-15:00',
-            '17:30-19:00',
-            '19:00-20:30',
-            '20:30-22:00'
+            '07:00-09:30',
+            '08:00-10:30',
+            '19:30-22:00'
           ],
-        },
-        // III. Sábados
-        {
-          dias: ['Sáb'],
-          horas: [
-            '08:00-11:00',
-            '11:00-14:00',
-            '14:00-17:00',
-            '17:00-20:00'
-          ],
-        },
-        // IV. Domingo
-        {
-          dias: ['Dom'],
-          horas: [
-            '08:00-11:00',
-            '17:00-20:00'
-          ],
-        },
+        }
       ]
     },
 
     portugues: {
       'A1': [
-        // sin horarios definidos aún
+        // Horarios aún no definidos
       ]
     },
 
     italiano: {
       'A1': [
-        // sin horarios definidos aún
+        // Horarios aún no definidos
       ]
     },
 
     aleman: {
       'A1': [
-        // sin horarios definidos aún
+        // Horarios aún no definidos
       ]
     }
   }
-  },
+},
   /*
   iniciacion: {
   idiomas: {
@@ -919,7 +776,7 @@ function populatePeriodos() {
     opts = [{ label: "18 agosto - 27 octubre", start: "2025-08-18", end: "2025-09-27" }];
   } else if (tipo === "regular") {
     opts = [
-      { label: "18 agosto - 27 octubre", start: "2025-08-18", end: "2025-09-27" },
+      { label: "18 agosto - 11 noviembre", start: "2025-08-18", end: "2025-11-11" },
     ];
   } else if (tipo === "iniciacion") {
     opts = [{ label: "4 - 31 julio", start: "2025-07-04", end: "2025-07-31" }];
