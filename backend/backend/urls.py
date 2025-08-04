@@ -16,16 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from inscripciones.views import list_inscripciones, index, inscribirse, count_inscripciones, registro_examen_colocacion, registro_lista_espera
-
+from inscripciones.views import list_inscripciones, index
 
 
 urlpatterns = [
-    path('admin/',                  admin.site.urls),
-    path('',                       index,                        name='home'),
-    path('api/inscripcion/',       inscribirse,                  name='inscribirse'),
-    path('api/inscripciones/count/', count_inscripciones,        name='count_inscripciones'),
-    path('api/examen-colocacion/', registro_examen_colocacion,   name='examen_colocacion'),
-    path('api/lista-espera/',      registro_lista_espera,        name='lista_espera'),
-    path('inscripciones/',         list_inscripciones,           name='list_inscripciones'),
+    path('admin/',             admin.site.urls),
+    path('',                   index,               name='home'),
+    path('api/',               include('inscripciones.urls')),
+    path('inscripciones/',     list_inscripciones,  name='list_inscripciones'),
 ]

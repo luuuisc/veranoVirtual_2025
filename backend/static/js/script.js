@@ -829,99 +829,68 @@ function bindFormLogic() {
   const otroInp = document.getElementById("horario_otro");
   const inlineCount = document.getElementById("inscritos-count-inline");
 
-  const placeholder = (txt) =>
-    `<option value="" disabled selected>${txt}</option>`;
+  const placeholder = txt => `<option value="" disabled selected>${txt}</option>`;
 
-  // 5.1) al cambiar tipo → poblamos idiomas + periodos
   tipo.addEventListener("change", () => {
     const langs = Object.keys(availability[tipo.value]?.idiomas || {});
     idioma.innerHTML = langs.length
-      ? [
-          placeholder("Selecciona un idioma…"),
-          ...langs.map((l) => {
-            const label =
-              languageLabels[l] || l.charAt(0).toUpperCase() + l.slice(1);
-            return `<option value="${l}">${label}</option>`;
-          }),
-        ].join("")
+      ? [placeholder("Selecciona un idioma…"), ...langs.map(l => {
+          const label = languageLabels[l] || l;
+          return `<option value="${l}">${label}</option>`;
+        })].join("")
       : placeholder("Selecciona tipo primero…");
-
     nivel.innerHTML = placeholder("Idioma primero…");
     horario.innerHTML = placeholder("Nivel primero…");
-
     populatePeriodos();
-    // No inlineCount update needed here
   });
 
-  // 5.2) al cambiar idioma → poblamos niveles
   idioma.addEventListener("change", () => {
-    const lvls = Object.keys(
-      availability[tipo.value]?.idiomas[idioma.value] || {}
-    );
+    const lvls = Object.keys(availability[tipo.value]?.idiomas[idioma.value] || {});
     nivel.innerHTML = lvls.length
-      ? [
-          placeholder("Selecciona un nivel…"),
-          ...lvls.map((v) => `<option value="${v}">${v}</option>`),
-        ].join("")
+      ? [placeholder("Selecciona un nivel…"), ...lvls.map(v => `<option value="${v}">${v}</option>`)].join("")
       : placeholder("Primero elige idioma…");
     horario.innerHTML = placeholder("Nivel primero…");
-    // No inlineCount update needed here
   });
 
-  // 5.3) al cambiar nivel → poblamos horarios con bloques o strings
   nivel.addEventListener("change", () => {
-    const conf =
-      availability[tipo.value]?.idiomas[idioma.value]?.[nivel.value] || [];
+    const conf = availability[tipo.value]?.idiomas[idioma.value]?.[nivel.value] || [];
     populateHorarios(conf, horario, placeholder);
-    // No inlineCount update needed here
   });
 
-  // 5.4) al cambiar horario → mostramos count y “otro” si aplica
   horario.addEventListener("change", () => {
     if (horario.value === "otro") {
       otroGrp.style.display = "block";
       otroInp.required = true;
-      // No inlineCount update for "otro"
       return;
     }
     otroGrp.style.display = "none";
     otroInp.required = false;
     otroInp.value = "";
-    // —— fetch count inscripciones ——
+
     const params = new URLSearchParams({
       tipo_curso: tipo.value,
       idioma: idioma.value,
       nivel_ingreso: nivel.value,
-      horario: horario.value,
+      horario: horario.value
     });
-    fetch(`/api/inscripcion/count/?${params}`, { method: "GET" })
-      .then((r) => r.json())
-      .then((json) => {
-        const n = json.count;
-        inlineCount.textContent = n;
-      })
-      .catch(() => {
-        inlineCount.textContent = "0";
-      });
+    fetch(`/api/inscripciones/count/?${params}`)
+      .then(r => r.json())
+      .then(json => inlineCount.textContent = json.count)
+      .catch(() => inlineCount.textContent = "0");
   });
 
-  // disparamos el primero
   tipo.dispatchEvent(new Event("change"));
 }
 
-// ————————————————————————————————
-// 6) populateHorarios: strings vs bloques {dias, horas}
-// ————————————————————————————————
+// 6) populateHorarios: construye <option> de horarios
 function populateHorarios(conf, selectEl, placeholder) {
   let opts = [placeholder("Selecciona un horario…")];
   if (conf.length && typeof conf[0] === "string") {
-    conf.forEach((h) => opts.push(`<option value="${h}">${h}</option>`));
+    conf.forEach(h => opts.push(`<option value="${h}">${h}</option>`));
   } else {
-    conf.forEach((block) => {
-      block.horas.forEach((h) => {
-        opts.push(
-          `<option value="${h}">${block.dias.join(", ")} — ${h}</option>`
-        );
+    conf.forEach(block => {
+      block.horas.forEach(h => {
+        opts.push(`<option value="${h}">${block.dias.join(", ")} — ${h}</option>`);
       });
     });
   }
@@ -929,72 +898,96 @@ function populateHorarios(conf, selectEl, placeholder) {
   selectEl.innerHTML = opts.join("");
 }
 
-// ————————————————————————————————
-// 7) attachInscriptionHandler: tu AJAX + Stripe Checkout
-// ————————————————————————————————
+// 7) attachInscriptionHandler: AJAX de inscripción
 function attachInscriptionHandler() {
-  const form = document.getElementById("form-inscripcion");
+  const form     = document.getElementById("form-inscripcion");
   const feedback = document.getElementById("insc-feedback");
-  const btn = form.querySelector('button[type="submit"]');
+  const btn      = form.querySelector('button[type="submit"]');
 
-  form.addEventListener("submit", async (e) => {
+  form.addEventListener("submit", async e => {
     e.preventDefault();
     feedback.className = "";
     feedback.textContent = "Procesando…";
     btn.disabled = true;
 
     const data = Object.fromEntries(new FormData(form).entries());
-
     try {
-      // 1) Guardar la inscripción en tu BD
-      let res = await fetch("/api/inscripcion/", {
+      const res = await fetch("/api/inscripcion/", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
-      let json = await res.json();
-
-      if (json.status !== "ok") {
-        feedback.classList.add("error");
-        feedback.textContent = json.message;
-        btn.disabled = false;
-        return;
-      }
-
-      /*
-      // 2) Crear Checkout según nivel
-      res = await fetch('/api/inscripcion/create-session/', {
-        method:'POST', headers:{'Content-Type':'application/json'},
+        headers: {"Content-Type":"application/json"},
         body: JSON.stringify(data)
       });
-      const { url, error } = await res.json();
-      if (error) throw new Error(error);
+      if (!res.ok) throw new Error(`Error ${res.status}`);
+      const json = await res.json();
+      if (json.status !== "ok") throw new Error(json.message);
 
-      // 3) Redirigir al Checkout de Stripe
-      window.location = url;
-      */
-
-      // 2) Aviso de pago manual
       feedback.classList.add("success");
-      feedback.innerHTML = `
-          <p>
-          <strong>
-            TU ALTA EN EL CURSO QUE ELEGISTE AÚN NO ESTÁ TERMINADA HASTA QUE REALICES EL PAGO DE $250 DE INSCRIPCIÓN
-          </strong>
-          <br>
-          Y LA COLEGIATURA CORRESPONDIENTE Y ENVÍES DICHO(S) COMPROBANTE(S), CON TU NOMBRE COMPLETO AL WHATSAPP
-          <a href="https://wa.me/5215513404064" target="_blank" rel="noopener">55&nbsp;1340&nbsp;4064</a>.
-          <br>
-          EN CASO DE QUERER PRESENTAR EL EXAMEN DE COLOCACIÓN DEBES ENVIAR LA PALABRA “<strong>EC</strong>” Y EL IDIOMA ELEGIDO AL MISMO NÚMERO DE WHATSAPP.
-        </p>
-      `;
-
+      feedback.textContent = json.message;
       form.reset();
     } catch (err) {
-      console.error(err);
       feedback.classList.add("error");
-      feedback.textContent = err.message || "Error, inténtalo más tarde.";
+      feedback.textContent = err.message;
       btn.disabled = false;
+    }
+  });
+}
+
+// 8) attachExamHandler: AJAX de examen de colocación
+function attachExamHandler() {
+  const form     = document.getElementById("form-examen-colocacion");
+  const feedback = document.getElementById("ex-feedback");
+
+  form.addEventListener("submit", async e => {
+    e.preventDefault();
+    feedback.className = "";
+    feedback.textContent = "Procesando…";
+
+    const data = Object.fromEntries(new FormData(form).entries());
+    try {
+      const res = await fetch("/api/examen-colocacion/", {
+        method: "POST",
+        headers: {"Content-Type":"application/json"},
+        body: JSON.stringify(data)
+      });
+      if (!res.ok) throw new Error(`Error ${res.status}`);
+      const json = await res.json();
+      if (json.status !== "ok") throw new Error(json.message);
+
+      feedback.textContent = json.message;
+      form.reset();
+    } catch (err) {
+      feedback.classList.add("error");
+      feedback.textContent = err.message;
+    }
+  });
+}
+
+// 9) attachListaHandler: AJAX de lista de espera
+function attachListaHandler() {
+  const form     = document.getElementById("form-lista-espera");
+  const feedback = document.getElementById("le-feedback");
+
+  form.addEventListener("submit", async e => {
+    e.preventDefault();
+    feedback.className = "";
+    feedback.textContent = "Procesando…";
+
+    const data = Object.fromEntries(new FormData(form).entries());
+    try {
+      const res = await fetch("/api/lista-espera/", {
+        method: "POST",
+        headers: {"Content-Type":"application/json"},
+        body: JSON.stringify(data)
+      });
+      if (!res.ok) throw new Error(`Error ${res.status}`);
+      const json = await res.json();
+      if (json.status !== "ok") throw new Error(json.message);
+
+      feedback.textContent = json.message;
+      form.reset();
+    } catch (err) {
+      feedback.classList.add("error");
+      feedback.textContent = err.message;
     }
   });
 }
