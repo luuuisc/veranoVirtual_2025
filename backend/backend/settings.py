@@ -147,20 +147,27 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# ----- Settings for sending emails -----
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
+# -------------------------------------------------------------------
+# EMAIL CONFIGURATION
+# -------------------------------------------------------------------
 
-# ----- E-mail credentials -----
-EMAIL_HOST_USER = env('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
-DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+# 1) Producción (Gmail SMTP)
+EMAIL_BACKEND       = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST          = "smtp.gmail.com"
+EMAIL_PORT          = 587
+EMAIL_USE_TLS       = True
+EMAIL_HOST_USER     = env("EMAIL_HOST_USER")      
+EMAIL_HOST_PASSWORD = env("EMAIL_HOST_PASSWORD")  
+DEFAULT_FROM_EMAIL  = EMAIL_HOST_USER
 
-# ----- Settings for static files in production -----
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-DEFAULT_FROM_EMAIL = 'no-reply@clx.local'
+# 2) Desarrollo (no explotar consola ni enviar correos reales)
+# -------------------------------------------------------------------
+# EMAIL_BACKEND    = "django.core.mail.backends.dummy.EmailBackend"
+# DEFAULT_FROM_EMAIL = "no-reply@clx.local"
+#
+# # O bien, para inspeccionar correos en ficheros:
+# # EMAIL_BACKEND    = "django.core.mail.backends.filebased.EmailBackend"
+# # EMAIL_FILE_PATH = BASE_DIR / "tmp" / "sent_emails"
 
 # ----- Seetings for payments -----
 STRIPE_SECRET_KEY = env('STRIPE_SECRET_KEY')
