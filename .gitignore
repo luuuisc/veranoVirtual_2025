@@ -32,3 +32,4 @@ export.ipynb
 # Base de datos SQLite
 db.sqlite3
 *.sqlite3
+*.sqlite
