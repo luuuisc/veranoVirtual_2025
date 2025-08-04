@@ -490,7 +490,7 @@ const courseDetails = {
   <button type="submit">Enviar Solicitud</button>
 </form>
 
-<div id="ex-feedback" role="alert"></div>
+<div id="le-feedback" role="alert"></div>
 
 <p class="note">
   * En breve un ejecutivo se pondrá en contacto contigo para darle seguimiento a tu solicitud.
