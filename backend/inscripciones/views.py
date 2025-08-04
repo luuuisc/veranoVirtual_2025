@@ -173,7 +173,7 @@ def registro_examen_colocacion(request):
     body_alumno = (
         f"Hola {examen.nombre},\n\n"
         "Hemos recibido tu solicitud para presentar el Examen de Colocación.\n"
-        f"- Idioma: {examen.get_idioma_display()}\n\n"
+        f"- Idioma: {examen.idioma}\n\n"
         "En breve un ejecutivo se pondrá en contacto contigo para darle seguimiento a tu solicitud.\n\n"
         "¡Gracias por tu interés!"
     )
@@ -198,7 +198,7 @@ def registro_examen_colocacion(request):
         f"- Cuenta UNAM: {examen.cuenta_unam}\n"
         f"- WhatsApp: {examen.whatsapp}\n"
         f"- E-mail: {examen.email}\n"
-        f"- Idioma: {examen.get_idioma_display()}\n"
+        f"- Idioma: {examen.idioma}\n"
         f"- Fecha registro: {timezone.localtime(examen.creado).strftime('%d/%m/%y %H:%M')}\n"
     )
     mail_eq = EmailMessage(
@@ -246,7 +246,7 @@ def registro_lista_espera(request):
     body_al = (
         f"Hola {registro.nombre},\n\n"
         f"Hemos recibido tu solicitud para la Lista de Espera.\n"
-        f"- Idioma: {registro.get_idioma_display()}\n\n"
+        f"- Idioma: {registro.idioma}\n\n"
         "En breve un ejecutivo se pondrá en contacto contigo para darle seguimiento a tu solicitud.\n\n"
         "¡Gracias por tu interés!"
     )
@@ -266,7 +266,7 @@ def registro_lista_espera(request):
         f"- Cuenta UNAM: {registro.cuenta_unam}\n"
         f"- WhatsApp: {registro.whatsapp}\n"
         f"- E-mail: {registro.email}\n"
-        f"- Idioma: {registro.get_idioma_display()}\n"
+        f"- Idioma: {registro.idioma}\n"
         f"- Fecha: {timezone.localtime(registro.creado).strftime('%d/%m/%y %H:%M')}"
     )
     mail_eq = EmailMessage(subject_eq, body_eq, settings.DEFAULT_FROM_EMAIL, equipo)
