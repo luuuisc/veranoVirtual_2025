@@ -437,6 +437,8 @@ const courseDetails = {
   <button type="submit">Enviar Registro</button>
 </form>
 
+<div id="ex-feedback" role="alert"></div>
+
 <p class="note">
   * En breve un ejecutivo se pondrá en contacto contigo para darle seguimiento al proceso de presentación de examen de colocación.
 </p>
@@ -488,6 +490,8 @@ const courseDetails = {
   <button type="submit">Enviar Solicitud</button>
 </form>
 
+<div id="ex-feedback" role="alert"></div>
+
 <p class="note">
   * En breve un ejecutivo se pondrá en contacto contigo para darle seguimiento a tu solicitud.
 </p>
@@ -498,18 +502,18 @@ const courseDetails = {
 // 2) DOMContentLoaded: menú lateral + renderizado dinámico
 // ————————————————————————————————
 document.addEventListener("DOMContentLoaded", () => {
-  const rects = document.querySelectorAll(".course-menu .rect");
+  const rects   = document.querySelectorAll(".course-menu .rect");
   const infoBox = document.getElementById("course-info");
 
-  rects.forEach((rect) => {
+  rects.forEach(rect => {
     rect.addEventListener("click", () => {
       // 1) Desactivar todos
-      rects.forEach((r) => r.classList.remove("active"));
+      rects.forEach(r => r.classList.remove("active"));
       // 2) Activar el clicado
       rect.classList.add("active");
 
       // 3) Renderizar contenido
-      const key = rect.id;
+      const key  = rect.id;
       const data = courseDetails[key];
       infoBox.innerHTML = `<h3>${data.title}</h3>${data.content}`;
 
@@ -518,12 +522,22 @@ document.addEventListener("DOMContentLoaded", () => {
         bindFormLogic();
         populatePeriodos();
         attachInscriptionHandler();
-        document
-          .getElementById("tipo_curso")
-          .dispatchEvent(new Event("change"));
+        // fuerza el primer change para poblar el select
+        document.getElementById("tipo_curso")
+                .dispatchEvent(new Event("change"));
       }
 
-      // 5) Scroll suave
+      // 5) Si es Examen de Colocación, engancha el AJAX handler
+      if (key === "examen") {
+        attachExamHandler();
+      }
+
+      // 6) Si es Lista de Espera, engancha el AJAX handler
+      if (key === "lista") {
+        attachListaHandler();
+      }
+
+      // 7) Scroll suave
       infoBox.scrollIntoView({ behavior: "smooth", block: "start" });
     });
   });
