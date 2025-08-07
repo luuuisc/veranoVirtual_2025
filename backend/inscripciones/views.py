@@ -130,8 +130,8 @@ def inscribirse(request):
     return JsonResponse({
         'status': 'ok',
         'message': (
-            "TU ALTA EN EL CURSO QUE ELEGISTE AÚN NO ESTÁ TERMINADA HASTA QUE REALICES EL PAGO DE $250 DE INSCRIPCIÓN "
-            "Y LA COLEGIATURA CORRESPONDIENTE Y ENVÍES DICHO(S) COMPROBANTE(S), CON TU NOMBRE COMPLETO AL WHATSAPP 55 1340 4064. "
+            "TU ALTA EN EL CURSO QUE ELEGISTE AÚN NO ESTÁ TERMINADA HASTA QUE REALICES EL PAGO DE $250 DE INSCRIPCIÓN"
+            "Y LA COLEGIATURA CORRESPONDIENTE Y ENVÍES DICHO(S) COMPROBANTE(S), CON TU NOMBRE COMPLETO AL WHATSAPP 55 1340 4064."
         )
     })
     
@@ -224,21 +224,25 @@ def registro_lista_espera(request):
     except json.JSONDecodeError:
         return JsonResponse({'status':'error','message':'JSON inválido'}, status=400)
 
-    nombre   = data.get('nombre')
-    cuenta   = data.get('cuenta_unam')
-    whatsapp = data.get('whatsapp')
-    email    = data.get('email')
-    idioma   = data.get('idioma')
+    nombre         = data.get('nombre')
+    cuenta         = data.get('cuenta_unam')
+    whatsapp       = data.get('whatsapp')
+    email          = data.get('email')
+    idioma         = data.get('idioma')
+    nivel          = data.get('nivel')            
+    horario_deseado = data.get('horario_deseado') 
 
-    if not all([nombre, cuenta, whatsapp, email, idioma]):
+    if not all([nombre, cuenta, whatsapp, email, idioma, nivel, horario_deseado]):
         return JsonResponse({'status':'error','message':'Faltan campos obligatorios'}, status=400)
 
     registro = ListaEspera.objects.create(
-        nombre      = nombre,
-        cuenta_unam = cuenta,
-        whatsapp    = whatsapp,
-        email       = email,
-        idioma      = idioma
+        nombre          = nombre,
+        cuenta_unam     = cuenta,
+        whatsapp        = whatsapp,
+        email           = email,
+        idioma          = idioma,
+        nivel           = nivel,            
+        horario_deseado = horario_deseado,  
     )
 
     # Correo al alumno
@@ -246,7 +250,9 @@ def registro_lista_espera(request):
     body_al = (
         f"Hola {registro.nombre},\n\n"
         f"Hemos recibido tu solicitud para la Lista de Espera.\n"
-        f"- Idioma: {registro.idioma}\n\n"
+        f"- Idioma: {registro.idioma}\n"
+        f"- Nivel: {registro.nivel}\n"
+        f"- Horario deseado: {registro.horario_deseado}\n\n"
         "En breve un ejecutivo se pondrá en contacto contigo para darle seguimiento a tu solicitud.\n\n"
         "¡Gracias por tu interés!"
     )
@@ -267,6 +273,8 @@ def registro_lista_espera(request):
         f"- WhatsApp: {registro.whatsapp}\n"
         f"- E-mail: {registro.email}\n"
         f"- Idioma: {registro.idioma}\n"
+        f"- Nivel: {registro.nivel}\n"
+        f"- Horario deseado: {registro.horario_deseado}\n"
         f"- Fecha: {timezone.localtime(registro.creado).strftime('%d/%m/%y %H:%M')}"
     )
     mail_eq = EmailMessage(subject_eq, body_eq, settings.DEFAULT_FROM_EMAIL, equipo)

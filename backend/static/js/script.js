@@ -1,7 +1,7 @@
 // Detalles de cada curso
 const courseDetails = {
-  clx: {
-    title: "Nosotros",
+clx: {
+    title: "NOSOTROS",
     content: `
       <p>Somos un gran equipo sinérgico, multilingüe y multicultural, conformado por colaboradores responsables y comprometidos. 
       Nos apasiona compartir nuestra experiencia en cada curso, proyecto, alianza o servicio. 
@@ -12,7 +12,25 @@ const courseDetails = {
       sin olvidar nunca que somos y atendemos a Seres Humanos.<p>
     `,
   },
-  intensivos: {
+
+proximamente: {
+    title: "PRÓXIMAMENTE",
+    content: `
+      <p>A partir del 15 de agosto, checa en este mismo link nuestra propuesta virtual y/o presencial para:</p>
+      <ul>
+        <li>LEX IT. Curso en autonomía mediante chatbot.</li>
+        <li>Talleres (conversión, gramática, léxico y otros)</li>
+        <li>Cursos semintensivos (1h30 diarias)</li>
+        <li>Cursos intensivos (2h diarias)</li>
+        <li>Cursos de comprensión de lectura</li>
+        <li>Cursos por objetivos específicos</li>
+        <li>Curso de preparación para exámenes de certificación</li>
+        <li>Invierno virtual</li>
+      </ul>
+      `,
+  },
+
+intensivos: {
     title: "Intensivos - Verano 2025",
     content: `
        <h4>
@@ -125,26 +143,24 @@ const courseDetails = {
     `,
   },
   regulares: {
-    title: "Regulares - VIRTUALES 2025",
+    title: "CURSOS <strong>REGULARES</strong> VIRTUALES 2025",
     content: ` 
 <section>
-  <h2><strong>Para la comunidad UNAM</strong></h2>
+  <h3><strong>para la comunidad UNAM</strong></h3>
   <p><strong>Periodo:</strong> Agosto - Noviembre 2025</p>
 
   <h3><strong>INSCRIPCIONES:</strong></h3>
-  <p>Del 1 al 16 de agosto. Cupo limitado.</p>
+  <p>Del 6 al 22 de agosto. Cupo limitado.</p>
 
   <h3><strong>DURACIÓN:</strong></h3>
   <ul>
-    <li><strong>Lunes a viernes:</strong> Del 18 de agosto al 11 de noviembre. (Días de asueto: 15 y 16 de septiembre)</li>
-    <li><strong>Sábados y domingos:</strong> Del 23 de agosto al 9 de noviembre.</li>
-    <li><strong>Carga horaria:</strong> 3 a 5 horas semanales. Total: 30 a 60 horas clase + tareas extracurriculares.</li>
+    <li><strong>Lunes a viernes:</strong> Del 25 de agosto al 20 de noviembre. (Días de asueto: 15 y 16 de septiembre)</li>
+    <li><strong>Sábados y domingos:</strong> Del 23 de agosto al 15 de noviembre.</li>
+    <li><strong>Carga horaria</strong> de 5 horas semanales durante 12 semanas, es decir, un total de 60 horas.</li>
   </ul>
 
-  <h3><strong>ALCANCE:</strong></h3>
-  <p>Se avanza medio nivel oficial con clases en tiempo real + actividades autónomas.</p>
-
   <h3><strong>CUOTAS DE RECUPERACIÓN:</strong></h3>
+  <ul>(El <strong>50% de descuento</strong> para la comunidad UNAM ya está aplicado)</ul>
   <ul>
     <li>Inscripción: <strong>$250</strong></li>
     <li>Curso regular virtual (12 semanas): <strong>$3000</strong></li>
@@ -158,16 +174,19 @@ const courseDetails = {
   <ul>
     <li><strong>Inglés A1:</strong> 7-8, 8-9, 11-12, 14-15, 17-18, 18-19, 19-20, 20-21 hrs</li>
     <li><strong>Francés A1:</strong> 7-8, 8-9, 13-14, 18-19, 20-21 hrs</li>
+    <li><strong>Italiano A1:</strong> 8-9, 15-16, 18-19, 19-20 hrs</li>
   </ul>
 
   <h4><strong>Sábados y domingos</strong></h4>
   <ul>
     <li><strong>Inglés A1:</strong> 7-9:30, 8-10:30, 9:30-12, 10:30-13, 19-21:30 hrs</li>
     <li><strong>Francés A1:</strong> 7-9:30, 8-10:30, 19:30-22 hrs</li>
-  </ul>
+    <li><strong>Alemán A1:</strong> 19:30-22 hrs</li>
+    <li><strong>Italiano A1:</strong> 8-10:30 hrs</li>
+  </ul> 
 
   <h3><strong>OTROS IDIOMAS:</strong></h3>
-  <p>Para horarios/niveles distintos o cursos en <strong>alemán, italiano, portugués, japonés, chino, coreano, español para extranjeros</strong>, consulta la sección <strong>“Lista de Espera”</strong>.</p>
+  <p>Para horarios/niveles distintos o cursos en <strong>portugués, japonés, chino, coreano, español para extranjeros</strong>, consulta la sección <strong>“LISTA DE ESPERA”</strong>.</p>
 
   <h3><strong>EXAMEN DE COLOCACIÓN:</strong></h3>
   <p>Requerido para ingresar a niveles A2, B1 o B2. Costo: <strong>$150</strong>. También puedes presentar constancia del nivel anterior.<br>
@@ -266,7 +285,7 @@ const courseDetails = {
     `,
   },
   contacto: {
-    title: "Contacto",
+    title: "CONTACTO",
     content: `
       <p>
          <p>Comunícate con nosotros, te atenderemos lo más pronto posible</p>
@@ -305,12 +324,12 @@ const courseDetails = {
   },
   // Formulario de inscripción
   inscripcion: {
-    title: "Inscripción Nivel A1",
+    title: "INSCRIPCIÓN NIVEL A1",
     content: `
       <form id="form-inscripcion" class="inscription-form">
         <h4>Formulario de Inscripción</h4>
         <div id="insc-announcement" class="announcement">
-          ⚠️ ¡IMPORTANTE! Abrimos un grupo con al menos 5 alumnos inscritos.<br><br>
+          ⚠️ ¡IMPORTANTE! Abrimos un grupo con al menos 6 alumnos inscritos.<br><br>
           Te recomendamos considerar un horario que ya tenga alumnos inscritos o bien reflexionar sobre otras posibilidades de horario o cambio de idioma (si eres principiante)<br>
         </div>
         <!-- Campos básicos -->
@@ -392,7 +411,7 @@ const courseDetails = {
     `,
   },
   examen: {
-    title: "Examen de Colocación",
+    title: "EXAMEN DE COLOCACIÓN",
     content: `
       <form id="form-examen-colocacion" class="examen-form">
   <h4>Registro Examen de Colocación</h4>
@@ -423,14 +442,6 @@ const courseDetails = {
       <option value="" disabled selected>Selecciona idioma…</option>
       <option value="ingles">Inglés</option>
       <option value="frances">Francés</option>
-      <option value="aleman">Alemán</option>
-      <option value="italiano">Italiano</option>
-      <option value="portugues">Portugués</option>
-      <option value="japones">Japonés</option>
-      <option value="chino">Chino</option>
-      <option value="coreano">Coreano</option>
-      <option value="esp_extranjeros">Español para extranjeros</option>
-      <option value="otro">Otro</option>
     </select>
   </div>
 
@@ -445,58 +456,79 @@ const courseDetails = {
     `,
   },
   lista: {
-    title: "Lista de Espera",
-    content: `
-      <form id="form-lista-espera" class="lista-espera-form">
-  <h4>Registro Lista de Espera</h4>
+  title: "LISTA DE ESPERA",
+  content: `
+    <form id="form-lista-espera" class="lista-espera-form">
+      <h4>Registro Lista de Espera</h4>
 
-  <div class="form-group">
-    <label for="le_nombre">Nombre</label>
-    <input id="le_nombre" name="nombre" type="text" placeholder="Tu nombre completo" required>
-  </div>
+      <div class="form-group">
+        <label for="le_nombre">Nombre</label>
+        <input id="le_nombre" name="nombre" type="text" placeholder="Tu nombre completo" required>
+      </div>
 
-  <div class="form-group">
-    <label for="le_cuenta">No. de Cuenta/Empleado UNAM</label>
-    <input id="le_cuenta" name="cuenta_unam" type="text" placeholder="Ej: 12345678" required>
-  </div>
+      <div class="form-group">
+        <label for="le_cuenta">No. de Cuenta/Empleado UNAM</label>
+        <input id="le_cuenta" name="cuenta_unam" type="text" placeholder="Ej: 12345678" required>
+      </div>
 
-  <div class="form-group">
-    <label for="le_whatsapp">WhatsApp</label>
-    <input id="le_whatsapp" name="whatsapp" type="tel" placeholder="55 1234 5678" required>
-  </div>
+      <div class="form-group">
+        <label for="le_whatsapp">WhatsApp</label>
+        <input id="le_whatsapp" name="whatsapp" type="tel" placeholder="55 1234 5678" required>
+      </div>
 
-  <div class="form-group">
-    <label for="le_email">E-mail</label>
-    <input id="le_email" name="email" type="email" placeholder="usuario@correo.com" required>
-  </div>
+      <div class="form-group">
+        <label for="le_email">E-mail</label>
+        <input id="le_email" name="email" type="email" placeholder="usuario@correo.com" required>
+      </div>
 
-  <div class="form-group">
-    <label for="le_idioma">Idioma</label>
-    <select id="le_idioma" name="idioma" required>
-      <option value="" disabled selected>Selecciona idioma…</option>
-      <option value="ingles">Inglés</option>
-      <option value="frances">Francés</option>
-      <option value="aleman">Alemán</option>
-      <option value="italiano">Italiano</option>
-      <option value="portugues">Portugués</option>
-      <option value="japones">Japonés</option>
-      <option value="chino">Chino</option>
-      <option value="coreano">Coreano</option>
-      <option value="esp_extranjeros">Español para extranjeros</option>
-      <option value="otro">Otro</option>
-    </select>
-  </div>
+      <div class="form-group">
+        <label for="le_idioma">Idioma</label>
+        <select id="le_idioma" name="idioma" required>
+          <option value="" disabled selected>Selecciona idioma…</option>
+          <option value="ingles">Inglés</option>
+          <option value="frances">Francés</option>
+          <option value="aleman">Alemán</option>
+          <option value="italiano">Italiano</option>
+          <option value="portugues">Portugués</option>
+          <option value="japones">Japonés</option>
+          <option value="chino">Chino</option>
+          <option value="coreano">Coreano</option>
+          <option value="esp_extranjeros">Español para extranjeros</option>
+          <option value="otro">Otro</option>
+        </select>
+      </div>
 
-  <button type="submit">Enviar Solicitud</button>
-</form>
+      <div class="form-group">
+        <label for="le_nivel">Nivel</label>
+        <select id="le_nivel" name="nivel" required>
+          <option value="" disabled selected>Selecciona nivel…</option>
+          <option value="A2">A2</option>
+          <option value="B1">B1</option>
+          <option value="B2">B2</option>
+        </select>
+      </div>
 
-<div id="le-feedback" role="alert"></div>
+      <div class="form-group">
+        <label for="le_horario">Horario deseado</label>
+        <select id="le_horario" name="horario_deseado" required>
+          <option value="" disabled selected>Selecciona horario…</option>
+          <option value="por la mañana">Por la mañana</option>
+          <option value="a media tarde">A media tarde</option>
+          <option value="por la noche">Por la noche</option>
+          <option value="fin de semana">En fin de semana</option>
+        </select>
+      </div>
 
-<p class="note">
-  * En breve un ejecutivo se pondrá en contacto contigo para darle seguimiento a tu solicitud.
-</p>
-    `,
-  },
+      <button type="submit">Enviar Solicitud</button>
+    </form>
+
+    <div id="le-feedback" role="alert"></div>
+
+    <p class="note">
+      * En breve un ejecutivo se pondrá en contacto contigo para darle seguimiento a tu solicitud.
+    </p>
+  `,
+},
 };
 
 // 2) DOMContentLoaded: menú lateral + renderizado dinámico
@@ -709,22 +741,37 @@ const availability = {
         }
       ]
     },
-
-    portugues: {
-      'A1': [
-        // Horarios aún no definidos
-      ]
-    },
-
     italiano: {
       'A1': [
-        // Horarios aún no definidos
+         // I. Lunes a viernes
+        {
+          dias: ['Lun', 'Mar', 'Mié', 'Jue', 'Vie'],
+          horas: [
+            '08:00-09:00',
+            '15:00-16:00',
+            '18:00-19:00',
+            '19:00-20:00',
+          ],
+        },
+        // II. Sábados y domingos
+        {
+          dias: ['Sáb', 'Dom'],
+          horas: [
+            '08:00-10:30',
+          ],
+        }
       ]
     },
 
     aleman: {
       'A1': [
-        // Horarios aún no definidos
+        // II. Sábados y domingos
+        {
+          dias: ['Sáb', 'Dom'],
+          horas: [
+            '19:30-22:00',
+          ],
+        }
       ]
     }
   }
@@ -790,7 +837,7 @@ function populatePeriodos() {
     opts = [{ label: "18 agosto - 27 octubre", start: "2025-08-18", end: "2025-09-27" }];
   } else if (tipo === "regular") {
     opts = [
-      { label: "18 agosto - 11 noviembre", start: "2025-08-18", end: "2025-11-11" },
+      { label: "25 agosto - 20 noviembre", start: "2025-08-25", end: "2025-11-20" },
     ];
   } else if (tipo === "iniciacion") {
     opts = [{ label: "4 - 31 julio", start: "2025-07-04", end: "2025-07-31" }];

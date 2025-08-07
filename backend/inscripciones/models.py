@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 
 # Create your models here.
 class Inscripcion(models.Model):
@@ -29,6 +30,19 @@ IDIOMA_CHOICES = [
     ('otro', 'Otro'),
 ]
 
+NIVEL_CHOICES = [
+    ('A2', 'A2'),
+    ('B1', 'B1'),
+    ('B2', 'B2'),
+]
+
+HORARIO_CHOICES = [
+    ('por la mañana', 'Por la mañana'),
+    ('a media tarde', 'A media tarde'),
+    ('por la noche', 'Por la noche'),
+    ('fin de semana', 'Fin de semana'),
+]
+
 class ExamenColocacion(models.Model):
     nombre      = models.CharField("Nombre completo", max_length=150)
     cuenta_unam = models.CharField("No. de Cuenta/UNAM", max_length=20)
@@ -43,15 +57,17 @@ class ExamenColocacion(models.Model):
         ordering = ['-creado']
 
     def __str__(self):
-        return f"{self.nombre} - {self.get_idioma_display()}"
+        return f"{self.nombre} - {self.idioma}"
     
 class ListaEspera(models.Model):
-    nombre      = models.CharField("Nombre completo", max_length=150)
-    cuenta_unam = models.CharField("No. de Cuenta/UNAM",   max_length=20)
-    whatsapp    = models.CharField("WhatsApp",             max_length=20)
-    email       = models.EmailField("Correo electrónico")
-    idioma      = models.CharField("Idioma",               max_length=30, choices=IDIOMA_CHOICES)
-    creado      = models.DateTimeField("Fecha registro",    auto_now_add=True)
+    nombre        = models.CharField(max_length=200)
+    cuenta_unam   = models.CharField(max_length=20)
+    whatsapp      = models.CharField(max_length=20)
+    email         = models.EmailField()
+    idioma        = models.CharField(max_length=20, choices=IDIOMA_CHOICES)
+    nivel         = models.CharField(max_length=2, choices=NIVEL_CHOICES, blank=True, null=True)                 
+    horario_deseado = models.CharField(max_length=20, choices=HORARIO_CHOICES, blank=True, null=True)            
+    creado        = models.DateTimeField(default=timezone.now)
 
     class Meta:
         verbose_name = "Registro Lista de Espera"
@@ -59,5 +75,5 @@ class ListaEspera(models.Model):
         ordering = ['-creado']
 
     def __str__(self):
-        return f"{self.nombre} – {self.get_idioma_display()}"
+        return f"{self.nombre} – {self.idioma}"
     
