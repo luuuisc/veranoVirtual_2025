@@ -150,7 +150,8 @@ intensivos: {
   <p><strong>Periodo:</strong> Agosto - Noviembre 2025</p>
 
   <h3><strong>INSCRIPCIONES:</strong></h3>
-  <p>Del 6 al 22 de agosto. Cupo limitado.</p>
+  <p>Del 27 de agosto al 5 de septiembre para cursos de Lunes a Viernes. Cupo limitado.</p>
+  <p>Del 27 de agosto al 11 de septiembre para cursos de Sábados y Domingos. Cupo limitado.</p>
 
   <h3><strong>DURACIÓN:</strong></h3>
   <ul>
