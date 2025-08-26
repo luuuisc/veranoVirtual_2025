@@ -154,8 +154,8 @@ intensivos: {
 
   <h3><strong>DURACIÓN:</strong></h3>
   <ul>
-    <li><strong>Lunes a viernes:</strong> Del 25 de agosto al 20 de noviembre. (Días de asueto: 15 y 16 de septiembre)</li>
-    <li><strong>Sábados y domingos:</strong> Del 23 de agosto al 15 de noviembre.</li>
+    <li><strong>Lunes a viernes:</strong> Del 8 de septiembre al 26 de noviembre. (Días de asueto: 15 y 16 de septiembre, 17 de noviembre)</li>
+    <li><strong>Sábados y domingos:</strong> Del 13 de septiembre al 30 de noviembre. (Días de asueto: 2 de noviembre)</li>
     <li><strong>Carga horaria</strong> de 5 horas semanales durante 12 semanas, es decir, un total de 60 horas.</li>
   </ul>
 
@@ -837,7 +837,7 @@ function populatePeriodos() {
     opts = [{ label: "18 agosto - 27 octubre", start: "2025-08-18", end: "2025-09-27" }];
   } else if (tipo === "regular") {
     opts = [
-      { label: "25 agosto - 20 noviembre", start: "2025-08-25", end: "2025-11-20" },
+      { label: "8 septiembre - 26 noviembre", start: "2025-09-08", end: "2025-11-26" },
     ];
   } else if (tipo === "iniciacion") {
     opts = [{ label: "4 - 31 julio", start: "2025-07-04", end: "2025-07-31" }];
