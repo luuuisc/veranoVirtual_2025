@@ -33,3 +33,6 @@ export.ipynb
 db.sqlite3
 *.sqlite3
 *.sqlite
+
+# Imágenes y archivos subidos
+*.jpeg

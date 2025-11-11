@@ -16,21 +16,31 @@ from .models import Inscripcion, ExamenColocacion, ListaEspera
 
 PDF_BANCOS = Path(settings.BASE_DIR) / 'static' / 'docs' / 'datos_bancarios.pdf'
 
+
 @csrf_exempt
 def inscribirse(request):
     if request.method != 'POST':
-        return JsonResponse({'status':'error','message':'Método no permitido'}, status=405)
+        return JsonResponse({'status': 'error', 'message': 'Método no permitido'}, status=405)
 
-    # Decodificar JSON
-    data = json.loads(request.body.decode())
+    # 1) Decodificar JSON con manejo de error
+    try:
+        data = json.loads(request.body.decode())
+    except json.JSONDecodeError:
+        return JsonResponse({'status': 'error', 'message': 'JSON inválido'}, status=400)
 
-    # Campos básicos
-    tipo    = data.get('tipo_curso')
-    idioma  = data.get('idioma')
-    nivel   = data.get('nivel_ingreso')
+    # 2) Campos básicos
+    tipo = data.get('tipo_curso')            # 'intensivo' | 'taller' | 'regular' (si lo activas)
+    idioma = data.get('idioma')
+    nivel = data.get('nivel_ingreso')
     horario = data.get('horario')
 
-    # Conteo de inscripciones en ese mismo bloque
+    # Validación mínima de obligatorios
+    obligatorios = ['nombre', 'email', 'whatsapp', 'tipo_curso', 'idioma', 'nivel_ingreso', 'horario', 'fecha_inicio', 'fecha_fin']
+    faltantes = [k for k in obligatorios if not data.get(k)]
+    if faltantes:
+        return JsonResponse({'status': 'error', 'message': f'Faltan campos obligatorios: {", ".join(faltantes)}'}, status=400)
+
+    # 3) Conteo actual y cupo por tipo
     existentes = Inscripcion.objects.filter(
         tipo_curso=tipo,
         idioma=idioma,
@@ -38,77 +48,103 @@ def inscribirse(request):
         horario=horario
     ).count()
 
-    # Si ya hay 12 o más, bloqueamos
-    if existentes >= 12:
+    capacidad_por_tipo = {'intensivo': 12, 'taller': 10, 'regular': 12}
+    capacidad = capacidad_por_tipo.get(tipo, 12)  # default 12
+
+    if existentes >= capacidad:
         return JsonResponse({
             'status': 'error',
             'message': 'Lo siento, este horario ya está lleno. Por favor elige otro horario o propón uno nuevo.'
         }, status=400)
 
-    # Siempre asignamos grupo = 1
+    # 4) Grupo fijo = 1 (si más adelante segmentas, cámbialo aquí)
     numero_grupo = 1
-    
-    fecha_inicio_str = data.get('fecha_inicio')   
-    fecha_fin_str    = data.get('fecha_fin')      
 
-    fecha_inicio = datetime.strptime(fecha_inicio_str, '%Y-%m-%d').date()
-    fecha_fin    = datetime.strptime(fecha_fin_str,    '%Y-%m-%d').date()
+    # 5) Parse de fechas con try/except
+    fecha_inicio_str = data.get('fecha_inicio')
+    fecha_fin_str = data.get('fecha_fin')
+    try:
+        fecha_inicio = datetime.strptime(fecha_inicio_str, '%Y-%m-%d').date()
+        fecha_fin = datetime.strptime(fecha_fin_str, '%Y-%m-%d').date()
+    except Exception:
+        return JsonResponse({'status': 'error', 'message': 'Formato de fechas inválido (usa YYYY-MM-DD).'}, status=400)
 
-    # Formato para el correo (dd/mm/aa)
+    # 6) Formatos para correo
     fmt_inicio = fecha_inicio.strftime('%d/%m/%y')
-    fmt_fin    = fecha_fin.   strftime('%d/%m/%y')
-    
-    # Crear la inscripción en la BD
+    fmt_fin = fecha_fin.strftime('%d/%m/%y')
+
+    # 7) Crear la inscripción en BD
     ins = Inscripcion.objects.create(
-        nombre        = data.get('nombre'),
-        cuenta_unam   = data.get('cuenta_unam', ''),
-        email         = data.get('email'),
-        whatsapp      = data.get('whatsapp'),
-        tipo_curso    = tipo,
-        nivel_ingreso = nivel,
-        idioma        = idioma,
-        horario       = horario,
-        fecha_inicio  = fecha_inicio,
-        fecha_fin     = fecha_fin,
-        grupo         = numero_grupo,
-        mensaje       = data.get('mensaje', ''),
+        nombre=data.get('nombre'),
+        cuenta_unam=data.get('cuenta_unam', ''),
+        email=data.get('email'),
+        whatsapp=data.get('whatsapp'),
+        tipo_curso=tipo,
+        nivel_ingreso=nivel,
+        idioma=idioma,
+        horario=horario,
+        fecha_inicio=fecha_inicio,
+        fecha_fin=fecha_fin,
+        grupo=numero_grupo,
+        mensaje=data.get('mensaje', ''),
     )
 
-    # Fecha de registro
-    fmt_reg    = timezone.localtime(ins.creado).strftime('%d/%m/%y %H:%M')
-    
-    # Correo al alumno con PDF adjunto
-    subject_alumno = 'CLX - ¡Tu pre-inscripción ha sido recibida!'
+    # 8) Correo al alumno (personalizado por tipo)
+    fmt_reg = timezone.localtime(ins.creado).strftime('%d/%m/%y %H:%M')
+    is_taller = (ins.tipo_curso == 'taller')
+
+    subject_alumno = (
+        'CLX - Taller de Conversación: confirmación de preinscripción'
+        if is_taller else
+        'CLX - ¡Tu preinscripción ha sido recibida!'
+    )
+
+    if is_taller:
+        extra_lineas = (
+            "Este taller NO requiere examen de colocación; solo presenta comprobante del último nivel cursado.\n"
+            "Cuotas: Inscripción $350 y Taller (6 semanas) $2,000.\n"
+            "Cupo por grupo: mínimo 3 y máximo 10 participantes.\n"
+        )
+        nombre_curso = 'taller de conversación'
+    else:
+        extra_lineas = (
+            "Para niveles superiores a INTRO (00) se requiere Examen de Colocación ($150) "
+            "o constancia del nivel anterior.\n"
+            "Cuotas: Inscripción $350 y Curso intensivo (6 semanas) $3,000.\n"
+            "Cupo por grupo: mínimo 6 y máximo 12 participantes.\n"
+        )
+        nombre_curso = 'curso intensivo'
+
     body_alumno = (
         f"Hola {ins.nombre},\n\n"
-        f"Hemos registrado tu solicitud al curso {ins.tipo_curso} "
-        f"({ins.nivel_ingreso} de {ins.idioma}).\n"
+        f"Hemos registrado tu solicitud al {nombre_curso} ({ins.nivel_ingreso} de {ins.idioma}).\n"
         f"Horario: {ins.horario}\n"
-        f"Periodo: {fmt_inicio} a {fmt_fin}\n"
-        f"Tu grupo es el número {ins.grupo}.\n\n"
+        f"Periodo: {fmt_inicio} a {fmt_fin}\n\n"
+        f"{extra_lineas}"
         "Adjunto encontrarás un PDF con nuestros datos bancarios para tu pago.\n\n"
-        "Enviar por WhatsApp una foto del comprobante de depósito al 55 1340 4064.\n"
+        "Envía por WhatsApp una foto del comprobante de depósito al 55 1340 4064.\n"
         "¡Gracias por confiar en nosotros!"
     )
+
     email_alumno = EmailMessage(
         subject_alumno,
         body_alumno,
         settings.DEFAULT_FROM_EMAIL,
-        [ins.email],           # ← aquí únicamente el email del alumno
+        [ins.email],  # solo al alumno
     )
     if PDF_BANCOS.exists():
         email_alumno.attach_file(str(PDF_BANCOS))
     email_alumno.send(fail_silently=False)
 
-    # Enviar correo de notificación al EQUIPO 
+    # 9) Notificación al equipo
     prof_emails = [
         'agente3jlcosta@gmail.com',
         'luisangelperezcastro1305@gmail.com',
-        'jorgedaniel2915@gmail.com'
+        'jorgedaniel2915@gmail.com',
     ]
-    subject_equipo = f'Nueva inscripción: {ins.nombre}'
+    subject_equipo = f'Nueva {"preinscripción Taller" if is_taller else "inscripción"}: {ins.nombre}'
     body_equipo = (
-        f"Se ha inscrito:\n"
+        f"Se ha registrado una {'preinscripción (Taller de Conversación)' if is_taller else 'inscripción (Intensivo)'}:\n"
         f"- Nombre: {ins.nombre}\n"
         f"- E-mail: {ins.email}\n"
         f"- WhatsApp: {ins.whatsapp}\n"
@@ -123,49 +159,51 @@ def inscribirse(request):
         subject_equipo,
         body_equipo,
         settings.DEFAULT_FROM_EMAIL,
-        prof_emails,          
+        prof_emails,
     )
     email_equipo.send(fail_silently=True)
 
+    # 10) Respuesta al frontend
     return JsonResponse({
         'status': 'ok',
         'message': (
-            "TU ALTA EN EL CURSO QUE ELEGISTE AÚN NO ESTÁ TERMINADA HASTA QUE REALICES EL PAGO DE $250 DE INSCRIPCIÓN "
-            " Y LA COLEGIATURA CORRESPONDIENTE Y ENVÍES DICHO(S) COMPROBANTE(S), CON TU NOMBRE COMPLETO AL WHATSAPP 55 1340 4064."
+            "TU ALTA EN EL CURSO QUE ELEGISTE AÚN NO ESTÁ TERMINADA HASTA QUE REALICES EL PAGO DE INSCRIPCIÓN "
+            "Y LA COLEGIATURA CORRESPONDIENTE Y ENVÍES DICHO(S) COMPROBANTE(S), CON TU NOMBRE COMPLETO AL WHATSAPP 55 1340 4064."
         )
     })
-    
+
+
 @csrf_exempt
 def registro_examen_colocacion(request):
     if request.method != 'POST':
-        return JsonResponse({'status':'error','message':'Método no permitido'}, status=405)
+        return JsonResponse({'status': 'error', 'message': 'Método no permitido'}, status=405)
 
     # 1) Parsear JSON
     try:
         data = json.loads(request.body.decode())
     except json.JSONDecodeError:
-        return JsonResponse({'status':'error','message':'JSON inválido'}, status=400)
+        return JsonResponse({'status': 'error', 'message': 'JSON inválido'}, status=400)
 
     # 2) Validar campos
-    nombre      = data.get('nombre')
-    cuenta      = data.get('cuenta_unam')
-    whatsapp    = data.get('whatsapp')
-    email       = data.get('email')
-    idioma      = data.get('idioma')
+    nombre = data.get('nombre')
+    cuenta = data.get('cuenta_unam')
+    whatsapp = data.get('whatsapp')
+    email = data.get('email')
+    idioma = data.get('idioma')
 
     if not all([nombre, cuenta, whatsapp, email, idioma]):
         return JsonResponse({
-            'status':'error',
-            'message':'Faltan campos obligatorios'
+            'status': 'error',
+            'message': 'Faltan campos obligatorios'
         }, status=400)
 
     # 3) Guardar en BD
     examen = ExamenColocacion.objects.create(
-        nombre      = nombre,
-        cuenta_unam = cuenta,
-        whatsapp    = whatsapp,
-        email       = email,
-        idioma      = idioma
+        nombre=nombre,
+        cuenta_unam=cuenta,
+        whatsapp=whatsapp,
+        email=email,
+        idioma=idioma
     )
 
     # 4) Enviar correo al alumno
@@ -210,39 +248,40 @@ def registro_examen_colocacion(request):
     mail_eq.send(fail_silently=True)
 
     return JsonResponse({
-        'status':'ok',
-        'message':'Tu registro ha sido recibido. En breve nos contactaremos contigo.'
+        'status': 'ok',
+        'message': 'Tu registro ha sido recibido. En breve nos contactaremos contigo.'
     })
+
 
 @csrf_exempt
 def registro_lista_espera(request):
     if request.method != 'POST':
-        return JsonResponse({'status':'error','message':'Método no permitido'}, status=405)
+        return JsonResponse({'status': 'error', 'message': 'Método no permitido'}, status=405)
 
     try:
         data = json.loads(request.body.decode())
     except json.JSONDecodeError:
-        return JsonResponse({'status':'error','message':'JSON inválido'}, status=400)
+        return JsonResponse({'status': 'error', 'message': 'JSON inválido'}, status=400)
 
-    nombre         = data.get('nombre')
-    cuenta         = data.get('cuenta_unam')
-    whatsapp       = data.get('whatsapp')
-    email          = data.get('email')
-    idioma         = data.get('idioma')
-    nivel          = data.get('nivel')            
-    horario_deseado = data.get('horario_deseado') 
+    nombre = data.get('nombre')
+    cuenta = data.get('cuenta_unam')
+    whatsapp = data.get('whatsapp')
+    email = data.get('email')
+    idioma = data.get('idioma')
+    nivel = data.get('nivel')                    # A2 / B1 / B2 (según tu formulario)
+    horario_deseado = data.get('horario_deseado')
 
     if not all([nombre, cuenta, whatsapp, email, idioma, nivel, horario_deseado]):
-        return JsonResponse({'status':'error','message':'Faltan campos obligatorios'}, status=400)
+        return JsonResponse({'status': 'error', 'message': 'Faltan campos obligatorios'}, status=400)
 
     registro = ListaEspera.objects.create(
-        nombre          = nombre,
-        cuenta_unam     = cuenta,
-        whatsapp        = whatsapp,
-        email           = email,
-        idioma          = idioma,
-        nivel           = nivel,            
-        horario_deseado = horario_deseado,  
+        nombre=nombre,
+        cuenta_unam=cuenta,
+        whatsapp=whatsapp,
+        email=email,
+        idioma=idioma,
+        nivel=nivel,
+        horario_deseado=horario_deseado,
     )
 
     # Correo al alumno
@@ -280,39 +319,45 @@ def registro_lista_espera(request):
     mail_eq = EmailMessage(subject_eq, body_eq, settings.DEFAULT_FROM_EMAIL, equipo)
     mail_eq.send(fail_silently=True)
 
-    return JsonResponse({'status':'ok','message':'Registro recibido correctamente.'})
+    return JsonResponse({'status': 'ok', 'message': 'Registro recibido correctamente.'})
+
 
 def list_inscripciones(request):
     inscripciones = Inscripcion.objects.all().order_by('-creado')
     return render(request, 'inscripciones/list.html', {
         'inscripciones': inscripciones
     })
-    
+
+
 def index(request):
     return render(request, 'index.html', {
-      'STRIPE_PUBLIC_KEY': settings.STRIPE_PUBLIC_KEY
+        'STRIPE_PUBLIC_KEY': settings.STRIPE_PUBLIC_KEY
     })
+
 
 @csrf_exempt
 def count_inscripciones(request):
     if request.method != 'GET':
-        return JsonResponse({'detail':'Method not allowed'}, status=405)
-    tipo     = request.GET.get('tipo_curso')
-    idioma   = request.GET.get('idioma')
-    nivel    = request.GET.get('nivel_ingreso')
-    horario  = request.GET.get('horario')
+        return JsonResponse({'detail': 'Method not allowed'}, status=405)
+
+    tipo = request.GET.get('tipo_curso')
+    idioma = request.GET.get('idioma')
+    nivel = request.GET.get('nivel_ingreso')
+    horario = request.GET.get('horario')
+
     count = Inscripcion.objects.filter(
         tipo_curso=tipo,
         idioma=idioma,
         nivel_ingreso=nivel,
         horario=horario
     ).count()
+
     return JsonResponse({'count': count})
 
-
-
 """
-stripe.api_key = settings.STRIPE_SECRET_KEY
+# Stripe (si decides reactivarlo)
+# import stripe
+# stripe.api_key = settings.STRIPE_SECRET_KEY
 
 @require_POST
 @csrf_exempt

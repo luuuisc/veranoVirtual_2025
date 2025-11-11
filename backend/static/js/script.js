@@ -31,267 +31,182 @@ proximamente: {
   },
 
 intensivos: {
-    title: "Intensivos - Verano 2025",
+    title: 'Invierno 2025',
     content: `
-       <h4>
-    <span class="small">Cursos</span>
-    <span class="medium">VIRTUALES</span>
-    <span class="large">INTENSIVOS</span>
-  </h4>
-  <p><strong>Para la comunidad UNAM</strong></p>
-  <p><strong>Periodo:</strong> Agosto - Octubre 2025</p>
+      <h4>Cursos Virtuales Intensivos de Invierno</h4>
 
-  <p><strong>INSCRIPCIONES:</strong><br>
-     Del 1 al 13 de agosto. Cupo limitado.</p>
+      <p><strong>Dirigido a:</strong><br>
+      Comunidad universitaria UNAM (50% de descuento ya aplicado en las cuotas).</p>
+      <p>Contamos con convenio vigente con la DGOAE para la Beca Idiomas de la UNAM.</p> 
 
-  <p><strong>DURACIÓN:</strong><br>
-     Del 18 de agosto al 27 de octubre<br>
-     (5 horas por semana durante 10 semanas)</p>
+      <p><strong>Periodo:</strong><br>
+      Diciembre 2025 - Enero 2026</p>
 
-  <p><strong>ALCANCE:</strong><br>
-     Se avanza un nivel oficial al cabo de 60 horas de clase en tiempo real y aproximadamente 120 horas de tareas extra clase.</p>
+      <p><strong>Inscripciones:</strong><br>
+      Del 10 de noviembre al 3 de diciembre. <strong>Cupo limitado.</strong></p>
 
-  <p><strong>HORARIOS:</strong></p>
-  <ul>
-    <li><strong>I. Lunes a viernes</strong>
+      <p><strong>Duración:</strong></p>
       <ul>
-        <li><strong>INGLÉS A1 (desde 00)</strong><br>
-            7-8 hrs<br>
-            8-9 hrs<br>
-            14-15 hrs<br>
-            17-18 hrs<br>
-            20-21 hrs
-        </li>
-        <li><strong>INGLÉS A2</strong><br>
-            7-8 hrs<br>
-            13-14 hrs<br>
-            20-21 hrs
-        </li>
-        <li><strong>INGLÉS B1</strong><br>
-            13-14 hrs<br>
-            21-22 hrs
-        </li>
-        <li><strong>INGLÉS B2</strong><br>
-            21-22 hrs
-        </li>
-        <li><strong>FRANCÉS A1 (desde 00)</strong><br>
-            7-8 hrs<br>
-            8-9 hrs<br>
-            17-18 hrs<br>
-            20-21 hrs
-        </li>
-        <li><strong>FRANCÉS A2</strong><br>
-            7-8 hrs<br>
-            13-14 hrs<br>
-            21-22 hrs
-        </li>
+        <li>Lunes a viernes: del 8 de diciembre al 30 de enero.</li>
+        <li>Días de asueto: del 22 de diciembre al 4 de enero.</li>
+        <li>Carga horaria: 10 horas semanales durante 6 semanas (60 horas en total).</li>
       </ul>
-    </li>
-    <li><strong>II. Sábados y domingos</strong>
+
+      <p><strong>Cuotas de recuperación:</strong></p>
       <ul>
-        <li><strong>INGLÉS A1 (desde 00)</strong><br>
-            8-11 hrs<br>
-            11-14 hrs<br>
-            19:30-22 hrs
-        </li>
-        <li><strong>INGLÉS A2</strong><br>
-            8-11 hrs<br>
-            11-14 hrs<br>
-            19:30-22 hrs
-        </li>
-        <li><strong>INGLÉS B1</strong><br>
-            8-11 hrs<br>
-            11-14 hrs<br>
-            19:30-22 hrs
-        </li>
-        <li><strong>FRANCÉS A1 (desde 00)</strong><br>
-            8-11 hrs<br>
-            11-14 hrs<br>
-            19:30-22 hrs
-        </li>
-        <li><strong>FRANCÉS A2</strong><br>
-            8-11 hrs<br>
-            11-14 hrs<br>
-            19:30-22 hrs
-        </li>
+        <li>Inscripción: $350</li>
+        <li>Curso intensivo virtual (6 semanas): $3,000</li>
+        <li><em>Nota:</em> El 50% de descuento para la comunidad UNAM ya está aplicado.</li>
       </ul>
-    </li>
-  </ul>
 
-  <p><strong>IMPORTANTE:</strong></p>
-  <ul>
-    <li>Si deseas inscribirte a un nivel u horario diferente de inglés o francés, así como a otro idioma (alemán, italiano, portugués, japonés, chino, coreano, español para extranjeros u otro), ingresa a la sección <strong>“LISTA DE ESPERA”</strong>.</li>
-    <li>El periodo de inscripción a estos cursos es del 10 al 25 de junio; el cupo por grupo es de 6 a 15 alumnos máximo.</li>
-    <li>La inscripción es de <strong>$250</strong> y la colegiatura para el curso <strong>INTENSIVO</strong> de 10 semanas es de <strong>$3,000</strong>.</li>
-    <li>El cupo por grupo es de mínimo 6, máximo 12 participantes.</li>
-    <li>Incluye material multimedia.</li>
-    <li>Al final del curso se otorga una constancia de equivalencia de nivel oficial internacional, si se obtiene un promedio mínimo de 8.</li>
-  </ul>
+      <p><strong>Cupo por grupo:</strong> mínimo 6, máximo 12 participantes</p>
 
-  <section id="examen-colocacion-intensivo" class="info-block">
-    <h3>EXAMEN DE COLOCACIÓN</h3>
-    <p>Para ingresar a los niveles A2, B1 o B2 es necesario presentar un examen de colocación cuyo costo es de <strong>$150</strong>, o bien, una constancia que acredite el nivel inmediato anterior.<br>
-    Para tramitar dicho examen ingresa a la sección <strong>“EXAMEN DE COLOCACIÓN”</strong>.</p>
-  </section>
+      <p><strong>Incluye:</strong></p>
+      <ul>
+        <li>Material multimedia</li>
+        <li>Constancia oficial al término del curso</li>
+      </ul>
+
+      <p><strong>Niveles ofertados:</strong></p>
+      <ul>
+        <li><strong>Inglés y Francés</strong> desde INTRO (00) hasta B2</li>
+      </ul>
+
+      <p><strong>Horarios disponibles:</strong></p>
+
+      <h4>Inglés</h4>
+      <ul>
+        <li><strong>INTRO:</strong> 09:00-11:00 y 17:00-19:00</li>
+        <li><strong>A1:</strong> 11:00-13:00</li>
+        <li><strong>A2:</strong> 17:00-19:00</li>
+        <li><strong>B1:</strong> 19:00-21:00</li>
+        <li><strong>B2:</strong> 20:00-22:00</li>
+      </ul>
+
+      <h4>Francés</h4>
+      <ul>
+        <li><strong>INTRO:</strong> 09:00-11:00 y 17:00-19:00</li>
+        <li><strong>A1:</strong> 11:00-13:00</li>
+        <li><strong>A2:</strong> 17:00-19:00</li>
+        <li><strong>B1:</strong> 19:00-21:00</li>
+        <li><strong>B2:</strong> 20:00-22:00</li>
+      </ul>
+
+
+      <p><strong>Otros idiomas:</strong><br>
+      Para horarios o niveles distintos, o para cursos de otras lenguas, regístrate en la <em>Lista de Espera</em>.</p>
+
+      <p><strong>Examen de colocación:</strong></p>
+      <ul>
+        <li>Requerido para ingresar a niveles superiores al INTRO (00).</li>
+        <li>Costo: $150</li>
+        <li>Tramita tu examen en la sección “Examen de colocación”.</li>
+      </ul>
+
+      <p><strong>Importante:</strong></p>
+      <ul>
+        <li>El curso está diseñado para un avance intensivo y equilibrado.</li>
+        <li>Ideal para quienes desean reforzar o avanzar en poco tiempo.</li>
+        <li>Se recomienda para participantes con alto nivel de compromiso.</li>
+      </ul>
+
+      <p><strong>¿Tienes dudas?</strong><br>
+      Escríbenos por WhatsApp: <a href="tel:+525573980411">55 7398 0411</a>
+      </p>
     `
   },
-  "semi-intensivos": {
-    title: "Semi intensivos",
-    content: `
-      <p>Clases 3 veces por semana durante 8 semanas. 
-      Equilibrio perfecto entre ritmo acelerado y tiempo para asimilar contenidos.</p>
-    `,
-  },
-  regulares: {
+
+regulares: {
     title: "CURSOS <strong>REGULARES</strong> VIRTUALES 2025",
-    content: ` 
-<section>
-  <h3><strong>para la comunidad UNAM</strong></h3>
-  <p><strong>Periodo:</strong> Agosto - Noviembre 2025</p>
-
-  <h3><strong>INSCRIPCIONES:</strong></h3>
-  <p>Del 27 de agosto al 5 de septiembre para cursos de Lunes a Viernes. Cupo limitado.</p>
-  <p>Del 27 de agosto al 11 de septiembre para cursos de Sábados y Domingos. Cupo limitado.</p>
-
-  <h3><strong>DURACIÓN:</strong></h3>
-  <ul>
-    <li><strong>Lunes a viernes:</strong> Del 8 de septiembre al 26 de noviembre. (Días de asueto: 15 y 16 de septiembre, 17 de noviembre)</li>
-    <li><strong>Sábados y domingos:</strong> Del 13 de septiembre al 30 de noviembre. (Días de asueto: 2 de noviembre)</li>
-    <li><strong>Carga horaria</strong> de 5 horas semanales durante 12 semanas, es decir, un total de 60 horas.</li>
-  </ul>
-
-  <h3><strong>CUOTAS DE RECUPERACIÓN:</strong></h3>
-  <ul>(El <strong>50% de descuento</strong> para la comunidad UNAM ya está aplicado)</ul>
-  <ul>
-    <li>Inscripción: <strong>$250</strong></li>
-    <li>Curso regular virtual (12 semanas): <strong>$3000</strong></li>
-    <li>Cupo por grupo: mínimo 6, máximo 12 personas</li>
-    <li>Incluye material multimedia y constancia oficial (mínimo 8 de promedio)</li>
-  </ul>
-
-  <h3><strong>HORARIOS DISPONIBLES</strong></h3>
-
-  <h4><strong>De lunes a viernes</strong></h4>
-  <ul>
-    <li><strong>Inglés A1:</strong> 7-8, 8-9, 11-12, 14-15, 17-18, 18-19, 19-20, 20-21 hrs</li>
-    <li><strong>Francés A1:</strong> 7-8, 8-9, 13-14, 18-19, 20-21 hrs</li>
-    <li><strong>Italiano A1:</strong> 8-9, 15-16, 18-19, 19-20 hrs</li>
-  </ul>
-
-  <h4><strong>Sábados y domingos</strong></h4>
-  <ul>
-    <li><strong>Inglés A1:</strong> 7-9:30, 8-10:30, 9:30-12, 10:30-13, 19-21:30 hrs</li>
-    <li><strong>Francés A1:</strong> 7-9:30, 8-10:30, 19:30-22 hrs</li>
-    <li><strong>Alemán A1:</strong> 19:30-22 hrs</li>
-    <li><strong>Italiano A1:</strong> 8-10:30 hrs</li>
-  </ul> 
-
-  <h3><strong>OTROS IDIOMAS:</strong></h3>
-  <p>Para horarios/niveles distintos o cursos en <strong>portugués, japonés, chino, coreano, español para extranjeros</strong>, consulta la sección <strong>“LISTA DE ESPERA”</strong>.</p>
-
-  <h3><strong>EXAMEN DE COLOCACIÓN:</strong></h3>
-  <p>Requerido para ingresar a niveles A2, B1 o B2. Costo: <strong>$150</strong>. También puedes presentar constancia del nivel anterior.<br>
-  Tramita tu examen en la sección <strong>“EXAMEN DE COLOCACIÓN”</strong>.</p>
-
-  <h3><strong>¿TIENES DUDAS?</strong></h3>
-  <p>Escríbenos por WhatsApp: <a href="https://wa.me/525573980411"><strong>55 7398 0411</strong></a></p>
-</section>`,
-  },
-  "ini-prepa": {
-    title: "Iniciación - Verano 2025",
     content: `
-    <h4>CURSOS virtuales <strong>DE INICIACIÓN</strong> a una lengua  extranjera, para la <strong>Comunidad  UNAM</strong>, idealmente de 15 años en adelante.</h4>
+      <h4>CURSOS VIRTUALES REGULARES - UNAM</h4>
+    `
+  },
 
-    <p><strong>DURACIÓN :</strong><br>
-    ( Del 4 al 31 de <strong>JULIO</strong> : 12 horas en total )</p>
+talleres: {
+  title: 'Invierno 2025',
+  content: `
+    <h4>Taller Virtual de <em>Conversación</em></h4>
 
-    <p><strong>HORARIOS :</strong></p>
+    <p><strong>Dirigido a:</strong><br>
+    Comunidad universitaria UNAM (50% de descuento ya aplicado).</p>
+    <p>Contamos con convenio vigente con la DGOAE para la Beca Idiomas de la UNAM.</p>
+
+    <p><strong>Periodo:</strong><br>
+    Diciembre 2025 - Enero 2026</p>
+
+    <p><strong>Inscripciones:</strong><br>
+    Del 10 de noviembre al 3 de diciembre. <strong>Cupo limitado.</strong></p>
+
+    <p><strong>Duración:</strong></p>
     <ul>
-      <li><strong>ALEMÁN</strong><br>
-          Lunes, miércoles y viernes de 18 a 19 hrs
-      </li>
-      <li><strong>ARABE</strong><br>
-          Lunes, miércoles y viernes de 19-20 hrs
-      </li>
-      <li><strong>COREANO</strong><br>
-          Martes y jueves de 9-10:30 hrs
-      </li>
-      <li><strong>FRANCÉS</strong><br>
-          Lunes, miércoles y viernes de 18 a 19 hrs
-      </li>
-      <li><strong>ITALIANO</strong><br>
-          Lunes, miércoles y viernes de 15 a 16 hrs
-      </li>
-      <li><strong>JAPONÉS</strong><br>
-          Lunes, miércoles y viernes de 17 a 18 hrs
-      </li>
-      <li><strong>PORTUGUÉS</strong><br>
-          Lunes, miércoles y viernes de 11-12 hrs
-      </li>
+      <li>Lunes a viernes: del 8 de diciembre al 30 de enero.</li>
+      <li>Días de asueto: del 22 de diciembre al 4 de enero.</li>
+      <li>Carga horaria: 5 horas semanales durante 6 semanas (30 horas en total).</li>
     </ul>
 
-    <p><strong>ALCANCE</strong><br>
-    En cuatro semanas lograrás adquirir una percepción general de la lengua extranjera que hayas elegido para decidir posteriormente y con mayor certeza, si deseas iniciar el estudio formal de la misma...</p>
+    <p><strong>Cuotas de recuperación:</strong></p>
+    <ul>
+      <li>Inscripción: $350</li>
+      <li>Taller virtual (6 semanas): $2,000</li>
+      <li><em>Nota:</em> Descuento UNAM ya aplicado.</li>
+    </ul>
 
-    <p><strong>PERIODO DE INSCRIPCIONES</strong><br>
-    El periodo de inscripción a estos cursos es del 10 al 20 de junio, el cupo por grupo es de 6 a 12 alumnos máximo.</p>
+    <p><strong>Cupo por grupo:</strong> mínimo 3, máximo 10 participantes</p>
 
-    <p>La inscripción es de <strong>$250</strong> y la colegiatura por el curso de 12 horas es de <strong>$600</strong> ( ya está aplicado el 50% de descuento para la comunidad UNAM ).</p>
-
-    <p>En el llenado de la ficha de inscripción, favor de anotar los datos de quien tomará el curso, no de quien l@ inscribe.</p>
-
-    <p><strong>IMPORTANTE :</strong><br>
-    Enviar los siguientes datos vía WhatsApp al <a href="https://wa.me/525513404064" target="_blank">55 1340 4064</a> :</p>
-    <ol>
-      <li>Nombre completo de quien tomará el curso :</li>
-      <li>Nombre completo y número de teléfono del padre o tutor, si quien va a tomar el curso es menor a 18 años :</li>
-      <li>Idioma :</li>
-      <li>Nivel :</li>
-      <li>Horario :</li>
-      <li>Foto o captura del depósito o transferencia de la inscripción y colegiatura. ( Total <strong>$850</strong> )</li>
-    </ol>
-
-    <p><strong>CUPO POR GRUPO :</strong><br>
-    Mínimo 6, máximo 12 participantes</p>
-
-    <p><strong>INCLUYE :</strong></p>
+    <p><strong>Incluye:</strong></p>
     <ul>
       <li>Material multimedia</li>
-      <li>Constancia de participación</li>
+      <li>Constancia oficial al término del taller</li>
     </ul>
 
-    <p><strong>A CONSIDERAR...</strong><br>
-    Este curso te permitirá:</p>
+    <p><strong>Idiomas disponibles:</strong> Inglés y Francés</p>
+
+    <p><strong>Niveles y horarios:</strong></p>
+
+    <h4>Inglés</h4>
     <ul>
-      <li>Descubrir si ese idioma que te llama la atención puede ser parte de tu camino.</li>
-      <li>Aprender frases útiles y expresiones básicas desde el primer día.</li>
-      <li>Explorar costumbres, música, gastronomía y escritura de otras culturas.</li>
-      <li>Dar el primer paso hacia una formación global y un perfil internacional.</li>
-      <li>Tener una experiencia enriquecedora que puedes continuar más adelante.</li>
+      <li><strong>A1:</strong> 10:00-11:00 y 18:00-19:00</li>
+      <li><strong>A2:</strong> 11:00-12:00 y 17:00-18:00</li>
+      <li><strong>B1:</strong> 10:00-11:00 y 17:00-18:00</li>
+      <li><strong>B2:</strong> 20:00-21:00</li>
     </ul>
-  `,
-  },
-  "ini-ninos": {
-    title: "Iniciación (Niños 6-10 años)",
-    content: `
-      <p>Clases lúdicas y didácticas para niños de 6 a 10 años. 
-      Juegos, canciones y proyectos divertidos para un aprendizaje natural.</p>
-    `,
-  },
-  lectura: {
+
+    <h4>Francés</h4>
+    <ul>
+      <li><strong>A1:</strong> 10:00-11:00 y 18:00-19:00</li>
+      <li><strong>A2:</strong> 11:00-12:00 y 17:00-18:00</li>
+      <li><strong>B1:</strong> 10:00-11:00 y 17:00-18:00</li>
+      <li><strong>B2:</strong> 20:00-21:00</li>
+    </ul>
+
+    <p><strong>Otros idiomas:</strong><br>
+    Para talleres en otras lenguas u otros horarios, regístrate en <em>Lista de Espera</em>.</p>
+
+    <p><strong>Examen de colocación:</strong><br>
+    <em>No es necesario</em>. Sólo presenta comprobante del último nivel cursado.</p>
+
+    <p><strong>¿Tienes dudas?</strong><br>
+    WhatsApp: <a href="tel:+525573980411">55 7398 0411</a></p>
+  `
+},
+
+
+lectura: {
     title: "Comprensión de lectura",
     content: `
       <p>Enfocado en desarrollar habilidades de lectura, análisis de textos y ampliación de vocabulario. 
       Lecturas auténticas adaptadas a tu nivel.</p>
     `,
   },
-  contacto: {
+
+contacto: {
     title: "CONTACTO",
     content: `
       <p>
          <p>Comunícate con nosotros, te atenderemos lo más pronto posible</p>
         <a href="mailto:contacto@clx.com">
-          <i class="fas fa-envelope"></i>contacto@clx.com
+          <i class="fas fa-envelope"></i>contacto@clx.com.mx
         </a><br>  
         <a href="tel:+525513404064">
           <i class="fab fa-whatsapp"></i>55 1340 4064<br>
@@ -323,9 +238,10 @@ intensivos: {
       </p>
     `,
   },
+
   // Formulario de inscripción
-  inscripcion: {
-    title: "INSCRIPCIÓN NIVEL A1",
+inscripcion: {
+    title: "INSCRIPCIONES",
     content: `
       <form id="form-inscripcion" class="inscription-form">
         <h4>Formulario de Inscripción</h4>
@@ -356,7 +272,9 @@ intensivos: {
           <label for="tipo_curso">Tipo de curso</label>
           <select id="tipo_curso" name="tipo_curso" required>
             <option value="" disabled selected>Elige un tipo…</option>
-            <option value="regular">Regular</option>
+            <!--<option value="regular">Regular</option>-->
+            <option value="intensivo">Intensivo</option>
+            <option value="taller">Taller de conversación</option>
           </select>
         </div>
         <div class="form-group">
@@ -411,52 +329,53 @@ intensivos: {
       </form>
     `,
   },
-  examen: {
+
+examen: {
     title: "EXAMEN DE COLOCACIÓN",
     content: `
-      <form id="form-examen-colocacion" class="examen-form">
-  <h4>Registro Examen de Colocación</h4>
+    <form id="form-examen-colocacion" class="examen-form">
+    <h4>Registro Examen de Colocación</h4>
 
-  <div class="form-group">
-    <label for="ex_nombre">Nombre</label>
-    <input id="ex_nombre" name="nombre" type="text" placeholder="Tu nombre completo" required>
-  </div>
+    <div class="form-group">
+      <label for="ex_nombre">Nombre</label>
+      <input id="ex_nombre" name="nombre" type="text" placeholder="Tu nombre completo" required>
+    </div>
 
-  <div class="form-group">
-    <label for="ex_cuenta">No. de Cuenta/Empleado UNAM</label>
-    <input id="ex_cuenta" name="cuenta_unam" type="text" placeholder="Ej: 12345678" required>
-  </div>
+    <div class="form-group">
+      <label for="ex_cuenta">No. de Cuenta/Empleado UNAM</label>
+      <input id="ex_cuenta" name="cuenta_unam" type="text" placeholder="Ej: 12345678" required>
+    </div>
 
-  <div class="form-group">
-    <label for="ex_whatsapp">WhatsApp</label>
-    <input id="ex_whatsapp" name="whatsapp" type="tel" placeholder="55 1234 5678" required>
-  </div>
+    <div class="form-group">
+      <label for="ex_whatsapp">WhatsApp</label>
+      <input id="ex_whatsapp" name="whatsapp" type="tel" placeholder="55 1234 5678" required>
+    </div>
 
-  <div class="form-group">
-    <label for="ex_email">E-mail</label>
-    <input id="ex_email" name="email" type="email" placeholder="usuario@correo.com" required>
-  </div>
+    <div class="form-group">
+      <label for="ex_email">E-mail</label>
+      <input id="ex_email" name="email" type="email" placeholder="usuario@correo.com" required>
+    </div>
 
-  <div class="form-group">
-    <label for="ex_idioma">Idioma</label>
-    <select id="ex_idioma" name="idioma" required>
-      <option value="" disabled selected>Selecciona idioma…</option>
-      <option value="ingles">Inglés</option>
-      <option value="frances">Francés</option>
-    </select>
-  </div>
+    <div class="form-group">
+      <label for="ex_idioma">Idioma</label>
+      <select id="ex_idioma" name="idioma" required>
+        <option value="" disabled selected>Selecciona idioma…</option>
+        <option value="ingles">Inglés</option>
+        <option value="frances">Francés</option>
+      </select>
+    </div>
 
-  <button type="submit">Enviar Registro</button>
-</form>
+    <button type="submit">Enviar Registro</button>
+  </form>
 
-<div id="ex-feedback" role="alert"></div>
+  <div id="ex-feedback" role="alert"></div>
 
-<p class="note">
-  * En breve un ejecutivo se pondrá en contacto contigo para darle seguimiento al proceso de presentación de examen de colocación.
-</p>
-    `,
+  <p class="note">
+    * En breve un ejecutivo se pondrá en contacto contigo para darle seguimiento al proceso de presentación de examen de colocación.
+  </p>`,
   },
-  lista: {
+
+lista: {
   title: "LISTA DE ESPERA",
   content: `
     <form id="form-lista-espera" class="lista-espera-form">
@@ -589,77 +508,76 @@ const languageLabels = {
 };
 
 // ————————————————————————————————
-// 3) availability: idiomas → niveles → horarios (strings) o bloques { dias, horas }
+// 3) availability: curso → idiomas → niveles → horarios (strings) o bloques { dias, horas }
 // ————————————————————————————————
 const availability = {
   intensivo: {
     idiomas: {
     ingles: {
+      INTRO: [
+        {
+          dias: ["Lun", "Mar", "Mié", "Jue", "Vie"],
+          horas: ["09:00-11:00", "17:00-19:00"],
+        },
+      ],
       A1: [
         {
           dias: ["Lun", "Mar", "Mié", "Jue", "Vie"],
-          horas: ["07:00-08:00", "08:00-09:00", "14:00-15:00", "17:00-18:00", "20:00-21:00"],
-        },
-        {
-          dias: ["Sáb", "Dom"],
-          horas: ["08:00-11:00", "11:00-14:00", "19:30-22:00"],
+          horas: ["11:00-13:00",],
         },
       ],
-      /*
       A2: [
         {
           dias: ["Lun", "Mar", "Mié", "Jue", "Vie"],
-          horas: ["07:00-08:00", "13:00-14:00", "20:00-21:00"],
-        },
-        {
-          dias: ["Sáb", "Dom"],
-          horas: ["08:00-11:00", "11:00-14:00", "19:30-22:00"],
+          horas: ["17:00-19:00",],
         },
       ],
       B1: [
         {
           dias: ["Lun", "Mar", "Mié", "Jue", "Vie"],
-          horas: ["13:00-14:00", "21:00-22:00"],
-        },
-        {
-          dias: ["Sáb", "Dom"],
-          horas: ["08:00-11:00", "11:00-14:00", "19:30-22:00"],
+          horas: ["19:00-21:00"],
         },
       ],
       B2: [
         {
           dias: ["Lun", "Mar", "Mié", "Jue", "Vie"],
-          horas: ["21:00-22:00"],
+          horas: ["20:00-22:00"],
         },
-        {
-          dias: ["Sáb", "Dom"],
-          horas: ["08:00-11:00", "11:00-14:00", "19:30-22:00"],
-        },
-      ],*/
+      ],
     },
     frances: {
+      INTRO: [
+        {
+          dias: ["Lun", "Mar", "Mié", "Jue", "Vie"],
+          horas: ["09:00-11:00", "17:00-19:00"],
+        },
+      ],
       A1: [
         {
           dias: ["Lun", "Mar", "Mié", "Jue", "Vie"],
-          horas: ["07:00-08:00", "08:00-09:00", "17:00-18:00", "20:00-21:00"],
-        },
-        {
-          dias: ["Sáb", "Dom"],
-          horas: ["08:00-11:00", "11:00-14:00", "19:30-22:00"],
+          horas: ["11:00-13:00",],
         },
       ],
-      /*
       A2: [
         {
           dias: ["Lun", "Mar", "Mié", "Jue", "Vie"],
-          horas: ["07:00-08:00", "13:00-14:00", "21:00-22:00"],
+          horas: ["17:00-19:00",],
         },
+      ],
+      B1: [
         {
-          dias: ["Sáb", "Dom"],
-          horas: ["08:00-11:00", "11:00-14:00", "19:30-22:00"],
+          dias: ["Lun", "Mar", "Mié", "Jue", "Vie"],
+          horas: ["19:00-21:00"],
         },
-      ],*/
+      ],
+      B2: [
+        {
+          dias: ["Lun", "Mar", "Mié", "Jue", "Vie"],
+          horas: ["20:00-22:00"],
+        },
+      ],
     },
+    /*
     aleman: {
       A1: [
         {
@@ -683,100 +601,118 @@ const availability = {
           horas: [],
         },
       ],
-    },
+    },*/
   },
   },
   regular: {
   idiomas: {
     ingles: {
       'A1': [
-        // I. Lunes a viernes
         {
           dias: ['Lun', 'Mar', 'Mié', 'Jue', 'Vie'],
-          horas: [
-            '07:00-08:00',
-            '08:00-09:00',
-            '11:00-12:00',
-            '14:00-15:00',
-            '17:00-18:00',
-            '18:00-19:00',
-            '19:00-20:00',
-            '20:00-21:00'
-          ],
+          horas: ['07:00-08:00','08:00-09:00',],
         },
-        // II. Sábados y domingos
         {
           dias: ['Sáb', 'Dom'],
-          horas: [
-            '07:00-09:30',
-            '08:00-10:30',
-            '09:30-12:00',
-            '10:30-13:00',
-            '19:00-21:30'
-          ],
+          horas: ['07:00-09:30','08:00-10:30','09:30-12:00','10:30-13:00','19:00-21:30'],
         }
       ]
     },
-
     frances: {
       'A1': [
-        // I. Lunes a viernes
         {
           dias: ['Lun', 'Mar', 'Mié', 'Jue', 'Vie'],
-          horas: [
-            '07:00-08:00',
-            '08:00-09:00',
-            '13:00-14:00',
-            '18:00-19:00',
-            '20:00-21:00'
-          ],
+          horas: ['07:00-08:00','08:00-09:00',],
         },
-        // II. Sábados y domingos
         {
           dias: ['Sáb', 'Dom'],
-          horas: [
-            '07:00-09:30',
-            '08:00-10:30',
-            '19:30-22:00'
-          ],
+          horas: ['07:00-09:30','08:00-10:30','09:30-12:00','10:30-13:00','19:00-21:30'],
         }
       ]
     },
     italiano: {
       'A1': [
-         // I. Lunes a viernes
         {
           dias: ['Lun', 'Mar', 'Mié', 'Jue', 'Vie'],
-          horas: [
-            '08:00-09:00',
-            '15:00-16:00',
-            '18:00-19:00',
-            '19:00-20:00',
-          ],
+          horas: ['07:00-08:00','08:00-09:00',],
         },
-        // II. Sábados y domingos
         {
           dias: ['Sáb', 'Dom'],
-          horas: [
-            '08:00-10:30',
-          ],
+          horas: ['07:00-09:30','08:00-10:30','09:30-12:00','10:30-13:00','19:00-21:30'],
         }
       ]
     },
 
     aleman: {
       'A1': [
-        // II. Sábados y domingos
+        {
+          dias: ['Lun', 'Mar', 'Mié', 'Jue', 'Vie'],
+          horas: ['07:00-08:00','08:00-09:00',],
+        },
         {
           dias: ['Sáb', 'Dom'],
-          horas: [
-            '19:30-22:00',
-          ],
+          horas: ['07:00-09:30','08:00-10:30','09:30-12:00','10:30-13:00','19:00-21:30'],
         }
       ]
     }
   }
 },
+  taller: {
+    idiomas: {
+      ingles: {
+        A1: [
+          {
+            dias: ["Lun", "Mar", "Mié", "Jue", "Vie"],
+            horas: ["10:00-11:00", "18:00-19:00",],
+          },
+        ],
+        A2: [
+          {
+            dias: ["Lun", "Mar", "Mié", "Jue", "Vie"],
+            horas: ["11:00-12:00", "17:00-18:00",],
+          },
+        ],
+        B1: [
+          {
+            dias: ["Lun", "Mar", "Mié", "Jue", "Vie"],
+            horas: ["10:00-11:00", "17:00-18:00",],
+          },
+        ],
+        B2: [
+          {
+            dias: ["Lun", "Mar", "Mié", "Jue", "Vie"],
+            horas: ["20:00-21:00"],
+          },
+        ],
+      },
+      frances: {
+        A1: [
+          {
+            dias: ["Lun", "Mar", "Mié", "Jue", "Vie"],
+            horas: ["10:00-11:00", "18:00-19:00",],
+          },
+        ],
+        A2: [
+          {
+            dias: ["Lun", "Mar", "Mié", "Jue", "Vie"],
+            horas: ["11:00-12:00", "17:00-18:00",],
+          },
+        ],
+        B1: [
+          {
+            dias: ["Lun", "Mar", "Mié", "Jue", "Vie"],
+            horas: ["10:00-11:00", "17:00-18:00",],
+          },
+        ],
+        B2: [
+          {
+            dias: ["Lun", "Mar", "Mié", "Jue", "Vie"],
+            horas: ["20:00-21:00"],
+          },
+        ],
+      },
+    },
+    },
   /*
   iniciacion: {
   idiomas: {
@@ -834,8 +770,8 @@ function populatePeriodos() {
   const grp = document.getElementById("periodo-group");
   let opts = [];
 
-  if (tipo === "intensivo") {
-    opts = [{ label: "18 agosto - 27 octubre", start: "2025-08-18", end: "2025-09-27" }];
+  if (tipo === "intensivo" || tipo === "taller") {
+    opts = [{ label: "08 diciembre - 30 enero", start: "2025-12-08", end: "2026-01-30" }];
   } else if (tipo === "regular") {
     opts = [
       { label: "8 septiembre - 26 noviembre", start: "2025-09-08", end: "2025-11-26" },
@@ -919,6 +855,7 @@ function bindFormLogic() {
     populateHorarios(conf, horario, placeholder);
   });
 
+  
   horario.addEventListener("change", () => {
     if (horario.value === "otro") {
       otroGrp.style.display = "block";
@@ -956,7 +893,8 @@ function populateHorarios(conf, selectEl, placeholder) {
       });
     });
   }
-  opts.push('<option value="otro">Otro…</option>');
+  // -------- Activar para proponer otro horario --------
+  //opts.push('<option value="otro">Otro…</option>');
   selectEl.innerHTML = opts.join("");
 }
 
