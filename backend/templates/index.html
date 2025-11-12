@@ -7,7 +7,7 @@
     <title>Escuela de Idiomas Virtuales</title>
 
     <!-- Favicon -->
-    <link rel="icon" href="img/CLX.png" type="image/png">
+    <link rel="icon" href="{% static 'img/CLX.png' %}?v={{ STATIC_VERSION }}" type="image/png">
     
     <!-- Google Fonts -->
     <link
@@ -17,56 +17,62 @@
     
     <!-- Font Awesome -->
     <link 
-    rel="stylesheet" 
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
-    crossorigin="anonymous"
+      rel="stylesheet" 
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+      crossorigin="anonymous"
     />
   
     <!-- CSS personalizado -->
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}?v={{ STATIC_VERSION }}">
   </head>
-<body>
-  <div class="main-container">
-    <!-- Columna izquierda: logo + menú de cursos -->
-    <div class="left-container">
-      <div class="header">
-        <img src="{% static 'img/CLX.png' %}" alt="Logo de la escuela" id="logo">
-        <h1>CURSOS VIRTUALES DE INVIERNO 2025</h1>
+
+  <body>
+    <div class="main-container">
+      <!-- Columna izquierda: logo + menú de cursos -->
+      <div class="left-container">
+        <div class="header">
+          <img src="{% static 'img/CLX.png' %}?v={{ STATIC_VERSION }}" alt="Logo de la escuela" id="logo">
+          <h1>CURSOS VIRTUALES DE INVIERNO 2025</h1>
+        </div>
+
+        <div class="course-menu">
+          <!--<div class="rect" id="clx">Nosotros</div>-->
+          <!--<div class="rect" id="regulares">CURSOS SEPTIEMBRE - NOVIEMBRE</div>-->
+          <!--<div class="rect" id="semi-intensivos">Semintensivos (Septiembre - Noviembre)</div>-->
+          <div class="rect" id="intensivos">CURSOS DE INVIERNO (Diciembre - Enero)</div>
+          <div class="rect" id="talleres">Talleres Virtuales de conversación</div>
+          <!--<div class="rect" id="ini-prepa">Iniciación de Lenguas Extranjeras</div>-->
+          <!--<div class="rect" id="ini-ninos">Iniciación (Niños 6-10 años)</div>-->
+          <!--<div class="rect" id="lectura">Comprensión de lectura</div>-->
+          <div class="rect" id="inscripcion">INSCRIPCIONES</div>
+          <div class="rect" id="examen">EXAMEN DE COLOCACIÓN</div>
+          <div class="rect" id="lista">LISTA DE ESPERA</div>
+          <!--<div class="rect" id="proximamente">PRÓXIMAMENTE</div>-->
+          <div class="rect" id="contacto">CONTACTO</div>
+
+          <p class="footer-text">
+            <i class="fa-solid fa-copyright"></i> 
+            Consejo Mexicano de Enseñanza e Investigación en Lenguas Extranjeras (CLX)
+          </p>
+        </div>
       </div>
-      <div class="course-menu">
-       <!--<div class="rect" id="clx">Nosotros</div>-->
-        <!--<div class="rect" id="regulares">CURSOS SEPTIEMBRE - NOVIEMBRE</div>-->
-        <!--<div class="rect" id="semi-intensivos">Semintensivos (Septiembre - Noviembre)</div>-->
-        <div class="rect" id="intensivos">CURSOS DE INVIERNO (Diciembre - Enero)</div>
-        <div class="rect" id="talleres">Talleres Virtuales de conversación</div>
-        <!--<div class="rect" id="ini-prepa">Iniciación de Lenguas Extranjeras</div>-->
-       <!--<div class="rect" id="ini-ninos">Iniciación (Niños 6-10 años)</div>-->
-       <!--<div class="rect" id="lectura">Comprensión de lectura</div> -->
-        <div class="rect" id="inscripcion">INSCRIPCIONES</div>
-        <div class="rect" id="examen">EXAMEN DE COLOCACIÓN</div>
-        <div class="rect" id="lista">LISTA DE ESPERA</div>
-        <!--<div class="rect" id="proximamente">PRÓXIMAMENTE</div>-->
-        <div class="rect" id="contacto">CONTACTO</div>
-        <p class="footer-text">
-          <i class="fa-solid fa-copyright"></i> Consejo Mexicano de Enseñanza e Investigación en Lenguas Extranjeras (CLX)
-        </p>
+
+      <!-- Columna derecha: detalle dinámico -->
+      <div class="right-container">
+        <div id="course-info">
+          <h3>Selecciona un curso para ver detalles</h3>
+        </div>
       </div>
     </div>
 
-    <!-- Columna derecha: detalle dinámico -->
-    <div class="right-container">
-      <div id="course-info">
-        <h3>Selecciona un curso para ver detalles</h3>
-      </div>
-    </div>
-  </div>
-  <!-- Stripe.js -->
-  <script src="https://js.stripe.com/v3/"></script>
-  <script>
-    // Lee llave pública desde la vista 
-    const stripe = Stripe("{{ STRIPE_PUBLIC_KEY }}");
-  </script>
-  <!-- JavaScript -->
-  <script src="{% static 'js/script.js' %}"></script>
-</body>
+    <!-- Stripe.js -->
+    <script src="https://js.stripe.com/v3/"></script>
+    <script>
+      // Lee llave pública desde la vista
+      const stripe = Stripe("{{ STRIPE_PUBLIC_KEY }}");
+    </script>
+
+    <!-- JavaScript principal -->
+    <script src="{% static 'js/script.js' %}?v={{ STATIC_VERSION }}"></script>
+  </body>
 </html>
