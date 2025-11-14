@@ -386,3 +386,22 @@ body {
     padding-right: 2rem;
   }
 }
+
+/* Estilo exclusivo para la pestaña PROMOCIONES DEL BUEN FIN */
+#promocion {
+  background-color: #ff4d6d; /* rojo moderno */
+  color: #fff;
+}
+
+/* Hover igual que los demás (amarillo) */
+#promocion:hover {
+  background-color: #ffe66d;  /* amarillo */
+  color: #333;
+  transform: scale(1.05);
+}
+
+/* Si está activa, también se ve amarillo */
+#promocion.active {
+  background-color: #ffe66d;
+  color: #333;
+}

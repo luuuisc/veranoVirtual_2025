@@ -2,6 +2,13 @@
 .DS_Store
 Thumbs.db
 
+# Cache de Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.sqlite3-journal
+
 # Variables de entorno
 .env
 
@@ -36,3 +43,9 @@ db.sqlite3
 
 # Imágenes y archivos subidos
 *.jpeg
+
+# Archivos csv
+*.csv
+
+# Carpeta scripts
+/scripts/

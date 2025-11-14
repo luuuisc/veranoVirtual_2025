@@ -29,16 +29,26 @@ def inscribirse(request):
         return JsonResponse({'status': 'error', 'message': 'JSON inválido'}, status=400)
 
     # 2) Campos básicos
-    tipo = data.get('tipo_curso')            # 'intensivo' | 'taller' | 'regular' (si lo activas)
+    tipo = data.get('tipo_curso')            # 'intensivo' | 'taller' | 'regular'
     idioma = data.get('idioma')
     nivel = data.get('nivel_ingreso')
     horario = data.get('horario')
 
     # Validación mínima de obligatorios
-    obligatorios = ['nombre', 'email', 'whatsapp', 'tipo_curso', 'idioma', 'nivel_ingreso', 'horario', 'fecha_inicio', 'fecha_fin']
+    obligatorios = [
+        'nombre', 'email', 'whatsapp',
+        'tipo_curso', 'idioma', 'nivel_ingreso',
+        'horario', 'fecha_inicio', 'fecha_fin'
+    ]
     faltantes = [k for k in obligatorios if not data.get(k)]
     if faltantes:
-        return JsonResponse({'status': 'error', 'message': f'Faltan campos obligatorios: {", ".join(faltantes)}'}, status=400)
+        return JsonResponse(
+            {
+                'status': 'error',
+                'message': f'Faltan campos obligatorios: {", ".join(faltantes)}'
+            },
+            status=400
+        )
 
     # 3) Conteo actual y cupo por tipo
     existentes = Inscripcion.objects.filter(
@@ -48,14 +58,25 @@ def inscribirse(request):
         horario=horario
     ).count()
 
-    capacidad_por_tipo = {'intensivo': 12, 'taller': 10, 'regular': 12}
+    # Intensivo: 15, Taller: 10, Regular: 12 (por si se activa)
+    capacidad_por_tipo = {
+        'intensivo': 15,
+        'taller': 10,
+        'regular': 12,
+    }
     capacidad = capacidad_por_tipo.get(tipo, 12)  # default 12
 
     if existentes >= capacidad:
-        return JsonResponse({
-            'status': 'error',
-            'message': 'Lo siento, este horario ya está lleno. Por favor elige otro horario o propón uno nuevo.'
-        }, status=400)
+        return JsonResponse(
+            {
+                'status': 'error',
+                'message': (
+                    f'Lo siento, este horario ya está lleno (cupo máximo {capacidad} participantes). '
+                    'Por favor elige otro horario o regístrate en la Lista de Espera.'
+                ),
+            },
+            status=400
+        )
 
     # 4) Grupo fijo = 1 (si más adelante segmentas, cámbialo aquí)
     numero_grupo = 1
@@ -67,7 +88,13 @@ def inscribirse(request):
         fecha_inicio = datetime.strptime(fecha_inicio_str, '%Y-%m-%d').date()
         fecha_fin = datetime.strptime(fecha_fin_str, '%Y-%m-%d').date()
     except Exception:
-        return JsonResponse({'status': 'error', 'message': 'Formato de fechas inválido (usa YYYY-MM-DD).'}, status=400)
+        return JsonResponse(
+            {
+                'status': 'error',
+                'message': 'Formato de fechas inválido (usa YYYY-MM-DD).'
+            },
+            status=400
+        )
 
     # 6) Formatos para correo
     fmt_inicio = fecha_inicio.strftime('%d/%m/%y')
@@ -107,11 +134,12 @@ def inscribirse(request):
         )
         nombre_curso = 'taller de conversación'
     else:
+        # 👉 Aquí actualizamos también el texto al máximo 15
         extra_lineas = (
             "Para niveles superiores a INTRO (00) se requiere Examen de Colocación ($150) "
             "o constancia del nivel anterior.\n"
             "Cuotas: Inscripción $350 y Curso intensivo (6 semanas) $3,000.\n"
-            "Cupo por grupo: mínimo 6 y máximo 12 participantes.\n"
+            "Cupo por grupo: mínimo 6 y máximo 15 participantes.\n"
         )
         nombre_curso = 'curso intensivo'
 
@@ -139,7 +167,7 @@ def inscribirse(request):
     # 9) Notificación al equipo
     prof_emails = [
         'agente3jlcosta@gmail.com',
-        'luisangelperezcastro1305@gmail.com',
+        'luuuis.pcastro@gmail.com',
         'jorgedaniel2915@gmail.com',
     ]
     subject_equipo = f'Nueva {"preinscripción Taller" if is_taller else "inscripción"}: {ins.nombre}'
@@ -226,7 +254,7 @@ def registro_examen_colocacion(request):
     # 5) Notificación al equipo
     equipo = [
         'agente3jlcosta@gmail.com',
-        'luisangelperezcastro1305@gmail.com',
+        'luuuis.pcastro@gmail.com',
         'jorgedaniel2915@gmail.com'
     ]
     subject_eq = f'Nueva solicitud Examen Colocación: {examen.nombre}'
@@ -268,7 +296,7 @@ def registro_lista_espera(request):
     whatsapp = data.get('whatsapp')
     email = data.get('email')
     idioma = data.get('idioma')
-    nivel = data.get('nivel')                    # A2 / B1 / B2 (según tu formulario)
+    nivel = data.get('nivel')                    
     horario_deseado = data.get('horario_deseado')
 
     if not all([nombre, cuenta, whatsapp, email, idioma, nivel, horario_deseado]):
@@ -301,7 +329,7 @@ def registro_lista_espera(request):
     # Notificación al equipo
     equipo = [
         'agente3jlcosta@gmail.com',
-        'luisangelperezcastro1305@gmail.com',
+        'luuuis.pcastro@gmail.com',
         'jorgedaniel2915@gmail.com'
     ]
     subject_eq = f'Nueva Lista de Espera: {registro.nombre}'

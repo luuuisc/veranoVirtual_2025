@@ -30,6 +30,74 @@ proximamente: {
       `,
   },
 
+ promocion: {
+  title: "PROMOCION DEL BUEN FIN",
+  content: `
+    <h4>Buen Fin CLX</h4>
+
+    <p><strong>Válido únicamente viernes 14, sábado 15, domingo 16 y lunes 17</strong>.</p>
+
+    <p>
+      Al cubrir la <strong>inscripción</strong> y la <strong>colegiatura</strong> 
+      de tu <strong>curso intensivo</strong> o <strong>taller de conversación</strong> 
+      de invierno, obtienes <strong>GRATIS</strong> un 
+      <strong>curso INTRO virtual de 30 horas</strong>.
+    </p>
+
+    <p>
+      Ese curso INTRO lo puedes:
+      <ul>
+        <li>Tomar tú mism@, u</li>
+        <li>Ofrecerlo como <strong>regalo</strong> a alguien más.</li>
+      </ul>
+    </p>
+
+    <p>
+      <strong>Cupo limitado:</strong> máximo <strong>20 participantes por grupo</strong> 
+      en los cursos INTRO.
+    </p>
+
+    <p><strong>Horarios a elegir (lunes a viernes)</strong></p>
+
+    <h5>FRANCÉS – Curso INTRO</h5>
+    <ul>
+      <li>09:00 – 10:00</li>
+      <li>18:00 – 19:00</li>
+      <li>19:00 – 20:00</li>
+      <li>20:00 – 21:00</li>
+      <li>21:00 – 22:00</li>
+    </ul>
+
+    <h5>ITALIANO – Curso INTRO</h5>
+    <ul>
+      <li>10:00 – 11:00</li>
+      <li>20:00 – 21:00</li>
+      <li>21:00 – 22:00</li>
+    </ul>
+
+    <p>
+      <strong>Importante:</strong> estos cursos INTRO siguen el mismo 
+      <strong>calendario</strong> que los cursos y talleres de invierno.
+    </p>
+
+    <p>
+      Para aprovechar la promoción:
+      <ol>
+        <li>Realiza tu registro en la pestaña <strong>INSCRIPCIONES</strong>.</li>
+        <li>Cubre la inscripción y la colegiatura del curso o taller que elijas.</li>
+        <li>En el campo <em>Mensaje</em>, indica a qué curso INTRO (idioma y horario) deseas acceder tú o la persona a quien se lo regalas.</li>
+      </ol>
+    </p>
+
+    <p>
+      Ante cualquier duda, contáctanos por WhatsApp:
+      <br>
+      <a href="tel:+525513404064"><strong>55 1340 4064</strong></a> /
+      <a href="tel:+525573980411"><strong>55 7398 0411</strong></a>
+    </p>
+  `,
+},
+
 intensivos: {
     title: 'Invierno 2025',
     content: `
@@ -59,7 +127,7 @@ intensivos: {
         <li><em>Nota:</em> El 50% de descuento para la comunidad UNAM ya está aplicado.</li>
       </ul>
 
-      <p><strong>Cupo por grupo:</strong> mínimo 6, máximo 12 participantes</p>
+      <p><strong>Cupo por grupo:</strong> mínimo 6, máximo 15 participantes</p>
 
       <p><strong>Incluye:</strong></p>
       <ul>
@@ -529,7 +597,7 @@ const availability = {
       A2: [
         {
           dias: ["Lun", "Mar", "Mié", "Jue", "Vie"],
-          horas: ["17:00-19:00",],
+          horas: ["09:00-11:00", "17:00-19:00",],
         },
       ],
       B1: [
