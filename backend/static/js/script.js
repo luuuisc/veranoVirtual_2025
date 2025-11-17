@@ -603,7 +603,7 @@ const availability = {
       B1: [
         {
           dias: ["Lun", "Mar", "Mié", "Jue", "Vie"],
-          horas: ["19:00-21:00"],
+          horas: ["17:00-19:00", "19:00-21:00"],
         },
       ],
       B2: [
