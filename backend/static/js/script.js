@@ -31,158 +31,120 @@ proximamente: {
   },
 
  promocion: {
-  title: "PROMOCION DEL BUEN FIN",
+  title: "PROMO SORPRESA · 18-21 NOV",
+
   content: `
-    <h4>Buen Fin CLX</h4>
+    <h4></h4>
 
-    <p><strong>Válido únicamente viernes 14, sábado 15, domingo 16 y lunes 17</strong>.</p>
+    <p><strong>Válida únicamente del martes 18 al viernes 21 de noviembre.</strong></p>
 
-    <p>
-      Al cubrir la <strong>inscripción</strong> y la <strong>colegiatura</strong> 
-      de tu <strong>curso intensivo</strong> o <strong>taller de conversación</strong> 
-      de invierno, obtienes <strong>GRATIS</strong> un 
-      <strong>curso INTRO virtual de 30 horas</strong>.
-    </p>
+    <p>Realiza tu registro en la pestaña <strong>INSCRIPCIONES</strong>.</p>
 
     <p>
-      Ese curso INTRO lo puedes:
-      <ul>
-        <li>Tomar tú mism@, u</li>
-        <li>Ofrecerlo como <strong>regalo</strong> a alguien más.</li>
-      </ul>
+      Cubre la <strong>inscripción ($350)</strong> y la <strong>colegiatura</strong> del:
     </p>
 
-    <p>
-      <strong>Cupo limitado:</strong> máximo <strong>20 participantes por grupo</strong> 
-      en los cursos INTRO.
-    </p>
-
-    <p><strong>Horarios a elegir (lunes a viernes)</strong></p>
-
-    <h5>FRANCÉS – Curso INTRO</h5>
     <ul>
-      <li>09:00 – 10:00</li>
-      <li>18:00 – 19:00</li>
-      <li>19:00 – 20:00</li>
-      <li>20:00 – 21:00</li>
-      <li>21:00 – 22:00</li>
+      <li><strong>Curso intensivo:</strong> de <s>$3000</s> → <strong>$2000</strong></li>
+      <li><strong>Taller de conversación:</strong> de <s>$2000</s> → <strong>$1500</strong></li>
     </ul>
 
-    <h5>ITALIANO – Curso INTRO</h5>
-    <ul>
-      <li>10:00 – 11:00</li>
-      <li>20:00 – 21:00</li>
-      <li>21:00 – 22:00</li>
-    </ul>
-
+    <p><strong>Dudas? Contáctanos por WhatsApp:</strong></p>
     <p>
-      <strong>Importante:</strong> estos cursos INTRO siguen el mismo 
-      <strong>calendario</strong> que los cursos y talleres de invierno.
-    </p>
-
-    <p>
-      Para aprovechar la promoción:
-      <ol>
-        <li>Realiza tu registro en la pestaña <strong>INSCRIPCIONES</strong>.</li>
-        <li>Cubre la inscripción y la colegiatura del curso o taller que elijas.</li>
-        <li>En el campo <em>Mensaje</em>, indica a qué curso INTRO (idioma y horario) deseas acceder tú o la persona a quien se lo regalas.</li>
-      </ol>
-    </p>
-
-    <p>
-      Ante cualquier duda, contáctanos por WhatsApp:
-      <br>
       <a href="tel:+525513404064"><strong>55 1340 4064</strong></a> /
       <a href="tel:+525573980411"><strong>55 7398 0411</strong></a>
     </p>
-  `,
+  `
 },
 
 intensivos: {
-    title: 'Invierno 2025',
-    content: `
-      <h4>Cursos Virtuales Intensivos de Invierno</h4>
+  title: 'Invierno 2025',
+  content: `
+    <h4>Cursos Virtuales Intensivos de Invierno</h4>
 
-      <p><strong>Dirigido a:</strong><br>
-      Comunidad universitaria UNAM (50% de descuento ya aplicado en las cuotas).</p>
-      <p>Contamos con convenio vigente con la DGOAE para la Beca Idiomas de la UNAM.</p> 
+    <p><strong>Dirigido a:</strong><br>
+    Comunidad universitaria UNAM (50% de descuento ya aplicado).</p>
 
-      <p><strong>Periodo:</strong><br>
-      Diciembre 2025 - Enero 2026</p>
+    <p>Contamos con convenio vigente con la DGOAE para la <strong>Beca Idiomas UNAM</strong>.</p>
 
-      <p><strong>Inscripciones:</strong><br>
-      Del 10 de noviembre al 3 de diciembre. <strong>Cupo limitado.</strong></p>
+    <p><strong>Periodo:</strong><br>
+    Diciembre 2025 – Enero 2026</p>
 
-      <p><strong>Duración:</strong></p>
-      <ul>
-        <li>Lunes a viernes: del 8 de diciembre al 30 de enero.</li>
-        <li>Días de asueto: del 22 de diciembre al 4 de enero.</li>
-        <li>Carga horaria: 10 horas semanales durante 6 semanas (60 horas en total).</li>
-      </ul>
+    <p><strong>Inscripciones:</strong><br>
+    Del 10 de noviembre al 3 de diciembre. <strong>Cupo limitado.</strong></p>
 
-      <p><strong>Cuotas de recuperación:</strong></p>
-      <ul>
-        <li>Inscripción: $350</li>
-        <li>Curso intensivo virtual (6 semanas): $3,000</li>
-        <li><em>Nota:</em> El 50% de descuento para la comunidad UNAM ya está aplicado.</li>
-      </ul>
+    <p><strong>Duración:</strong></p>
+    <ul>
+      <li>Lunes a viernes: del <strong>8 de diciembre</strong> al <strong>30 de enero</strong>.</li>
+      <li>Días de asueto: <strong>22 de diciembre al 4 de enero</strong>.</li>
+      <li>Carga horaria: <strong>10 h/semana</strong> durante 6 semanas (<strong>60 h en total</strong>).</li>
+    </ul>
 
-      <p><strong>Cupo por grupo:</strong> mínimo 6, máximo 15 participantes</p>
+    <p><strong>Cuotas de recuperación:</strong></p>
+    <ul>
+      <li><strong>Inscripción:</strong> $350</li>
+      <li>
+        <strong>Curso intensivo virtual (6 semanas):</strong> 
+        <s>$3,000</s> → <strong>$2,000</strong> 
+        <br><em>(Pagas $33.33 por hora de clase)</em>
+      </li>
+      <li><em>Nota:</em> El 50% de descuento UNAM ya está aplicado.</li>
+    </ul>
 
-      <p><strong>Incluye:</strong></p>
-      <ul>
-        <li>Material multimedia</li>
-        <li>Constancia oficial al término del curso</li>
-      </ul>
+    <p><strong>Cupo por grupo:</strong> mínimo 10, máximo 15 participantes</p>
 
-      <p><strong>Niveles ofertados:</strong></p>
-      <ul>
-        <li><strong>Inglés y Francés</strong> desde INTRO (00) hasta B2</li>
-      </ul>
+    <p><strong>Incluye:</strong></p>
+    <ul>
+      <li>Material multimedia</li>
+      <li>Constancia oficial al término del curso</li>
+    </ul>
 
-      <p><strong>Horarios disponibles:</strong></p>
+    <p><strong>Niveles ofertados:</strong><br>
+    <strong>Inglés y Francés</strong> desde INTRO (00) hasta B2</p>
 
-      <h4>Inglés</h4>
-      <ul>
-        <li><strong>INTRO:</strong> 09:00-11:00 y 17:00-19:00</li>
-        <li><strong>A1:</strong> 11:00-13:00</li>
-        <li><strong>A2:</strong> 17:00-19:00</li>
-        <li><strong>B1:</strong> 19:00-21:00</li>
-        <li><strong>B2:</strong> 20:00-22:00</li>
-      </ul>
+    <p><strong>Horarios disponibles:</strong></p>
 
-      <h4>Francés</h4>
-      <ul>
-        <li><strong>INTRO:</strong> 09:00-11:00 y 17:00-19:00</li>
-        <li><strong>A1:</strong> 11:00-13:00</li>
-        <li><strong>A2:</strong> 17:00-19:00</li>
-        <li><strong>B1:</strong> 19:00-21:00</li>
-        <li><strong>B2:</strong> 20:00-22:00</li>
-      </ul>
+    <h4>Inglés</h4>
+    <ul>
+      <li><strong>INTRO:</strong> 09:00–11:00 y 17:00–19:00</li>
+      <li><strong>A1:</strong> 11:00–13:00</li>
+      <li><strong>A2:</strong> 09:00–11:00 y 17:00–19:00</li>
+      <li><strong>B1:</strong> 17:00–19:00 y 19:00–21:00</li>
+      <li><strong>B2:</strong> 20:00–22:00</li>
+    </ul>
 
+    <h4>Francés</h4>
+    <ul>
+      <li><strong>INTRO:</strong> 09:00–11:00 y 17:00–19:00</li>
+      <li><strong>A1:</strong> 11:00–13:00</li>
+      <li><strong>A2:</strong> 17:00–19:00</li>
+      <li><strong>B1:</strong> 19:00–21:00</li>
+      <li><strong>B2:</strong> 20:00–22:00</li>
+    </ul>
 
-      <p><strong>Otros idiomas:</strong><br>
-      Para horarios o niveles distintos, o para cursos de otras lenguas, regístrate en la <em>Lista de Espera</em>.</p>
+    <p><strong>Otros idiomas:</strong><br>
+    Para otros horarios, niveles o lenguas adicionales, regístrate en la <em>Lista de Espera</em>.</p>
 
-      <p><strong>Examen de colocación:</strong></p>
-      <ul>
-        <li>Requerido para ingresar a niveles superiores al INTRO (00).</li>
-        <li>Costo: $150</li>
-        <li>Tramita tu examen en la sección “Examen de colocación”.</li>
-      </ul>
+    <p><strong>Examen de colocación:</strong></p>
+    <ul>
+      <li>Requerido para niveles superiores a INTRO (00).</li>
+      <li>Costo: $150</li>
+      <li>Solicítalo en la sección <strong>“Examen de Colocación”</strong>.</li>
+    </ul>
 
-      <p><strong>Importante:</strong></p>
-      <ul>
-        <li>El curso está diseñado para un avance intensivo y equilibrado.</li>
-        <li>Ideal para quienes desean reforzar o avanzar en poco tiempo.</li>
-        <li>Se recomienda para participantes con alto nivel de compromiso.</li>
-      </ul>
+    <p><strong>Importante:</strong></p>
+    <ul>
+      <li>Diseñado para un avance intensivo y equilibrado.</li>
+      <li>Ideal para quienes desean avanzar en poco tiempo.</li>
+      <li>Recomendado para participantes con alto nivel de compromiso.</li>
+    </ul>
 
-      <p><strong>¿Tienes dudas?</strong><br>
-      Escríbenos por WhatsApp: <a href="tel:+525573980411">55 7398 0411</a>
-      </p>
-    `
-  },
+    <p><strong>¿Tienes dudas?</strong><br>
+    Escríbenos por WhatsApp: 
+    <a href="tel:+525573980411">55 7398 0411</a>
+    </p>
+  `
+},
 
 regulares: {
     title: "CURSOS <strong>REGULARES</strong> VIRTUALES 2025",
@@ -198,29 +160,34 @@ talleres: {
 
     <p><strong>Dirigido a:</strong><br>
     Comunidad universitaria UNAM (50% de descuento ya aplicado).</p>
-    <p>Contamos con convenio vigente con la DGOAE para la Beca Idiomas de la UNAM.</p>
+
+    <p>Contamos con convenio vigente con la DGOAE para la <strong>Beca Idiomas UNAM</strong>.</p>
 
     <p><strong>Periodo:</strong><br>
-    Diciembre 2025 - Enero 2026</p>
+    Diciembre 2025 – Enero 2026</p>
 
     <p><strong>Inscripciones:</strong><br>
-    Del 10 de noviembre al 3 de diciembre. <strong>Cupo limitado.</strong></p>
+    Del <strong>18 al 21 de noviembre</strong>. PROMO Sorpresa. <strong>Cupo limitado</strong>.</p>
 
     <p><strong>Duración:</strong></p>
     <ul>
-      <li>Lunes a viernes: del 8 de diciembre al 30 de enero.</li>
-      <li>Días de asueto: del 22 de diciembre al 4 de enero.</li>
-      <li>Carga horaria: 5 horas semanales durante 6 semanas (30 horas en total).</li>
+      <li>Lunes a viernes: del <strong>8 de diciembre</strong> al <strong>30 de enero</strong>.</li>
+      <li>Días de asueto: <strong>22 de diciembre al 4 de enero</strong>.</li>
+      <li>Carga horaria: <strong>5 h/semana</strong> durante 6 semanas (30 h en total).</li>
     </ul>
 
     <p><strong>Cuotas de recuperación:</strong></p>
     <ul>
-      <li>Inscripción: $350</li>
-      <li>Taller virtual (6 semanas): $2,000</li>
+      <li><strong>Inscripción:</strong> $350</li>
+      <li>
+        <strong>Taller virtual (6 semanas):</strong> 
+        <s>$2,000</s> → <strong>$1,500</strong>
+        <br><em>(Pagas $50 por hora de clase)</em>
+      </li>
       <li><em>Nota:</em> Descuento UNAM ya aplicado.</li>
     </ul>
 
-    <p><strong>Cupo por grupo:</strong> mínimo 3, máximo 10 participantes</p>
+    <p><strong>Cupo por grupo:</strong> mínimo 6, máximo 12 participantes</p>
 
     <p><strong>Incluye:</strong></p>
     <ul>
@@ -234,31 +201,30 @@ talleres: {
 
     <h4>Inglés</h4>
     <ul>
-      <li><strong>A1:</strong> 10:00-11:00 y 18:00-19:00</li>
-      <li><strong>A2:</strong> 11:00-12:00 y 17:00-18:00</li>
-      <li><strong>B1:</strong> 10:00-11:00 y 17:00-18:00</li>
-      <li><strong>B2:</strong> 20:00-21:00</li>
+      <li><strong>A1:</strong> 10:00–11:00 y 18:00–19:00</li>
+      <li><strong>A2:</strong> 11:00–12:00 y 17:00–18:00</li>
+      <li><strong>B1:</strong> 10:00–11:00 y 17:00–18:00</li>
+      <li><strong>B2:</strong> 20:00–21:00</li>
     </ul>
 
     <h4>Francés</h4>
     <ul>
-      <li><strong>A1:</strong> 10:00-11:00 y 18:00-19:00</li>
-      <li><strong>A2:</strong> 11:00-12:00 y 17:00-18:00</li>
-      <li><strong>B1:</strong> 10:00-11:00 y 17:00-18:00</li>
-      <li><strong>B2:</strong> 20:00-21:00</li>
+      <li><strong>A1:</strong> 10:00–11:00 y 18:00–19:00</li>
+      <li><strong>A2:</strong> 11:00–12:00 y 17:00–18:00</li>
+      <li><strong>B1:</strong> 10:00–11:00 y 17:00–18:00</li>
+      <li><strong>B2:</strong> 20:00–21:00</li>
     </ul>
 
     <p><strong>Otros idiomas:</strong><br>
-    Para talleres en otras lenguas u otros horarios, regístrate en <em>Lista de Espera</em>.</p>
+    Para otros horarios, niveles o lenguas, regístrate en la <em>Lista de Espera</em>.</p>
 
     <p><strong>Examen de colocación:</strong><br>
-    <em>No es necesario</em>. Sólo presenta comprobante del último nivel cursado.</p>
+    <em>No es necesario.</em> Solo presenta comprobante del último nivel cursado.</p>
 
     <p><strong>¿Tienes dudas?</strong><br>
     WhatsApp: <a href="tel:+525573980411">55 7398 0411</a></p>
   `
 },
-
 
 lectura: {
     title: "Comprensión de lectura",
