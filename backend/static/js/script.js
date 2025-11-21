@@ -109,7 +109,7 @@ intensivos: {
       <li><strong>INTRO:</strong> 09:00–11:00 y 17:00–19:00</li>
       <li><strong>A1:</strong> 11:00–13:00</li>
       <li><strong>A2:</strong> 09:00–11:00 y 17:00–19:00</li>
-      <li><strong>B1:</strong> 17:00–19:00 y 19:00–21:00</li>
+      <li><strong>B1:</strong> 10:00–12:00, 17:00–19:00 y 19:00–21:00</li>
       <li><strong>B2:</strong> 20:00–22:00</li>
     </ul>
 
@@ -569,7 +569,7 @@ const availability = {
       B1: [
         {
           dias: ["Lun", "Mar", "Mié", "Jue", "Vie"],
-          horas: ["17:00-19:00", "19:00-21:00"],
+          horas: ["10:00-12:00", "17:00-19:00", "19:00-21:00"],
         },
       ],
       B2: [
