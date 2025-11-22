@@ -51,20 +51,27 @@ def inscribirse(request):
         )
 
     # 3) Conteo actual y cupo por tipo
-    existentes = Inscripcion.objects.filter(
-        tipo_curso=tipo,
-        idioma=idioma,
-        nivel_ingreso=nivel,
-        horario=horario
-    ).count()
+    try:
+        existentes = Inscripcion.objects.filter(
+            tipo_curso=tipo,
+            idioma=idioma,
+            nivel_ingreso=nivel,
+            horario=horario
+        ).count()
+    except Exception as e:
+        # Maneja cualquier error que pueda ocurrir durante la consulta
+        return JsonResponse({'status': 'error', 'message': f'Error al contar inscripciones: {str(e)}'}, status=500)
 
-    # Intensivo: 15, Taller: 10, Regular: 12 (por si se activa)
+    # Intensivo: 25, Taller: 10, Regular: 12 (por si se activa)
     capacidad_por_tipo = {
-        'intensivo': 15,
+        'intensivo': 25,
         'taller': 10,
         'regular': 12,
     }
     capacidad = capacidad_por_tipo.get(tipo, 12)  # default 12
+
+    # Depuración del conteo y capacidad
+    #print(f"Existen {existentes} inscripciones para el curso {tipo} en el horario {horario}. Capacidad: {capacidad}")
 
     if existentes >= capacidad:
         return JsonResponse(
