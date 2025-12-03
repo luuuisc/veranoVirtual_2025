@@ -31,12 +31,12 @@ proximamente: {
   },
 
  promocion: {
-  title: "PROMO SORPRESA · 18-21 NOV",
+  title: "PROMO FIN DE AÑO",
 
   content: `
     <h4></h4>
 
-    <p><strong>Válida únicamente del martes 18 al viernes 21 de noviembre.</strong></p>
+    <p><strong>Válida únicamente hasta el 6 de diciembre.</strong></p>
 
     <p>Realiza tu registro en la pestaña <strong>INSCRIPCIONES</strong>.</p>
 
@@ -71,7 +71,7 @@ intensivos: {
     Diciembre 2025 – Enero 2026</p>
 
     <p><strong>Inscripciones:</strong><br>
-    Del 10 de noviembre al 3 de diciembre. <strong>Cupo limitado.</strong></p>
+    Hasta el 6 de diciembre. <strong>Cupo limitado.</strong></p>
 
     <p><strong>Duración:</strong></p>
     <ul>
@@ -227,12 +227,73 @@ talleres: {
 },
 
 lectura: {
-    title: "Comprensión de lectura",
-    content: `
-      <p>Enfocado en desarrollar habilidades de lectura, análisis de textos y ampliación de vocabulario. 
-      Lecturas auténticas adaptadas a tu nivel.</p>
-    `,
-  },
+  title: "Curso de Comprensión de Lectura – Invierno 2025",
+  content: `
+    <p><strong>Dirigido a:</strong> Comunidad universitaria UNAM 
+    <em>(50% de descuento ya aplicado)</em>.</p>
+
+    <p>Contamos con convenio vigente con la <strong>DGOAE</strong> para la 
+    <strong>Beca Idiomas UNAM</strong>.</p>
+
+    <p><strong>Periodo:</strong> Enero 2026</p>
+
+    <p><strong>Inscripciones:</strong> Del <strong>1 al 18 de diciembre</strong>. 
+    <strong>Cupo limitado.</strong></p>
+
+    <p><strong>Duración:</strong><br>
+    Lunes a viernes, del <strong>5 al 30 de enero</strong></p>
+
+    <p><strong>Carga horaria:</strong></p>
+    <ul>
+      <li><strong>Sincrónica:</strong> Clases en vivo en tiempo real<br>
+      10 h/semana durante 4 semanas (40 h en total)</li>
+      <li><strong>Asincrónica:</strong> Tareas de lectura<br>
+      20 h/semana durante 4 semanas (80 h en total)</li>
+    </ul>
+
+    <p><strong>Competencias por especialidad:</strong></p>
+    <ol>
+      <li>Lingüística</li>
+      <li>Discursiva</li>
+      <li>Estratégica</li>
+    </ol>
+
+    <p><strong>Cuotas de recuperación:</strong></p>
+    <ul>
+      <li>Inscripción: <strong>$350</strong></li>
+      <li>Curso virtual (4 semanas): <strong>$2,500</strong></li>
+      <li>Pagas <strong>$62.50 por hora</strong> en grupos pequeños</li>
+    </ul>
+
+    <p><em>Nota: Descuento UNAM ya aplicado.</em></p>
+    <p><strong>Cupo por grupo:</strong> mínimo 6, máximo 12 participantes</p>
+
+    <p><strong>Incluye:</strong></p>
+    <ul>
+      <li>Material de lectura por área de especialidad</li>
+      <li>Constancia oficial al término del curso</li>
+    </ul>
+
+    <p><strong>Idiomas disponibles:</strong> Inglés y Francés</p>
+
+    <p><strong>Niveles y horarios:</strong></p>
+    <ul>
+      <li>7:00 - 9:00</li>
+      <li>9:00 - 11:00</li>
+      <li>18:00 - 20:00</li>
+      <li>20:00 - 22:00</li>
+    </ul>
+
+    <p><strong>Otros idiomas:</strong><br>
+    Para otros horarios o lenguas, regístrate en la <strong>Lista de Espera</strong>.</p>
+
+    <p><strong>Examen de colocación:</strong> No es necesario.</p>
+
+    <p><strong>¿Tienes dudas?</strong><br>
+    WhatsApp: <strong>55 7398 0411</strong></p>
+  `,
+},
+
 
 contacto: {
     title: "CONTACTO",
@@ -308,7 +369,7 @@ inscripcion: {
             <option value="" disabled selected>Elige un tipo…</option>
             <!--<option value="regular">Regular</option>-->
             <option value="intensivo">Intensivo</option>
-            <option value="taller">Taller de conversación</option>
+            <option value="lectura">Comprensión de lectura</option>
           </select>
         </div>
         <div class="form-group">
@@ -747,6 +808,26 @@ const availability = {
       },
     },
     },
+  lectura: {
+    idiomas: {
+      ingles: {
+        LECTURA: [
+          {
+            dias: ["Lun", "Mar", "Mié", "Jue", "Vie"],
+            horas: ["07:00-09:00", "09:00-11:00", "18:00-20:00","20:00-22:00",],
+          },
+        ],
+      },
+      frances: {
+        LECTURA: [
+          {
+            dias: ["Lun", "Mar", "Mié", "Jue", "Vie"],
+            horas: ["07:00-09:00", "09:00-11:00", "18:00-20:00","20:00-22:00",],
+          },
+        ],
+      },
+    },
+  },
   /*
   iniciacion: {
   idiomas: {
