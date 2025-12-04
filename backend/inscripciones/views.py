@@ -64,9 +64,10 @@ def inscribirse(request):
 
     # Intensivo: 25, Taller: 10, Regular: 12 (por si se activa)
     capacidad_por_tipo = {
-        'intensivo': 25,
+        'intensivo': 40,
         'taller': 10,
         'regular': 12,
+        'lectura': 12,
     }
     capacidad = capacidad_por_tipo.get(tipo, 12)  # default 12
 
