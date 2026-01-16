@@ -1,0 +1,17 @@
+Nuevo registro en Lista de Espera:
+
+DATOS DEL ALUMNO:
+- Nombre: {{ nombre }}
+- Cuenta UNAM: {{ cuenta_unam }}
+- WhatsApp: {{ whatsapp }}
+- E-mail: {{ email }}
+
+PREFERENCIAS:
+- Idioma: {{ idioma }}
+- Nivel: {{ nivel }}
+- Horario deseado: {{ horario_deseado }}
+
+Fecha de registro: {{ fecha_registro }}
+
+--
+Sistema de Inscripciones CLX

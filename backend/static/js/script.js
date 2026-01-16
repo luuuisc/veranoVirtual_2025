@@ -293,6 +293,459 @@ lectura: {
     WhatsApp: <strong>55 7398 0411</strong></p>
   `,
 },
+"curso-sabado": {
+    title: "CURSOS de 5h en SÁBADOS",
+    content: `
+      <h4>Cursos VIRTUALES de idiomas</h4>
+      <h3>CURSOS de 5h en SÁBADOS</h3>
+
+      <p><strong>Carga horaria:</strong><br>
+      5 horas cada sábado durante 12 sábados (60 horas en total).</p>
+
+      <p><strong>Dirigidos a:</strong><br>
+      Comunidad UNAM (50% de descuento ya aplicado en las cuotas conforme al convenio vigente con la DGOAE)</p>
+
+      <p><strong>Calendario:</strong><br>
+      Inicio: sábado 7 de febrero<br>
+      Término: sábado 2 de mayo<br>
+      Asuetos: sábado 4 de abril</p>
+
+      <p><strong>Idiomas, niveles y horarios</strong></p>
+
+      <h4>Inglés</h4>
+      <ul>
+        <li><strong>INTRO, A1, A2:</strong> 7:00-12:30</li>
+        <li><strong>INTRO, A1, A2:</strong> 16:00-21:30</li>
+      </ul>
+
+      <h4>Francés</h4>
+      <ul>
+        <li><strong>INTRO, A1:</strong> 7:00-12:30</li>
+        <li><strong>INTRO, A1:</strong> 16:00-21:30</li>
+      </ul>
+
+      <p><strong>Costos:</strong></p>
+      <p><strong>Hasta el 31 de enero:</strong></p>
+      <ul>
+        <li>Inscripción: <strong>$200</strong></li>
+        <li>Colegiatura: <strong>$2,300</strong></li>
+        <li>Examen de Colocación, requerido para ingresar a niveles superiores al INTRO (00): <strong>$100</strong><br>
+        (Tramítalo en la sección "Examen de colocación")</li>
+      </ul>
+      <p><strong>A partir del 1 de febrero:</strong></p>
+      <ul>
+        <li>Inscripción: <strong>$250</strong></li>
+        <li>Colegiatura: <strong>$2,500</strong></li>
+        <li>Examen de Colocación, requerido para ingresar a niveles superiores al INTRO (00): <strong>$150</strong><br>
+        (Tramítalo en la sección "Examen de colocación")</li>
+      </ul>
+
+      <p><strong>Inscripciones:</strong><br>
+      <strong>A partir del 15 de enero.</strong> Cupo limitado: mínimo 6, máximo 15 participantes</p>
+
+      <p><strong>Incluye:</strong></p>
+      <ul>
+        <li>Material multimedia</li>
+        <li>Constancia oficial al término del curso</li>
+      </ul>
+
+      <p><strong>Otros idiomas:</strong><br>
+      Para horarios o niveles distintos, o para cursos de otras lenguas, regístrate en la sección: Lista de Espera.</p>
+
+      <p><strong>Importante:</strong><br>
+      El curso está diseñado para un avance equilibrado entre habilidades y competencias de acuerdo a los lineamientos del MCER. Lo recomiendamos para participantes con alto nivel de compromiso.</p>
+
+      <p><strong>¿Tienes dudas?</strong><br>
+      Escríbenos por WhatsApp: 
+      <a href="tel:+525573980411">55 7398 0411</a> / 
+      <a href="tel:+525513404064">55 1340 4064</a>
+      </p>
+    `
+  },
+  "curso-domingo": {
+    title: "CURSOS de 5h en DOMINGOS",
+    content: `
+      <h4>Cursos VIRTUALES de idiomas</h4>
+      <h3>CURSOS de 5h en DOMINGOS</h3>
+
+      <p><strong>Carga horaria:</strong><br>
+      5 horas semanales cada domingo durante 12 domingos (60 horas en total).</p>
+
+      <p><strong>Dirigidos a:</strong><br>
+      Comunidad UNAM (50% de descuento ya aplicado en las cuotas conforme al convenio vigente con la DGOAE)</p>
+
+      <p><strong>Calendario:</strong><br>
+      Inicio: domingo 8 de febrero<br>
+      Término: domingo 3 de mayo<br>
+      Asuetos: domingo 5 de abril</p>
+
+      <p><strong>Idiomas, niveles y horarios</strong></p>
+
+      <h4>Inglés</h4>
+      <ul>
+        <li><strong>INTRO:</strong> 7:00-12:30</li>
+        <li><strong>A1, A2, B1:</strong> 16:00-21:30</li>
+      </ul>
+
+      <h4>Francés</h4>
+      <ul>
+        <li><strong>INTRO:</strong> 7:00-12:30</li>
+        <li><strong>INTRO:</strong> 16:00-21:30</li>
+      </ul>
+
+      <p><strong>Costos:</strong></p>
+      <p><strong>Hasta el 31 de enero:</strong></p>
+      <ul>
+        <li>Inscripción: <strong>$200</strong></li>
+        <li>Colegiatura: <strong>$2,300</strong></li>
+        <li>Examen de Colocación, requerido para ingresar a niveles superiores al INTRO (00): <strong>$100</strong><br>
+        (Tramítalo en la sección "Examen de colocación")</li>
+      </ul>
+      <p><strong>A partir del 1 de febrero:</strong></p>
+      <ul>
+        <li>Inscripción: <strong>$250</strong></li>
+        <li>Colegiatura: <strong>$2,500</strong></li>
+        <li>Examen de Colocación, requerido para ingresar a niveles superiores al INTRO (00): <strong>$150</strong><br>
+        (Tramítalo en la sección "Examen de colocación")</li>
+      </ul>
+
+      <p><strong>Inscripciones:</strong><br>
+      <strong>A partir del 15 de enero.</strong> Cupo limitado: mínimo 6, máximo 15 participantes</p>
+
+      <p><strong>Incluye:</strong></p>
+      <ul>
+        <li>Material multimedia</li>
+        <li>Constancia oficial al término del curso</li>
+      </ul>
+
+      <p><strong>Otros idiomas:</strong><br>
+      Para horarios o niveles distintos, o para cursos de otras lenguas, regístrate en la sección: Lista de Espera.</p>
+
+      <p><strong>Importante:</strong><br>
+      El curso está diseñado para un avance equilibrado entre habilidades y competencias de acuerdo a los lineamientos del MCER. Lo recomiendamos para participantes con alto nivel de compromiso.</p>
+
+      <p><strong>¿Tienes dudas?</strong><br>
+      Escríbenos por WhatsApp: 
+      <a href="tel:+525573980411">55 7398 0411</a> / 
+      <a href="tel:+525513404064">55 1340 4064</a>
+      </p>
+    `
+  },
+  "curso-sabsabdomado": {
+    title: "CURSOS de 3h en SÁB y DOM",
+    content: `
+      <h4>Cursos VIRTUALES de idiomas</h4>
+      <h3>CURSOS de 3h en SÁBADOS Y DOMINGOS</h3>
+      <p>(3 Horas cada día)</p>
+
+      <p><strong>Carga horaria:</strong><br>
+      6 horas semanales durante 10 semanas (60 horas en total).</p>
+
+      <p><strong>Dirigidos a:</strong><br>
+      Comunidad UNAM (50% de descuento ya aplicado en las cuotas conforme al convenio vigente con la DGOAE)</p>
+
+      <p><strong>Calendario:</strong><br>
+      Cursos de <strong>6 horas</strong> semanales<br>
+      <strong>Sábados y domingos</strong> (3h cada día)<br>
+      Inicio: sábado 7 de febrero<br>
+      Término: domingo 19 de abril<br>
+      Asuetos: domingo 5 de abril</p>
+
+      <p><strong>Idiomas, niveles y horarios</strong></p>
+
+      <h4>Inglés</h4>
+      <ul>
+        <li><strong>INTRO, A1, A2, B1:</strong> 7:00-10:00</li>
+        <li><strong>INTRO, A1, A2, B1:</strong> 10:00-13:00</li>
+        <li><strong>INTRO, A1, A2, B1:</strong> 19:00-22:00</li>
+      </ul>
+
+      <h4>Francés</h4>
+      <ul>
+        <li><strong>INTRO, A1, A2:</strong> 7:00-10:00</li>
+        <li><strong>INTRO, A1, A2:</strong> 19:00-22:00</li>
+      </ul>
+
+      <h4>Alemán</h4>
+      <ul>
+        <li><strong>INTRO:</strong> 19:00-22:00</li>
+      </ul>
+
+      <p><strong>Costos:</strong></p>
+      <p><strong>Hasta el 31 de enero:</strong></p>
+      <ul>
+        <li>Inscripción: <strong>$200</strong></li>
+        <li>Colegiatura: <strong>$2,300</strong></li>
+        <li>Examen de Colocación, requerido para ingresar a niveles superiores al INTRO (00): <strong>$100</strong><br>
+        (Tramítalo en la sección "Examen de colocación")</li>
+      </ul>
+      <p><strong>A partir del 1 de febrero:</strong></p>
+      <ul>
+        <li>Inscripción: <strong>$250</strong></li>
+        <li>Colegiatura: <strong>$2,500</strong></li>
+        <li>Examen de Colocación, requerido para ingresar a niveles superiores al INTRO (00): <strong>$150</strong><br>
+        (Tramítalo en la sección "Examen de colocación")</li>
+      </ul>
+
+      <p><strong>Inscripciones:</strong><br>
+      <strong>A partir del 15 de enero.</strong> Cupo limitado: mínimo 6, máximo 15 participantes</p>
+
+      <p><strong>Incluye:</strong></p>
+      <ul>
+        <li>Material multimedia</li>
+        <li>Constancia oficial al término del curso</li>
+      </ul>
+
+      <p><strong>Otros idiomas:</strong><br>
+      Para horarios o niveles distintos, o para cursos de otras lenguas, regístrate en la sección: Lista de Espera.</p>
+
+      <p><strong>Importante:</strong><br>
+      El curso está diseñado para un avance equilibrado entre habilidades y competencias de acuerdo a los lineamientos del MCER. Lo recomiendamos para participantes con alto nivel de compromiso.</p>
+
+      <p><strong>¿Tienes dudas?</strong><br>
+      Escríbenos por WhatsApp: 
+      <a href="tel:+525573980411">55 7398 0411</a> / 
+      <a href="tel:+525513404064">55 1340 4064</a>
+      </p>
+    `
+  },
+  "curso-lumievie": {
+    title: "CURSOS de 2h en LU, MIE, VIE",
+    content: `
+      <h4>Cursos VIRTUALES de idiomas</h4>
+      <h3>CURSOS DE LUNES, MIÉRCOLES Y VIERNES</h3>
+      <p>(2 horas cada día)</p>
+
+      <p><strong>Carga horaria:</strong><br>
+      6 horas semanales durante 10 semanas (60 horas en total).</p>
+
+      <p><strong>Dirigidos a:</strong><br>
+      Comunidad UNAM (50% de descuento ya aplicado en las cuotas conforme al convenio vigente con la DGOAE)</p>
+
+      <p><strong>Calendario:</strong><br>
+      Inicio: miércoles 4 de febrero<br>
+      Término: viernes 24 de abril<br>
+      Asuetos: lunes 16, lunes 30 de marzo, miércoles 1 y viernes 3 de abril</p>
+
+      <p><strong>Idiomas, niveles y horarios</strong></p>
+
+      <h4>Inglés</h4>
+      <ul>
+        <li><strong>INTRO, A1, A2:</strong> 7:00-9:00</li>
+        <li><strong>INTRO, A1, A2:</strong> 13:00-15:00</li>
+        <li><strong>INTRO, A1, A2:</strong> 18:00-20:00</li>
+        <li><strong>B1, B2:</strong> 7:00-9:00</li>
+        <li><strong>B1, B2:</strong> 19:00-21:00</li>
+      </ul>
+
+      <h4>Francés</h4>
+      <ul>
+        <li><strong>INTRO, A1:</strong> 7:00-9:00</li>
+        <li><strong>INTRO, A1:</strong> 13:00-15:00</li>
+        <li><strong>INTRO, A1:</strong> 19:00-21:00</li>
+      </ul>
+
+      <p><strong>Costos:</strong></p>
+      <p><strong>Hasta el 31 de enero:</strong></p>
+      <ul>
+        <li>Inscripción: <strong>$200</strong></li>
+        <li>Colegiatura: <strong>$2,300</strong></li>
+        <li>Examen de Colocación, requerido para ingresar a niveles superiores al INTRO (00): <strong>$100</strong><br>
+        (Tramítalo en la sección "Examen de colocación")</li>
+      </ul>
+      <p><strong>A partir del 1 de febrero:</strong></p>
+      <ul>
+        <li>Inscripción: <strong>$250</strong></li>
+        <li>Colegiatura: <strong>$2,500</strong></li>
+        <li>Examen de Colocación, requerido para ingresar a niveles superiores al INTRO (00): <strong>$150</strong><br>
+        (Tramítalo en la sección "Examen de colocación")</li>
+      </ul>
+
+      <p><strong>Inscripciones:</strong><br>
+      <strong>A partir del 15 de enero.</strong> Cupo limitado: mínimo 6, máximo 15 participantes</p>
+
+      <p><strong>Incluye:</strong></p>
+      <ul>
+        <li>Material multimedia</li>
+        <li>Constancia oficial al término del curso</li>
+      </ul>
+
+      <p><strong>Otros idiomas:</strong><br>
+      Para horarios o niveles distintos, o para cursos de otras lenguas, regístrate en la sección: Lista de Espera.</p>
+
+      <p><strong>Importante:</strong><br>
+      El curso está diseñado para un avance equilibrado entre habilidades y competencias de acuerdo a los lineamientos del MCER. Lo recomiendamos para participantes con alto nivel de compromiso.</p>
+
+      <p><strong>¿Tienes dudas?</strong><br>
+      Escríbenos por WhatsApp: 
+      <a href="tel:+525573980411">55 7398 0411</a> / 
+      <a href="tel:+525513404064">55 1340 4064</a>
+      </p>
+    `
+  },
+  "curso-luavie75": {
+    title: "CURSOS de 7.5h de LU a VIE",
+    content: `
+      <h4>Cursos VIRTUALES de idiomas</h4>
+      <h3>CURSOS DE LUNES a VIERNES</h3>
+      <p>(1h30 cada día)</p>
+
+      <p><strong>Carga horaria:</strong><br>
+      7.5 horas semanales durante 8 semanas (60 horas en total).</p>
+
+      <p><strong>Dirigidos a:</strong><br>
+      Comunidad UNAM (50% de descuento ya aplicado en las cuotas conforme al convenio vigente con la DGOAE)</p>
+
+      <p><strong>Calendario:</strong><br>
+      Inicio: lunes 9 de febrero<br>
+      Término: lunes 13 de abril<br>
+      Asuetos: lunes 16, lunes 30, martes 31 de marzo, miércoles 1, jueves 2 y viernes 3 de abril</p>
+
+      <p><strong>Idiomas, niveles y horarios</strong></p>
+
+      <h4>Inglés</h4>
+      <ul>
+        <li><strong>INTRO:</strong> 7:00-8:30</li>
+        <li><strong>INTRO:</strong> 13:00-14:30</li>
+        <li><strong>INTRO:</strong> 19:00-20:30</li>
+        <li><strong>A1:</strong> 7:00-8:30</li>
+        <li><strong>A1:</strong> 13:00-14:30</li>
+        <li><strong>A1:</strong> 14:30-16:00</li>
+        <li><strong>A1:</strong> 19:00-20:30</li>
+        <li><strong>A2:</strong> 7:00-8:30</li>
+        <li><strong>A2:</strong> 13:00-14:30</li>
+        <li><strong>A2:</strong> 20:30-22:00</li>
+        <li><strong>B1:</strong> 19:00-20:30</li>
+        <li><strong>B2:</strong> 20:30-22:00</li>
+      </ul>
+
+      <h4>Francés</h4>
+      <ul>
+        <li><strong>INTRO:</strong> 7:00-8:30</li>
+        <li><strong>INTRO:</strong> 13:00-14:30</li>
+        <li><strong>INTRO:</strong> 17:30-19:00</li>
+        <li><strong>INTRO:</strong> 20:30-22:00</li>
+        <li><strong>A1:</strong> 19:00-20:30</li>
+        <li><strong>A2:</strong> 20:30-22:00</li>
+      </ul>
+
+      <p><strong>Costos:</strong></p>
+      <p><strong>Hasta el 31 de enero:</strong></p>
+      <ul>
+        <li>Inscripción: <strong>$200</strong></li>
+        <li>Colegiatura: <strong>$2,300</strong></li>
+        <li>Examen de Colocación, requerido para ingresar a niveles superiores al INTRO (00): <strong>$100</strong><br>
+        (Tramítalo en la sección "Examen de colocación")</li>
+      </ul>
+      <p><strong>A partir del 1 de febrero:</strong></p>
+      <ul>
+        <li>Inscripción: <strong>$250</strong></li>
+        <li>Colegiatura: <strong>$2,500</strong></li>
+        <li>Examen de Colocación, requerido para ingresar a niveles superiores al INTRO (00): <strong>$150</strong><br>
+        (Tramítalo en la sección "Examen de colocación")</li>
+      </ul>
+
+      <p><strong>Inscripciones:</strong><br>
+      <strong>A partir del 15 de enero.</strong> Cupo limitado: mínimo 6, máximo 15 participantes</p>
+
+      <p><strong>Incluye:</strong></p>
+      <ul>
+        <li>Material multimedia</li>
+        <li>Constancia oficial al término del curso</li>
+      </ul>
+
+      <p><strong>Otros idiomas:</strong><br>
+      Para horarios o niveles distintos, o para cursos de otras lenguas, regístrate en la sección: Lista de Espera.</p>
+
+      <p><strong>Importante:</strong><br>
+      El curso está diseñado para un avance equilibrado entre habilidades y competencias de acuerdo a los lineamientos del MCER. Lo recomiendamos para participantes con alto nivel de compromiso.</p>
+
+      <p><strong>¿Tienes dudas?</strong><br>
+      Escríbenos por WhatsApp: 
+      <a href="tel:+525573980411">55 7398 0411</a> / 
+      <a href="tel:+525513404064">55 1340 4064</a>
+      </p>
+    `
+  },
+  "curso-luavie10": {
+    title: "CURSOS de 10h de LU a VIE",
+    content: `
+      <h4>Cursos VIRTUALES de idiomas</h4>
+      <h3>CURSOS DE LUNES a VIERNES</h3>
+      <p>(2h cada día)</p>
+
+      <p><strong>Carga horaria:</strong><br>
+      10 horas semanales durante 6 semanas (60 horas en total).</p>
+
+      <p><strong>Dirigidos a:</strong><br>
+      Comunidad UNAM (50% de descuento ya aplicado en las cuotas conforme al convenio vigente con la DGOAE)</p>
+
+      <p><strong>Calendario:</strong><br>
+      Inicio: lunes 9 de febrero<br>
+      Término: viernes 20 de marzo<br>
+      Asuetos: no hay</p>
+
+      <p><strong>Idiomas, niveles y horarios</strong></p>
+
+      <h4>Inglés</h4>
+      <ul>
+        <li><strong>INTRO:</strong> 7:00-9:00</li>
+        <li><strong>INTRO:</strong> 13:00-15:00</li>
+        <li><strong>INTRO:</strong> 18:00-20:00</li>
+        <li><strong>A1:</strong> 7:00-9:00</li>
+        <li><strong>A1:</strong> 14:00-16:00</li>
+        <li><strong>A1:</strong> 20:00-22:00</li>
+        <li><strong>A2:</strong> 14:00-16:00</li>
+        <li><strong>A2:</strong> 18:00-20:00</li>
+        <li><strong>B1:</strong> 19:00-21:00</li>
+        <li><strong>B2:</strong> 20:00-22:00</li>
+      </ul>
+
+      <h4>Francés</h4>
+      <ul>
+        <li><strong>INTRO:</strong> 18:00-20:00</li>
+        <li><strong>A1:</strong> 19:00-21:00</li>
+        <li><strong>A2:</strong> 20:00-22:00</li>
+      </ul>
+
+      <p><strong>Costos:</strong></p>
+      <p><strong>Hasta el 31 de enero:</strong></p>
+      <ul>
+        <li>Inscripción: <strong>$200</strong></li>
+        <li>Colegiatura: <strong>$2,300</strong></li>
+        <li>Examen de Colocación, requerido para ingresar a niveles superiores al INTRO (00): <strong>$100</strong><br>
+        (Tramítalo en la sección "Examen de colocación")</li>
+      </ul>
+      <p><strong>A partir del 1 de febrero:</strong></p>
+      <ul>
+        <li>Inscripción: <strong>$250</strong></li>
+        <li>Colegiatura: <strong>$2,500</strong></li>
+        <li>Examen de Colocación, requerido para ingresar a niveles superiores al INTRO (00): <strong>$150</strong><br>
+        (Tramítalo en la sección "Examen de colocación")</li>
+      </ul>
+
+      <p><strong>Inscripciones:</strong><br>
+      <strong>A partir del 15 de enero.</strong> Cupo limitado: mínimo 6, máximo 15 participantes</p>
+
+      <p><strong>Incluye:</strong></p>
+      <ul>
+        <li>Material multimedia</li>
+        <li>Constancia oficial al término del curso</li>
+      </ul>
+
+      <p><strong>Otros idiomas:</strong><br>
+      Para horarios o niveles distintos, o para cursos de otras lenguas, regístrate en la sección: Lista de Espera.</p>
+
+      <p><strong>Importante:</strong><br>
+      El curso está diseñado para un avance equilibrado entre habilidades y competencias de acuerdo a los lineamientos del MCER. Lo recomiendamos para participantes con alto nivel de compromiso.</p>
+
+      <p><strong>¿Tienes dudas?</strong><br>
+      Escríbenos por WhatsApp: 
+      <a href="tel:+525573980411">55 7398 0411</a> / 
+      <a href="tel:+525513404064">55 1340 4064</a>
+      </p>
+    `
+  },
 
 
 contacto: {
@@ -368,8 +821,14 @@ inscripcion: {
           <select id="tipo_curso" name="tipo_curso" required>
             <option value="" disabled selected>Elige un tipo…</option>
             <!--<option value="regular">Regular</option>-->
-            <option value="intensivo">Intensivo</option>
-            <option value="lectura">Comprensión de lectura</option>
+            <!--<option value="intensivo">Intensivo</option>-->
+            <!--<option value="lectura">Comprensión de lectura</option>-->
+            <option value="curso-sabado">Cursos de 5h en Sábados</option>
+            <option value="curso-domingo">Cursos de 5h en Domingos</option>
+            <option value="curso-sabsabdomado">Cursos de 3h en Sáb y Dom</option>
+            <option value="curso-lumievie">Cursos de 2h en Lu, Mié, Vie</option>
+            <option value="curso-luavie75">Cursos de 7.5h de Lu a Vie</option>
+            <option value="curso-luavie10">Cursos de 10h de Lu a Vie</option>
           </select>
         </div>
         <div class="form-group">
@@ -828,6 +1287,97 @@ const availability = {
       },
     },
   },
+  "curso-sabado": {
+    idiomas: {
+      ingles: {
+        INTRO: [{ dias: ["Sáb"], horas: ["07:00-12:30", "16:00-21:30"] }],
+        A1: [{ dias: ["Sáb"], horas: ["07:00-12:30", "16:00-21:30"] }],
+        A2: [{ dias: ["Sáb"], horas: ["07:00-12:30", "16:00-21:30"] }],
+      },
+      frances: {
+        INTRO: [{ dias: ["Sáb"], horas: ["07:00-12:30", "16:00-21:30"] }],
+        A1: [{ dias: ["Sáb"], horas: ["07:00-12:30", "16:00-21:30"] }],
+      },
+    },
+  },
+  "curso-domingo": {
+    idiomas: {
+      ingles: {
+        INTRO: [{ dias: ["Dom"], horas: ["07:00-12:30"] }],
+        A1: [{ dias: ["Dom"], horas: ["16:00-21:30"] }],
+        A2: [{ dias: ["Dom"], horas: ["16:00-21:30"] }],
+        B1: [{ dias: ["Dom"], horas: ["16:00-21:30"] }],
+      },
+      frances: {
+        INTRO: [{ dias: ["Dom"], horas: ["07:00-12:30", "16:00-21:30"] }],
+      },
+    },
+  },
+  "curso-sabsabdomado": {
+    idiomas: {
+      ingles: {
+        INTRO: [{ dias: ["Sáb", "Dom"], horas: ["07:00-10:00", "10:00-13:00", "19:00-22:00"] }],
+        A1: [{ dias: ["Sáb", "Dom"], horas: ["07:00-10:00", "10:00-13:00", "19:00-22:00"] }],
+        A2: [{ dias: ["Sáb", "Dom"], horas: ["07:00-10:00", "10:00-13:00", "19:00-22:00"] }],
+        B1: [{ dias: ["Sáb", "Dom"], horas: ["07:00-10:00", "10:00-13:00", "19:00-22:00"] }],
+      },
+      frances: {
+        INTRO: [{ dias: ["Sáb", "Dom"], horas: ["07:00-10:00", "19:00-22:00"] }],
+        A1: [{ dias: ["Sáb", "Dom"], horas: ["07:00-10:00", "19:00-22:00"] }],
+        A2: [{ dias: ["Sáb", "Dom"], horas: ["07:00-10:00", "19:00-22:00"] }],
+      },
+      aleman: {
+        INTRO: [{ dias: ["Sáb", "Dom"], horas: ["19:00-22:00"] }],
+      },
+    },
+  },
+  "curso-lumievie": {
+    idiomas: {
+      ingles: {
+        INTRO: [{ dias: ["Lun", "Mié", "Vie"], horas: ["07:00-09:00", "13:00-15:00", "18:00-20:00"] }],
+        A1: [{ dias: ["Lun", "Mié", "Vie"], horas: ["07:00-09:00", "13:00-15:00", "18:00-20:00"] }],
+        A2: [{ dias: ["Lun", "Mié", "Vie"], horas: ["07:00-09:00", "13:00-15:00", "18:00-20:00"] }],
+        B1: [{ dias: ["Lun", "Mié", "Vie"], horas: ["07:00-09:00", "19:00-21:00"] }],
+        B2: [{ dias: ["Lun", "Mié", "Vie"], horas: ["07:00-09:00", "19:00-21:00"] }],
+      },
+      frances: {
+        INTRO: [{ dias: ["Lun", "Mié", "Vie"], horas: ["07:00-09:00", "13:00-15:00", "19:00-21:00"] }],
+        A1: [{ dias: ["Lun", "Mié", "Vie"], horas: ["07:00-09:00", "13:00-15:00", "19:00-21:00"] }],
+      },
+    },
+  },
+  "curso-luavie75": {
+    idiomas: {
+      ingles: {
+        INTRO: [{ dias: ["Lun", "Mar", "Mié", "Jue", "Vie"], horas: ["07:00-08:30", "13:00-14:30", "19:00-20:30"] }],
+        A1: [{ dias: ["Lun", "Mar", "Mié", "Jue", "Vie"], horas: ["07:00-08:30", "13:00-14:30", "14:30-16:00", "19:00-20:30"] }],
+        A2: [{ dias: ["Lun", "Mar", "Mié", "Jue", "Vie"], horas: ["07:00-08:30", "13:00-14:30", "20:30-22:00"] }],
+        B1: [{ dias: ["Lun", "Mar", "Mié", "Jue", "Vie"], horas: ["19:00-20:30"] }],
+        B2: [{ dias: ["Lun", "Mar", "Mié", "Jue", "Vie"], horas: ["20:30-22:00"] }],
+      },
+      frances: {
+        INTRO: [{ dias: ["Lun", "Mar", "Mié", "Jue", "Vie"], horas: ["07:00-08:30", "13:00-14:30", "17:30-19:00", "20:30-22:00"] }],
+        A1: [{ dias: ["Lun", "Mar", "Mié", "Jue", "Vie"], horas: ["19:00-20:30"] }],
+        A2: [{ dias: ["Lun", "Mar", "Mié", "Jue", "Vie"], horas: ["20:30-22:00"] }],
+      },
+    },
+  },
+  "curso-luavie10": {
+    idiomas: {
+      ingles: {
+        INTRO: [{ dias: ["Lun", "Mar", "Mié", "Jue", "Vie"], horas: ["07:00-09:00", "13:00-15:00", "18:00-20:00"] }],
+        A1: [{ dias: ["Lun", "Mar", "Mié", "Jue", "Vie"], horas: ["07:00-09:00", "14:00-16:00", "20:00-22:00"] }],
+        A2: [{ dias: ["Lun", "Mar", "Mié", "Jue", "Vie"], horas: ["14:00-16:00", "18:00-20:00"] }],
+        B1: [{ dias: ["Lun", "Mar", "Mié", "Jue", "Vie"], horas: ["19:00-21:00"] }],
+        B2: [{ dias: ["Lun", "Mar", "Mié", "Jue", "Vie"], horas: ["20:00-22:00"] }],
+      },
+      frances: {
+        INTRO: [{ dias: ["Lun", "Mar", "Mié", "Jue", "Vie"], horas: ["18:00-20:00"] }],
+        A1: [{ dias: ["Lun", "Mar", "Mié", "Jue", "Vie"], horas: ["19:00-21:00"] }],
+        A2: [{ dias: ["Lun", "Mar", "Mié", "Jue", "Vie"], horas: ["20:00-22:00"] }],
+      },
+    },
+  },
   /*
   iniciacion: {
   idiomas: {
@@ -893,6 +1443,20 @@ function populatePeriodos() {
     ];
   } else if (tipo === "iniciacion") {
     opts = [{ label: "4 - 31 julio", start: "2025-07-04", end: "2025-07-31" }];
+  } else if (tipo === "curso-sabado") {
+    opts = [{ label: "7 febrero - 2 mayo", start: "2026-02-07", end: "2026-05-02" }];
+  } else if (tipo === "curso-domingo") {
+    opts = [{ label: "8 febrero - 3 mayo", start: "2026-02-08", end: "2026-05-03" }];
+  } else if (tipo === "curso-sabsabdomado") {
+    opts = [{ label: "7 febrero - 19 abril", start: "2026-02-07", end: "2026-04-19" }];
+  } else if (tipo === "curso-lumievie") {
+    opts = [{ label: "4 febrero - 24 abril", start: "2026-02-04", end: "2026-04-24" }];
+  } else if (tipo === "curso-luavie75") {
+    opts = [{ label: "9 febrero - 13 abril", start: "2026-02-09", end: "2026-04-13" }];
+  } else if (tipo === "curso-luavie10") {
+    opts = [{ label: "9 febrero - 20 marzo", start: "2026-02-09", end: "2026-03-20" }];
+  } else if (tipo === "lectura") {
+    opts = [{ label: "5 enero - 30 enero", start: "2026-01-05", end: "2026-01-30" }];
   }
 
   if (!opts.length) {

@@ -1,0 +1,24 @@
+Se ha registrado una {{ 'preinscripción (Taller de Conversación)' if is_taller else 'inscripción (Curso)' }}:
+
+DATOS DEL ALUMNO:
+- Nombre: {{ nombre }}
+- E-mail: {{ email }}
+- WhatsApp: {{ whatsapp }}
+{% if cuenta_unam %}- Cuenta UNAM: {{ cuenta_unam }}{% endif %}
+
+DATOS DEL CURSO:
+- Tipo: {{ curso_tipo }} ({{ curso_nombre }})
+- Idioma: {{ idioma }}
+- Nivel: {{ nivel }}
+- Horario: {{ horario }}
+- Periodo: {{ fecha_inicio }} a {{ fecha_fin }}
+- Grupo: {{ grupo }}
+
+{% if mensaje %}MENSAJE DEL ALUMNO:
+{{ mensaje }}
+{% endif %}
+
+Fecha de registro: {{ fecha_registro }}
+
+--
+Sistema de Inscripciones CLX

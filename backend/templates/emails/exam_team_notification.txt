@@ -1,0 +1,13 @@
+Nueva solicitud de Examen de Colocación:
+
+DATOS DEL ALUMNO:
+- Nombre: {{ nombre }}
+- Cuenta UNAM: {{ cuenta_unam }}
+- WhatsApp: {{ whatsapp }}
+- E-mail: {{ email }}
+- Idioma: {{ idioma }}
+
+Fecha de registro: {{ fecha_registro }}
+
+--
+Sistema de Inscripciones CLX

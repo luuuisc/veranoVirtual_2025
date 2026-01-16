@@ -405,3 +405,34 @@ body {
   background-color: #ffe66d;
   color: #333;
 }
+
+/* Estilo especial para resaltar INSCRIPCIONES */
+.rect-highlight {
+  background: linear-gradient(135deg, #48bb78 0%, #38a169 100%) !important;
+  color: #fff !important;
+  font-size: 1.3em !important;
+  box-shadow: 0 4px 12px rgba(72, 187, 120, 0.4);
+  animation: pulse 2s ease-in-out infinite;
+  border: 2px solid #2f855a;
+}
+
+.rect-highlight:hover {
+  background: linear-gradient(135deg, #38a169 0%, #2f855a 100%) !important;
+  color: #fff !important;
+  transform: scale(1.08);
+  box-shadow: 0 6px 16px rgba(72, 187, 120, 0.6);
+}
+
+.rect-highlight.active {
+  background: linear-gradient(135deg, #2f855a 0%, #276749 100%) !important;
+  color: #fff !important;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 4px 12px rgba(72, 187, 120, 0.4);
+  }
+  50% {
+    box-shadow: 0 6px 20px rgba(72, 187, 120, 0.7);
+  }
+}

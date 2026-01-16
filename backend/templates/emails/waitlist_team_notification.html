@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nueva Lista de Espera - CLX Idiomas</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background-color: #f4f7fa; }
+        .email-container { max-width: 600px; margin: 0 auto; background-color: #ffffff; }
+        .header { background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%); padding: 30px; text-align: center; color: white; }
+        .header h1 { font-size: 24px; font-weight: 700; }
+        .content { padding: 30px; }
+        .alert-badge { display: inline-block; background: linear-gradient(135deg, #ed8936 0%, #dd6b20 100%); color: white; padding: 8px 16px; border-radius: 20px; font-size: 12px; font-weight: 600; margin-bottom: 20px; }
+        .info-box { background: #fef5e7; border-left: 4px solid #ed8936; padding: 20px; margin-bottom: 20px; border-radius: 4px; }
+        .info-box h2 { font-size: 16px; color: #9c4221; margin-bottom: 12px; font-weight: 600; }
+        .info-row { display: flex; padding: 8px 0; font-size: 14px; }
+        .info-label { font-weight: 600; color: #2d3748; min-width: 140px; }
+        .info-value { color: #4a5568; }
+        .footer { background-color: #edf2f7; padding: 20px; text-align: center; font-size: 12px; color: #718096; }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <div class="header">
+            <h1>⏳ Nueva Lista de Espera</h1>
+        </div>
+        <div class="content">
+            <div class="alert-badge">ℹ️ INFORMACIÓN</div>
+            <div class="info-box">
+                <h2>👤 Datos del Alumno</h2>
+                <div class="info-row"><span class="info-label">Nombre:</span><span class="info-value"><strong>{{ nombre }}</strong></span></div>
+                <div class="info-row"><span class="info-label">Cuenta UNAM:</span><span class="info-value">{{ cuenta_unam }}</span></div>
+                <div class="info-row"><span class="info-label">WhatsApp:</span><span class="info-value">{{ whatsapp }}</span></div>
+                <div class="info-row"><span class="info-label">E-mail:</span><span class="info-value">{{ email }}</span></div>
+                <div class="info-row"><span class="info-label">Idioma:</span><span class="info-value">{{ idioma }}</span></div>
+                <div class="info-row"><span class="info-label">Nivel:</span><span class="info-value">{{ nivel }}</span></div>
+                <div class="info-row"><span class="info-label">Horario deseado:</span><span class="info-value">{{ horario_deseado }}</span></div>
+            </div>
+            <p style="font-size: 12px; color: #718096;"><strong>Fecha:</strong> {{ fecha_registro }}</p>
+        </div>
+        <div class="footer"><p>Sistema Automático - CLX Idiomas</p></div>
+    </div>
+</body>
+</html>

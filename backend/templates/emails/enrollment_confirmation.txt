@@ -1,0 +1,42 @@
+Hola {{ nombre }},
+
+Hemos registrado tu solicitud al {{ curso_nombre }} ({{ nivel }} de {{ idioma }}).
+
+Detalles de tu inscripción:
+- Horario: {{ horario }}
+- Periodo: {{ fecha_inicio }} a {{ fecha_fin }}
+- Duración: {{ duracion }}
+- Carga horaria: {{ carga }} ({{ total_horas }} horas en total)
+
+INFORMACIÓN DE PAGOS:
+{% if is_early_bird %}
+⏰ PRECIO ESPECIAL hasta el {{ cutoff_date }}:
+{% else %}
+Precios vigentes:
+{% endif %}
+- Inscripción: ${{ inscripcion_precio }}
+{% if requiere_examen and nivel != 'INTRO' %}
+- Examen de Colocación (si aplica): ${{ examen_precio }}
+{% endif %}
+- Colegiatura: ${{ colegiatura }}
+
+{% if requiere_examen and nivel != 'INTRO' %}
+IMPORTANTE: Para niveles superiores a INTRO (00) se requiere Examen de Colocación (${{ examen_precio }}) o constancia del nivel anterior.
+{% else %}
+{% if is_taller %}
+Este taller NO requiere examen de colocación; solo presenta comprobante del último nivel cursado.
+{% endif %}
+{% endif %}
+
+Cupo por grupo: mínimo {{ cupo_min }}, máximo {{ cupo_max }} participantes.
+
+SIGUIENTE PASO:
+Adjunto encontrarás un PDF con nuestros datos bancarios para realizar tu pago.
+
+Envía por WhatsApp una foto del comprobante de depósito al {{ whatsapp }}.
+
+¡Gracias por confiar en nosotros!
+
+--
+CLX Idiomas
+WhatsApp: {{ whatsapp }}
