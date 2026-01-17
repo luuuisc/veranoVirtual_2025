@@ -134,8 +134,11 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 # Nombres con hash y compresión → evita caché vieja
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
-# Versión opcional para querystring de caché
-STATIC_VERSION = os.getenv("STATIC_VERSION", "2025-11-11-1")
+# Versión para querystring de caché - Actualizar cuando haya cambios importantes
+STATIC_VERSION = os.getenv("STATIC_VERSION", "2026-01-16-1")
+
+# WhiteNoise: no caché en desarrollo, 1 año en producción
+WHITENOISE_MAX_AGE = 0 if DEBUG else 31536000
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
@@ -149,6 +152,13 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = env("EMAIL_HOST_USER")
 EMAIL_HOST_PASSWORD = env("EMAIL_HOST_PASSWORD")
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
+# Emails del equipo administrativo
+TEAM_EMAILS = env.list('TEAM_EMAILS', default=[
+    'agente3jlcosta@gmail.com',
+    'luuuis.pcastro@gmail.com',
+    'jorgedaniel2915@gmail.com',
+])
 
 # =======================
 # STRIPE CONFIG

@@ -135,6 +135,7 @@ class EmailService:
             'jorgedaniel2915@gmail.com',
         ])
         self.pdf_bancos = Path(settings.BASE_DIR) / 'static' / 'docs' / 'datos_bancarios.pdf'
+        logger.info(f"EmailService inicializado. Emails del equipo: {', '.join(self.team_emails)}")
     
     def get_pricing_info(self, fecha: Optional[date] = None) -> Dict[str, int]:
         """Obtiene los precios según la fecha actual o proporcionada."""
@@ -290,9 +291,18 @@ class EmailService:
             )
             if html_content:
                 email.attach_alternative(html_content, "text/html")
-            email.send(fail_silently=True)
             
-            logger.info(f"Notificación enviada al equipo - Inscripción: {inscripcion.nombre}")
+            # Enviar con logging mejorado
+            try:
+                email.send(fail_silently=False)
+                logger.info(f"✅ Notificación enviada al equipo - Inscripción: {inscripcion.nombre}")
+                logger.info(f"   Destinatarios: {', '.join(self.team_emails)}")
+            except Exception as send_error:
+                logger.error(f"❌ Error enviando notificación al equipo: {str(send_error)}")
+                logger.error(f"   Destinatarios: {', '.join(self.team_emails)}")
+                logger.error(f"   Inscripción: {inscripcion.nombre} - {inscripcion.email}")
+                # No lanzar excepción para no bloquear el proceso principal
+            
             return True
             
         except Exception as e:
@@ -367,9 +377,17 @@ class EmailService:
             )
             if html_content:
                 email.attach_alternative(html_content, "text/html")
-            email.send(fail_silently=True)
             
-            logger.info(f"Notificación de examen enviada al equipo - {examen.nombre}")
+            # Enviar con logging mejorado
+            try:
+                email.send(fail_silently=False)
+                logger.info(f"✅ Notificación de examen enviada al equipo - {examen.nombre}")
+                logger.info(f"   Destinatarios: {', '.join(self.team_emails)}")
+            except Exception as send_error:
+                logger.error(f"❌ Error enviando notificación de examen al equipo: {str(send_error)}")
+                logger.error(f"   Destinatarios: {', '.join(self.team_emails)}")
+                logger.error(f"   Examen: {examen.nombre} - {examen.email}")
+            
             return True
             
         except Exception as e:
@@ -443,9 +461,17 @@ class EmailService:
             )
             if html_content:
                 email.attach_alternative(html_content, "text/html")
-            email.send(fail_silently=True)
             
-            logger.info(f"Notificación de lista de espera enviada al equipo - {registro.nombre}")
+            # Enviar con logging mejorado
+            try:
+                email.send(fail_silently=False)
+                logger.info(f"✅ Notificación de lista de espera enviada al equipo - {registro.nombre}")
+                logger.info(f"   Destinatarios: {', '.join(self.team_emails)}")
+            except Exception as send_error:
+                logger.error(f"❌ Error enviando notificación de lista de espera al equipo: {str(send_error)}")
+                logger.error(f"   Destinatarios: {', '.join(self.team_emails)}")
+                logger.error(f"   Lista espera: {registro.nombre} - {registro.email}")
+            
             return True
             
         except Exception as e:
