@@ -825,12 +825,6 @@ inscripcion: {
           <input type="hidden" id="fecha_fin" name="fecha_fin" required>
         </div>
 
-        <!-- Confirmación -->
-        <div class="form-group">
-          <input id="confirm_periodo" name="confirm_periodo" type="checkbox" required>
-          <label for="confirm_periodo">Confirmo que el periodo seleccionado es correcto</label>
-        </div>
-
         <!-- Mensaje y envío -->
         <div class="form-group full-width">
           <label for="mensaje">Mensaje (opcional)</label>
@@ -1392,7 +1386,6 @@ const availability = {
 // ————————————————————————————————
 function populatePeriodos() {
   const tipo = document.getElementById("tipo_curso").value;
-  const cont = document.getElementById("periodo-options");
   const grp = document.getElementById("periodo-group");
   let opts = [];
 
@@ -1420,37 +1413,11 @@ function populatePeriodos() {
     opts = [{ label: "5 enero - 30 enero", start: "2026-01-05", end: "2026-01-30" }];
   }
 
-  if (!opts.length) {
-    grp.style.display = "none";
-    return;
-  }
-  grp.style.display = "block";
+  grp.style.display = "none";
 
-  cont.innerHTML = opts
-    .map(
-      (o, i) => `
-    <div class="radio-option">
-      <input type="radio" id="periodo_${i}" name="periodo" 
-             value="${o.start}|${o.end}" required>
-      <label for="periodo_${i}">${o.label}</label>
-    </div>
-  `
-    )
-    .join("");
-
-  opts.forEach((o, i) => {
-    document.getElementById(`periodo_${i}`).addEventListener("change", (e) => {
-      const [s, f] = e.target.value.split("|");
-      document.getElementById("fecha_inicio").value = s;
-      document.getElementById("fecha_fin").value = f;
-    });
-  });
-
-  // auto-select si sólo hay uno
-  const r = cont.querySelectorAll('input[type="radio"]');
-  if (r.length === 1) {
-    r[0].checked = true;
-    r[0].dispatchEvent(new Event("change"));
+  if (opts.length > 0) {
+    document.getElementById("fecha_inicio").value = opts[0].start;
+    document.getElementById("fecha_fin").value = opts[0].end;
   }
 }
 

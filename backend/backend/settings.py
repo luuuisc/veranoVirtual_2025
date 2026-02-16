@@ -135,7 +135,7 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # Versión para querystring de caché - Actualizar cuando haya cambios importantes
-STATIC_VERSION = os.getenv("STATIC_VERSION", "2026-01-16-1")
+STATIC_VERSION = os.getenv("STATIC_VERSION", "2026-01-16-3")
 
 # WhiteNoise: no caché en desarrollo, 1 año en producción
 WHITENOISE_MAX_AGE = 0 if DEBUG else 31536000
