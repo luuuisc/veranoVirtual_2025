@@ -52,66 +52,66 @@ COURSE_INFO = {
         'duracion': '12 semanas',
         'carga': '5h/semana',
         'total_horas': 60,
-        'colegiatura_early': 2300,
-        'colegiatura_regular': 2500,
+        'colegiatura_early': 1500,
+        'colegiatura_regular': 1500,
         'requiere_examen': True,
-        'cupo_min': 6,
-        'cupo_max': 15,
+        'cupo_min': 15,
+        'cupo_max': 25,
     },
     'curso-domingo': {
         'nombre': 'Curso de 5h en Domingos',
         'duracion': '12 semanas',
         'carga': '5h/semana',
         'total_horas': 60,
-        'colegiatura_early': 2300,
-        'colegiatura_regular': 2500,
+        'colegiatura_early': 1500,
+        'colegiatura_regular': 1500,
         'requiere_examen': True,
-        'cupo_min': 6,
-        'cupo_max': 15,
+        'cupo_min': 15,
+        'cupo_max': 25,
     },
     'curso-sabsabdomado': {
         'nombre': 'Curso de 3h en Sáb y Dom',
         'duracion': '10 semanas',
         'carga': '6h/semana',
         'total_horas': 60,
-        'colegiatura_early': 2300,
-        'colegiatura_regular': 2500,
+        'colegiatura_early': 1500,
+        'colegiatura_regular': 1500,
         'requiere_examen': True,
-        'cupo_min': 6,
-        'cupo_max': 15,
+        'cupo_min': 15,
+        'cupo_max': 25,
     },
     'curso-lumievie': {
         'nombre': 'Curso de 2h en Lu, Mié, Vie',
         'duracion': '10 semanas',
         'carga': '6h/semana',
         'total_horas': 60,
-        'colegiatura_early': 2300,
-        'colegiatura_regular': 2500,
+        'colegiatura_early': 1500,
+        'colegiatura_regular': 1500,
         'requiere_examen': True,
-        'cupo_min': 6,
-        'cupo_max': 15,
+        'cupo_min': 15,
+        'cupo_max': 25,
     },
     'curso-luavie75': {
         'nombre': 'Curso de 7.5h de Lu a Vie',
         'duracion': '8 semanas',
         'carga': '7.5h/semana',
         'total_horas': 60,
-        'colegiatura_early': 2300,
-        'colegiatura_regular': 2500,
+        'colegiatura_early': 1500,
+        'colegiatura_regular': 1500,
         'requiere_examen': True,
-        'cupo_min': 6,
-        'cupo_max': 15,
+        'cupo_min': 15,
+        'cupo_max': 25,
     },
     'curso-luavie10': {
         'nombre': 'Curso de 10h de Lu a Vie',
         'duracion': '6 semanas',
         'carga': '10h/semana',
         'total_horas': 60,
-        'colegiatura_early': 2300,
-        'colegiatura_regular': 2500,
+        'colegiatura_early': 1500,
+        'colegiatura_regular': 1500,
         'requiere_examen': True,
-        'cupo_min': 6,
-        'cupo_max': 15,
+        'cupo_min': 15,
+        'cupo_max': 25,
     },
 }
 
@@ -123,10 +123,10 @@ class EmailService:
     EARLY_BIRD_CUTOFF = date(2026, 1, 31)
     
     # Precios de inscripción y examen
-    INSCRIPCION_EARLY = 200
-    INSCRIPCION_REGULAR = 250
+    INSCRIPCION_EARLY = 100
+    INSCRIPCION_REGULAR = 100
     EXAMEN_EARLY = 100
-    EXAMEN_REGULAR = 150
+    EXAMEN_REGULAR = 100
     
     def __init__(self):
         self.team_emails = getattr(settings, 'TEAM_EMAILS', [
