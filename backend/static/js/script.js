@@ -1305,8 +1305,8 @@ const availability = {
     idiomas: {
       ingles: {
         //INTRO: [{ dias: ["Lun", "Mar", "Mié", "Jue", "Vie"], horas: ["07:00-08:30", "13:00-14:30", "19:00-20:30"] }],
-        A1: [{ dias: ["Lun", "Mar", "Mié", "Jue", "Vie"], horas: ["07:00-08:30", "13:00-14:30", "14:30-16:00", "19:00-20:30"] }],
-        A2: [{ dias: ["Lun", "Mar", "Mié", "Jue", "Vie"], horas: ["07:00-08:30", "13:00-14:30", "20:30-22:00"] }],
+        A1: [{ dias: ["Lun", "Mar", "Mié", "Jue", "Vie"], horas: ["19:00-20:30"] }],
+        A2: [{ dias: ["Lun", "Mar", "Mié", "Jue", "Vie"], horas: ["07:00-08:30"] }],
         //B1: [{ dias: ["Lun", "Mar", "Mié", "Jue", "Vie"], horas: ["19:00-20:30"] }],
         //B2: [{ dias: ["Lun", "Mar", "Mié", "Jue", "Vie"], horas: ["20:30-22:00"] }],
       },/*
